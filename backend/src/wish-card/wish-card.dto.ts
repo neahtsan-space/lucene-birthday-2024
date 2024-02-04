@@ -1,7 +1,7 @@
 export interface wishCardDto {
     name: string;
     wish: string;
-    time: Date;
+    time: string;
     picture: string;
     cardNumber: number;
 }

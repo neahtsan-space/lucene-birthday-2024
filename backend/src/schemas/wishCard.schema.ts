@@ -12,7 +12,7 @@ export class wishCard{
     wish: string;
 
     @Prop()
-    time: Date;
+    time: string;
 
     @Prop()
     picture: string;
