@@ -1,4 +1,4 @@
-import { BadRequestException, Body, Controller, Get, Post, Param } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Get, Post, Param, Put, Query, Delete } from '@nestjs/common';
 import { WishCardService } from './wish-card.service';
 import { wishCardDto } from './wish-card.dto';
 
@@ -23,4 +23,53 @@ export class WishCardController {
                 throw new BadRequestException(e.message);
             }
         }
+
+    @Get('search')
+    async getWishCardByName(@Query('name') name: string) {
+        try 
+        {
+            return await this.wishCardService.getWishCardByName(name);
+        } 
+        catch (e) 
+        {
+            throw new BadRequestException(e.message);
+        }
+    }
+
+    @Put('update')
+    async updateWishCardByName(@Body('name') name: string, @Body('wish') wish: string) {
+        try 
+        {
+            return await this.wishCardService.updateWishCardByName(name, wish);
+        } 
+        catch (e) 
+        {
+            throw new BadRequestException(e.message);
+        }
+    }
+
+    @Delete('delete')
+    async deleteWishCardByName(@Body('name') name: string) {
+        try 
+        {
+            return await this.wishCardService.deleteWishCardByName(name);
+        } 
+        catch (e) 
+        {
+            throw new BadRequestException(e.message);
+        }
+    }
+
+    @Delete('nuclear-option')
+    async deleteAllWishCards() {
+        try 
+        {
+            return await this.wishCardService.deleteAllWishCards();
+        } 
+        catch (e) 
+        {
+            throw new BadRequestException(e.message);
+        }
+    }
+
 }

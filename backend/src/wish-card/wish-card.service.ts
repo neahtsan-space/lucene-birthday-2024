@@ -12,7 +12,7 @@ export class WishCardService {
     formatDateTime(date: Date): string {
         const pad = (num: number) => num.toString().padStart(2, '0');
       
-        // Assuming the server is in GMT+7 or you want to force GMT+7 regardless of server timezone
+        // Assuming the server is in GMT+7
         const offset = 7; // GMT+7
         const localDate = new Date(date.getTime() + offset * 3600 * 1000);
       
@@ -30,7 +30,19 @@ export class WishCardService {
         return this.wishCardModel.countDocuments().exec();
     }
 
+    async checkNameExists(name: string) {
+        const searchDbResult = await this.wishCardModel.findOne({name: name}).exec()
+        if (searchDbResult == null){
+            return false;
+        }
+        return true;
+    }
+
     async createWishCard(wishCard: wishCardDto): Promise<wishCard> {
+        const searchDbResult = await this.checkNameExists(wishCard.name);
+        if (searchDbResult){
+            throw new BadRequestException('Wish card with the given name already exists, please write another name / มีคนใช้ชื่อนี้ส่งการ์ดอวยพรแล้วครับ โปรดตั้งชื่อใหม่นะครับ~')
+        }
         wishCard.time = this.formatDateTime(new Date());
         wishCard.cardNumber = await this.getWishCardCount() + 1;
         const createdWishCard = new this.wishCardModel(wishCard);
@@ -42,10 +54,32 @@ export class WishCardService {
     }
 
     async getWishCardByName(name: string) {
-        const searchDbResult = await this.wishCardModel.findOne({name: name}).exec()
+        const searchDbResult = await this.wishCardModel.findOne({name: name}).exec();
         if (searchDbResult == null){
             throw new BadRequestException('No wish card found with the given name')
         }
         return searchDbResult;
     }
+
+    async updateWishCardByName(name: string, wish: string) {
+        const searchDbResult = await this.getWishCardByName(name);
+        if (searchDbResult == null){
+            throw new BadRequestException('No wish card found with the given name')
+        }
+        const time = this.formatDateTime(new Date());
+        return this.wishCardModel.updateOne({name: name}, {wish: wish, time: time}).exec();
+    }
+
+    async deleteWishCardByName(name: string) {
+        const searchDbResult = await this.checkNameExists(name);
+        if (searchDbResult == false){
+            throw new BadRequestException('No wish card found with the given name')
+        }
+        return this.wishCardModel.deleteOne({name: name}).exec();
+    }
+
+    async deleteAllWishCards() {
+        return this.wishCardModel.deleteMany({}).exec();
+    }
+
 }
