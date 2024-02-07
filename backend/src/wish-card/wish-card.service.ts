@@ -71,11 +71,16 @@ export class WishCardService {
     }
 
     async deleteWishCardByName(name: string) {
-        const searchDbResult = await this.checkNameExists(name);
-        if (searchDbResult == false){
-            throw new BadRequestException('No wish card found with the given name')
-        }
-        return this.wishCardModel.deleteOne({name: name}).exec();
+        const searchDbResult = await this.getWishCardByName(name);
+        
+        await this.wishCardModel.deleteOne({name: name}).exec();
+
+        const cardNumberToDelete = searchDbResult.cardNumber;
+        await this.wishCardModel.updateMany(
+            { cardNumber: { $gt: cardNumberToDelete } },
+            { $inc: { cardNumber: -1 } }
+          ).exec();
+        return {statuscode: 200, message: 'Wish card deleted successfully & Update the rest of the card number successfully!'}
     }
 
     async deleteAllWishCards() {
