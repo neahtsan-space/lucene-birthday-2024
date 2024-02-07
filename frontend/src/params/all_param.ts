@@ -1,1 +1,0 @@
-const project_name = "lc-lp-birthday-2024";
