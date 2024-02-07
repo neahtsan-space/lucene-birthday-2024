@@ -72,4 +72,16 @@ export class WishCardController {
         }
     }
 
+    @Get('slang-check')
+    async getSlangCheck() {
+        try 
+        {
+            return await this.wishCardService.getSlangCheck();
+        } 
+        catch (e) 
+        {
+            throw new BadRequestException(e.message);
+        }
+    }
+
 }

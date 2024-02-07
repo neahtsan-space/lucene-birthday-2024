@@ -3,11 +3,31 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { wishCard } from 'src/schemas/wishCard.schema';
 import { wishCardDto } from './wish-card.dto';
-
+import { promises as fs } from 'fs';
+import * as path from 'path';
 
 @Injectable()
 export class WishCardService {
     constructor(@InjectModel(wishCard.name) private wishCardModel: Model<wishCard>) {}
+
+    async loadSlangWords() {
+            try {
+                const absolutePath = path.isAbsolute('slang.json');
+                const srcPath = absolutePath ? '' : 'src';
+                const slangPath = path.join(srcPath,'slang-detector-ds' ,'slang.json');
+                const data = await fs.readFile(slangPath, 'utf8');
+                const slangWords = JSON.parse(data);
+                return slangWords;
+            } catch (error) {
+                console.error('Failed to load slang words:', error);
+            }
+        }
+    
+    async containsSlang(message: string): Promise<boolean> {
+        const slangWords = await this.loadSlangWords();
+        console.log(message)
+        return slangWords.some(slang => message.includes(slang));
+    }
 
     formatDateTime(date: Date): string {
         const pad = (num: number) => num.toString().padStart(2, '0');
@@ -51,6 +71,18 @@ export class WishCardService {
 
     async getAllWishCards() {
         return this.wishCardModel.find().exec();
+    }
+
+    async getSlangCheck(){
+        const all_wish_cards = await this.getAllWishCards();
+        const slang_words_owner = [];
+        
+        for (let i = 0; i < all_wish_cards.length; i++){
+            if (await this.containsSlang(all_wish_cards[i].wish)){
+                slang_words_owner.push({name: all_wish_cards[i].name, wish: all_wish_cards[i].wish});
+            }
+        }
+        return {statuscode: 200, message: 'Slang words found in the following wish cards:', data: slang_words_owner}
     }
 
     async getWishCardByName(name: string) {
