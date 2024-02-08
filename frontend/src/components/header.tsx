@@ -10,7 +10,10 @@ const Header: React.FC = () => {
     <header className="header">
       <div className="header-left-side">
         <div className="text-container">
-          <span className="line">{HeaderParams.topic}<br />{HeaderParams.description}</span>
+          <span className="header-title">
+            {HeaderParams.topic}<br />
+            {HeaderParams.description}
+          </span>
         </div>
       </div>
       <div className="header-button">

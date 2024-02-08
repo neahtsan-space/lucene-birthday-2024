@@ -11,10 +11,24 @@
     display: flex;
     align-items: center;
 }
-  
+
 .text-container {
-    margin-right: 10px;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    padding-left: 20;
+  }
+  
+  .header-title {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: white; /* Consider changing the color for better contrast if needed */
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.5;
+  }
+  
   
 .header-button {
     margin: 10px;
