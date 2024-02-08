@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .left-side {
+    display: flex;
+    align-items: center;
+  }
+  
+  .textbox {
+    margin-right: 10px;
+  }
+  
+  .right-side a {
+    margin-left: 5px;
+    text-decoration: none;
+    color: #fff;
+  }
