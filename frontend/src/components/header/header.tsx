@@ -7,14 +7,16 @@ const Header: React.FC = () => {
   return (
     <header className="header">
       <div className="left-side">
-        <input type="text" placeholder={topic} className="textbox" />
+        <div className="text-container">
+          <span className="line">First line of text<br />Second line of text</span>
+        </div>
       </div>
       <div className="right-side">
-        <a href="/page1">{button1_EN}</a>
-        <a href="/page2">{button2_EN}</a>
-        <a href="/page3">{button3_EN}</a>
-        <a href="/page4">{button4_EN}</a>
-        <a href="/page5">{button5_EN}</a>
+        <a href="/page1">Button 1</a>
+        <a href="/page2">Button 2</a>
+        <a href="/page3">Button 3</a>
+        <a href="/page4">Button 4</a>
+        <a href="/page5">Button 5</a>
       </div>
     </header>
   );

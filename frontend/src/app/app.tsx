@@ -11,7 +11,7 @@ const App: React.FC = () => {
     <main>
     <div className="container">
       <div className="left">
-        <div className="photo-container">
+        <div className="dashboardContainer">
           {/* Photo Content */}
         </div>
       </div>
