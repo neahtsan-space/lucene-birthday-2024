@@ -1,25 +1,20 @@
 import React from 'react';
-import Header from '../components/header/header';
-import Footer from '../components/footer/footer';
-import { topic } from '../params/header_params';
-import styles from './index.module.css'; // Import CSS module
-import Image from 'next/image';
+import Header from '../components/header';
+import Footer from '../components/footer';
+import styles from './page.module.css';
 
 const Home: React.FC = () => {
   return (
     <div>
-      <Header></Header>
+      <Header />
       <div className={styles.flexContainer}>
-        <div className={styles.flexRow}>
+        <div className={styles.topRow}>
           <div className={styles.box}>Box 1</div>
           <div className={styles.box}>Box 2</div>
         </div>
-        <div className={styles.flexRow}>
-          <div className={styles.box}>Box 3</div>
-          <div className={styles.box}>Box 4</div>
-        </div>
+        <div className={styles.fullWidthBox}>Merged Box 3 & 4</div>
       </div>
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 };
