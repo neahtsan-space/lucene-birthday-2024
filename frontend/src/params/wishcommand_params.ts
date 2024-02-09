@@ -1,1 +1,0 @@
-export const WISHCOMMAND_TITLE = 'Happy Lucene Day 2024'
