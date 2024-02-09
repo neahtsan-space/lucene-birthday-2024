@@ -19,6 +19,9 @@ export class wishCard{
 
     @Prop()
     cardNumber: number;
+
+    @Prop()
+    borderColor: string;
 }
 
 export const wishCardSchema = SchemaFactory.createForClass(wishCard);
