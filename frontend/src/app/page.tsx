@@ -6,7 +6,6 @@ import WishCommand from '@/components/wishcommand';
 import RecentWish from '@/components/recentWish';
 import Footer from '../components/footer';
 import styles from './page.module.css';
-import * as body from '@/params/navbar_params';
 
 
 const Home: React.FC = () => {
