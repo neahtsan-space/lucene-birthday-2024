@@ -14,8 +14,26 @@
   .footer-text-container {
     display: flex;
     align-items: center;
+    margin: 10px;
+    padding: 10px;
   }
   
   .textbox {
     margin-right: 10px;
+  }
+
+  .custom-img {
+    width: 40px;
+    height: 40px; /* Maintain aspect ratio */
+    border-radius: 50%; /* Round the corners */
+    border: 2px solid #ccc; /* Add a border */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a shadow */
+    margin-left: 50px;
+    margin-right: 50px;
+    transition: transform 0.2s;
+  }
+
+  .image-link:hover .custom-img {
+    transform: scale(2); /* Increase the size on hover */
+    border: 2px solid #9c3af8; /* Add a border */
   }

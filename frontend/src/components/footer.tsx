@@ -1,19 +1,21 @@
 import React from 'react';
 import '@/css/footer.css';
+import * as FooterParams from '@/params/footer_params';
 
 const Footer: React.FC = () => {
   return (
     <footer>
       <div className="footer">
-        <div>
-        <p>This is the footer.</p>
+        <div className='.footer-text-container'>      
+        <a href={FooterParams.imglink1_URL} className="image-link">
+        <img src={FooterParams.imgsrc1} className="custom-img" alt="Discord" /></a>
+        <a href={FooterParams.imglink2_URL} className="image-link">
+        <img src={FooterParams.imgsrc2} className="custom-img" alt="Discord" /></a>
+        <a href={FooterParams.imglink3_URL} className="image-link">
+        <img src={FooterParams.imgsrc3} className="custom-img" alt="Discord" /></a>
         </div>
-        <a href="/page1">Button 1</a>
-        <a href="/page2">Button 2</a>
-        <a href="/page3">Button 3</a>
-        <a href="/page4">Button 4</a>
-        <a href="/page5">Button 5</a>
-        </div>
+        <div></div>
+      </div>
     </footer>
   );
 };
