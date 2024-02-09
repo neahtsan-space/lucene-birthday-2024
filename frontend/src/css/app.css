@@ -16,5 +16,6 @@
   width: 50%; /* Each item takes half of the container's width */
   height: 50vh; /* Each item takes half of the container's height */
   border: 1px solid black;
-  box-sizing: border-box;
+  box-sizing: content-box;
 }
+
