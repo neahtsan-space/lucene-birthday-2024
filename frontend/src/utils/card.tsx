@@ -8,7 +8,7 @@ import { Card } from 'antd';
 
 const { Meta } = Card;
 
-const wishCardTemplate: React.FC<{wishCard: IWishCard}> = ({wishCard}) => {
+const WishCardTemplate: React.FC<{wishCard: IWishCard}> = ({wishCard}) => {
     return (
         <div>
         <Card
@@ -22,4 +22,4 @@ const wishCardTemplate: React.FC<{wishCard: IWishCard}> = ({wishCard}) => {
     );
     }
 
-export default wishCardTemplate;
+export default WishCardTemplate;
