@@ -18,7 +18,9 @@ const Footer: React.FC = () => {
           <a href={FooterParams.imglink2_URL} className="youtube">
             <Image src={FooterParams.imgsrc2} width={40} height={40} className="custom-img" alt="Youtube" /></a>
           <a href={FooterParams.imglink3_URL} className="x_twitter">
-            <Image src={FooterParams.imgsrc3} width={40} height={40} className="custom-img" alt="X_logo" /></a>
+            <Image src={FooterParams.imgsrc3} width={40} height={40} className="custom-img" alt="X" /></a>
+          <a href={FooterParams.imglink4_URL} className="x_twitter">
+            <Image src={FooterParams.imgsrc4} width={40} height={40} className="custom-img" alt="Facebook" /></a>
         </div>
         <div></div>
       </div>
