@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
             <Image src={FooterParams.imgsrc2} width={40} height={40} className="custom-img" alt="Youtube" /></a>
           <a href={FooterParams.imglink3_URL} className="x_twitter">
             <Image src={FooterParams.imgsrc3} width={40} height={40} className="custom-img" alt="X" /></a>
-          <a href={FooterParams.imglink4_URL} className="x_twitter">
+          <a href={FooterParams.imglink4_URL} className="facebook">
             <Image src={FooterParams.imgsrc4} width={40} height={40} className="custom-img" alt="Facebook" /></a>
         </div>
         <div></div>
