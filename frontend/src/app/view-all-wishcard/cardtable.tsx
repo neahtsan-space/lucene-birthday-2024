@@ -4,7 +4,9 @@ import { Table } from 'antd';
 import WishCardTemplate from '@/utils/card'; // Import wishCardTemplate component
 import wishCard from '@/interfaces/IWishcard'; // Assuming you have defined IWishCard interface
 
-
+interface CardTableProps {
+  data: typeof mock_data; // Replace with your actual data type
+}
 
 
 const mock_data = [
@@ -37,11 +39,11 @@ const mock_data = [
   }
 ]
 
-const CardTable: React.FC = () => {
+const CardTable: React.FC<CardTableProps> = ({ data: tableData }) => {
   if (!mock_data || mock_data.length === 0) {
     return <div>No wish cards available.</div>;
   }
-
+  
   const numRows = Math.ceil(mock_data.length / 4);
 
   const columns = Array.from({ length: 4 }).map((_, index) => ({
