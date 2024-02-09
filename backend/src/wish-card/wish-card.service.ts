@@ -25,7 +25,6 @@ export class WishCardService {
     
     async containsSlang(message: string): Promise<boolean> {
         const slangWords = await this.loadSlangWords();
-        console.log(message)
         return slangWords.some(slang => message.includes(slang));
     }
 
@@ -88,6 +87,9 @@ export class WishCardService {
             if (await this.containsSlang(all_wish_cards[i].wish)){
                 slang_words_owner.push({name: all_wish_cards[i].name, wish: all_wish_cards[i].wish});
             }
+        }
+        if (slang_words_owner.length == 0){
+            throw new BadRequestException('No slang words found in the wish cards')
         }
         return {statuscode: 200, message: 'Slang words found in the following wish cards:', data: slang_words_owner}
     }
