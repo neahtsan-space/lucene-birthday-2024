@@ -59,6 +59,13 @@ export class WishCardService {
     }
 
     async createWishCard(wishCard: wishCardDto): Promise<wishCard> {
+        //check if the picture and border color number is valid
+        if (parseInt(wishCard.picture) > 16){
+            throw new BadRequestException(`Invalid picture number, please choose a number between 1-16 / หมายเลขรูปภาพไม่ถูกต้อง โปรดเลือกหมายเลขระหว่าง 1-4 ครับ~, ${wishCard.picture}`)
+        }
+        if (parseInt(wishCard.borderColor) > 4){
+            throw new BadRequestException(`Invalid border color number, please choose a number between 1-4 / หมายเลขสีขอบไม่ถูกต้อง โปรดเลือกหมายเลขระหว่าง 1-4 ครับ~, ${wishCard.borderColor}`)
+        }
         const searchDbResult = await this.checkNameExists(wishCard.name);
         if (searchDbResult){
             throw new BadRequestException('Wish card with the given name already exists, please write another name / มีคนใช้ชื่อนี้ส่งการ์ดอวยพรแล้วครับ โปรดตั้งชื่อใหม่นะครับ~')
