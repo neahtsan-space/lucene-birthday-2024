@@ -6,7 +6,7 @@ const CardTable: React.FC<{ cards: string[] }> = ({ cards }) => {
     {
       title: 'Cards',
       dataIndex: 'cards',
-      render: (text: string, record: any, index: number) => (
+      render: (_: string, __: any, index: number) => (
         <div style={{ display: 'flex' }}>
           {cards.slice(index * 4, index * 4 + 4).map((card, idx) => (
             <div key={idx} style={{ marginRight: '20px' }}>

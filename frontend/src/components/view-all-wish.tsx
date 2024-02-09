@@ -1,5 +1,9 @@
+import React from 'react';
 import CardTable from "@/app/view-all-wishcard/cardtable";
-const wishtable: React.FC = () => {
+
+
+
+const WishTable: React.FC = () => {
     const cards = ["Card 1", "Card 2", "Card 3"]; // Your list of cards
   
     return (
@@ -10,4 +14,4 @@ const wishtable: React.FC = () => {
     );
 };
 
-export default wishtable;
+export default WishTable;

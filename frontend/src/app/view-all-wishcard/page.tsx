@@ -1,14 +1,15 @@
+'use client';
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import './page.css';
 import React from 'react';
-import wishtable from "@/components/table";
+import WishTable from "@/components/view-all-wish";
 
 const ViewAllWishcard: React.FC = () => {
     return (
       <div>
         <Header />
-        <wishtable/> {/* Render MyComponent directly */}
+        <WishTable />
         <Footer />
       </div>
     );
