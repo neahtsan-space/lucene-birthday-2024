@@ -9,18 +9,28 @@
   color: white;
   text-align: center;
   padding: 20px;
-  }
+}
   
   .footer-text-container {
     display: flex;
     align-items: center;
-    margin: 10px;
-    padding: 10px;
-  }
+}
+
+.footer-discord-name {
+  display: flex;
+}
+
+.footer-follow-talent {
+  padding-left: 20px;
+}
+
+.footer-name-underline{
+  text-decoration: underline;
+}
   
   .textbox {
     margin-right: 10px;
-  }
+}
 
   .custom-img {
     width: 40px;
@@ -31,9 +41,9 @@
     margin-left: 50px;
     margin-right: 50px;
     transition: transform 0.2s;
-  }
+}
 
   .image-link:hover .custom-img {
     transform: scale(2); /* Increase the size on hover */
     border: 2px solid #9c3af8; /* Add a border */
-  }
+}
