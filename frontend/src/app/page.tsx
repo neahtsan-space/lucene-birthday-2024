@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../components/header';
+import DashBoard from '@/components/dashboard';
 import Footer from '../components/footer';
 import styles from './page.module.css';
 import * as body from '@/params/navbar_params';
@@ -11,7 +12,9 @@ const Home: React.FC = () => {
       <Header />
       <div className={styles.flexContainer}>
         <div className={styles.topRow}>
-          <div className={styles.box}>Box1</div>
+          <div className={styles.dashboardContainer}>
+            <DashBoard />
+          </div>
           <div className={styles.box2}>
             <span className={styles.text}>{body.textbody}</span>
             <hr className={styles.line} /> {/* Horizontal line */}

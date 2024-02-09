@@ -10,13 +10,9 @@
   flex: 1;
 }
 
-.box {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ccc; /* Example background color */
-  border: 1px solid #000; /* Optional: adds a border between the boxes */
+.dashboardContainer {
+  width: 50%;
+  height: 100%;
 }
 
 .box2 {
