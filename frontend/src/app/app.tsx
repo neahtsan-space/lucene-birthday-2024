@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from './page'
+import Home from './page';
 import './App.css';
 
 const App: React.FC = () => {

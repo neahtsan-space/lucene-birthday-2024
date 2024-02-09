@@ -1,10 +1,17 @@
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import './page.css';
+import React from 'react';
+import wishtable from "@/components/table";
+
 const ViewAllWishcard: React.FC = () => {
     return (
       <div>
-        <h1>View All Wish Cards</h1>
-        {/* Content goes here */}
+        <Header />
+        <wishtable/> {/* Render MyComponent directly */}
+        <Footer />
       </div>
     );
-  }
-  
-  export default ViewAllWishcard;
+}
+
+export default ViewAllWishcard;
