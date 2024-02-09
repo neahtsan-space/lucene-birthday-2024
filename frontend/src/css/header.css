@@ -28,7 +28,7 @@
     font-size: 24px;
     font-weight: bold;
     line-height: 1.5;
-    animation: glow 20s infinite
+    animation: headerglow 20s infinite
     ,colorChange 20s infinite
   }
   
@@ -48,7 +48,7 @@
   color: rgba(38, 222, 247, 0.829); /* Mid color */
 }
 }
-@keyframes glow {
+@keyframes headerglow {
 0%, 100% {
   color: rgba(255, 255, 255, 0.5); /* Initial and final color */
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.5); /* Initial and final shadow */

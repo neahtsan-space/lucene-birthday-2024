@@ -46,10 +46,16 @@ const mock_data = [
 
 const RecentWish: React.FC = () => {
   return (
-    <div>
-      {wishCardTemplate({wishCard: mock_data[0]})}
-      <p>{pictureToSticker(mock_data[0].picture) as ReactNode}</p>
-      <p>{stickerToPicture([STICKER_1, STICKER_5])}</p>
+    <div className="recent-wish-container"> {/* Apply container class */}
+      <div className="wish-card"> {/* Apply wish card class */}
+        {wishCardTemplate({wishCard: mock_data[0]})}
+      </div>
+      <p className="picture"> {/* Apply picture class */}
+        {pictureToSticker(mock_data[0].picture) as ReactNode}
+      </p>
+      <p className="sticker"> {/* Apply sticker class */}
+        {stickerToPicture([STICKER_5, STICKER_3])}
+      </p>
     </div>
   );
 };

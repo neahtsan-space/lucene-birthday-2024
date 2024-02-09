@@ -1,0 +1,24 @@
+/* Container styles */
+.recent-wish-container {
+    padding: 20px;
+    border: 1px solid transparent; /* Start with transparent border */
+  }
+  /* Style for the wish card */
+  .wish-card {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-bottom: 10px;
+    animation: glow 5s infinite alternate; /* Apply glow animation */
+  }
+  @keyframes glow {
+    from {
+      border-color: rgba(255, 108, 71, 0.5); /* Start with semi-transparent red */
+      box-shadow: 0 0 10px rgba(255, 108, 71, 0.5); /* Apply box shadow for glow effect */
+    }
+    to {
+      border-color: transparent; /* End with transparent border */
+      box-shadow: none; /* Remove box shadow */
+    }
+  }
