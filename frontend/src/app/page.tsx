@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/header';
 import DashBoard from '@/components/dashboard';
+import RecentWish from '@/components/recentWish';
 import Footer from '../components/footer';
 import styles from './page.module.css';
 import * as body from '@/params/navbar_params';
@@ -29,7 +30,9 @@ const Home: React.FC = () => {
             <span className={styles.text2}>{body.wish}</span>
           </div>
         </div>
-        <div className={styles.fullWidthBox}>Merged Box 3 & 4</div>
+        <div className={styles.fullWidthBox}>
+          <RecentWish />
+        </div>
       </div>
       <Footer />
     </div>

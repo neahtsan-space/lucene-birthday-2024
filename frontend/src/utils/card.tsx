@@ -1,5 +1,8 @@
 import React from 'react';
+import Image from 'next/image';
 import IWishCard from '@/interfaces/IWishcard';
+import { STICKER_6 } from '@/params/card_params';
+
 
 import { Card } from 'antd';
 
@@ -11,9 +14,9 @@ const wishCardTemplate: React.FC<{wishCard: IWishCard}> = ({wishCard}) => {
         <Card
             hoverable
             style={{ width: 240 }}
-            // cover={<img alt="example" src={wishCard.picture} />}
+            cover={<Image alt="example" src={STICKER_6} width={40} height={400} sizes='100vw' />}
         >
-            <Meta title={wishCard.name} description={wishCard.wish} />
+            <Meta title={`${wishCard.name} #${wishCard.cardNumber}`} description={wishCard.wish} />
         </Card>
         </div>
     );

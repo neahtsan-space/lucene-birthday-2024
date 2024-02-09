@@ -1,5 +1,5 @@
 type wishCard = {
-    cardId: string;
+    _id: string;
     name: string;
     wish: string;
     time: string;
