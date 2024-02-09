@@ -4,4 +4,5 @@ export interface wishCardDto {
     time: string;
     picture: string;
     cardNumber: number;
+    borderColor: string;
 }
