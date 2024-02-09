@@ -1,0 +1,30 @@
+.carousel {
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    background-color: brown;
+  }
+
+.carousel-container {
+    display: flex !important;
+    justify-content: center;
+    background-color: hotpink;
+    align-content: center;
+}
+
+.carousel-container > img {
+    width: 100vh;
+    height: auto;
+  }
+
+.carousel-description {
+  background-color: aquamarine;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  height: 100%;
+  font-size: clamp(16px, 2vw, 24px);
+  width: 100%; 
+  text-align: center; 
+  line-height: 3; 
+}
