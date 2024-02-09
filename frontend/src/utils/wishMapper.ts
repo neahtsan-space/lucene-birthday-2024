@@ -37,7 +37,6 @@ function stickerToPicture(sticker_choice: string[]) {
     if (JSON.stringify(sticker_choice) === JSON.stringify([STICKER_1, STICKER_5])) {
         return '1';
     }
-    // Handle other cases
 }
 
 

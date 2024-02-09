@@ -1,4 +1,6 @@
 import React from 'react';
+import Link from 'next/link';
+import ViewAllWishcard from './view-all-wishcard/page';
 import Header from '../components/header';
 import DashBoard from '@/components/dashboard';
 import RecentWish from '@/components/recentWish';
@@ -12,6 +14,7 @@ const Home: React.FC = () => {
     <div>
       <Header />
       <div className={styles.flexContainer}>
+        <Link href="/view-all-wishcard" />
         <div className={styles.topRow}>
           <div className={styles.dashboardContainer}>
             <DashBoard />
