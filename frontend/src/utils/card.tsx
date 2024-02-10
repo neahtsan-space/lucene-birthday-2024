@@ -47,10 +47,10 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
                     overflow: "hidden",
                     borderColor: currentWish.borderColor,
                     borderWidth: 20 }} onClick={showModal}>
-                    <Meta title={`${currentWish.name} #${currentWish.cardNumber}`} description={
+                    <Meta title={`${wishCard.name} #${wishCard.cardNumber}`} description={
                         <div>
-                            <p>{currentWish.time}</p>
-                            <p>{currentWish.wish}</p>
+                            <p>{wishCard.time}</p>
+                            <p>{wishCard.wish}</p>
                         </div>
                     }  />
                 </Card>
