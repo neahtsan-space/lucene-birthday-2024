@@ -105,3 +105,24 @@ a {
     color-scheme: dark;
   }
 }
+
+.modalStyle .ant-modal-content{
+}
+
+.card-style .ant-card-body{
+    flex-shrink: 0;
+    margin: 30px;
+    height: 400px; 
+    width: 300px;
+    overflow: hidden;
+    border-color: black;
+}
+
+.card-border {
+  border-color: black;
+  border-width: 10%;
+}
+
+.img-style {
+  
+}

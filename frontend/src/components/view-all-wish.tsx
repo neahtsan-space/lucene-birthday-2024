@@ -17,7 +17,7 @@ const WishTable: React.FC = () => {
 
   return (
     <div>
-      <h1>Card Table</h1>
+      <div className='Table'></div>
       <CardTable data={wishData} />
     </div>
   );

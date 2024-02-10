@@ -37,7 +37,7 @@ const CardTable: React.FC<CardTableProps> = ({ data }) => {
   });
 
   return (
-    <Table columns={columns} dataSource={dataSource} pagination={false} bordered />
+    <Table  columns={columns} dataSource={dataSource} pagination={false} showHeader={false} bordered />
   );
 };
 
