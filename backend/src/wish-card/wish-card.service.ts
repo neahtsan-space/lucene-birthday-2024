@@ -57,6 +57,10 @@ export class WishCardService {
         return true;
     }
 
+    async getLastestFour() {
+        return this.wishCardModel.find().sort({cardNumber: -1}).limit(4).exec();
+    }
+
     async createWishCard(wishCard: wishCardDto): Promise<wishCard> {
         //check if the picture and border color number is valid
         if (parseInt(wishCard.picture) > 16){

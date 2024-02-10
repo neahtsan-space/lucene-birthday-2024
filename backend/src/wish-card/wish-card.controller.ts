@@ -24,6 +24,11 @@ export class WishCardController {
             }
         }
 
+    @Get('lastest-four')
+    async getLastestFour() {
+        return await this.wishCardService.getLastestFour();
+    }
+
     @Get('search')
     async getWishCardByName(@Query('name') name: string) {
         try 
