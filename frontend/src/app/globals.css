@@ -107,40 +107,15 @@ a {
 }
 
 .modalStyle .ant-modal-content{
-  display: flex;
-  flex-direction: column;
 }
-
-.modal-body .ant-modal-body{
-  display: flex;
-}
-
-.modal-img-style-buttom{
-  float:right;
-  justify-self: right;
-}
-
-.modal-img-style-top{
-}
-.modal-icon-top{
-  float:left;
-  justify-self: left;
-}
-.modal-icon-buttom{
-  float:right;
-  justify-self: right;
-  margin-top: 50px;
-}
-
 
 .card-style .ant-card-body{
     flex-shrink: 0;
-    margin: 20px;
-    height: 500px; 
+    margin: 30px;
+    height: 400px; 
     width: 300px;
     overflow: hidden;
     border-color: black;
-    position: "relative",
 }
 
 .card-border {
@@ -148,12 +123,6 @@ a {
   border-width: 10%;
 }
 
-.img-style-top {
-  justify-self: left;
+.img-style {
+  
 }
-
-.img-style-buttom {
-  float:right;
-  justify-self: right;
-}
-
