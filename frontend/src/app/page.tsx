@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Link from 'next/link';
 import Header from '../components/header';
 import DashBoard from '@/components/dashboard';
@@ -16,7 +16,9 @@ const Home: React.FC = () => {
         <Link href="/view-all-wishcard" />
         <div className={styles.topRow}>
           <div className={styles.dashboardContainer}>
-            <DashBoard />
+            <Suspense fallback={<div>Loading...</div>}>
+              <DashBoard />
+            </Suspense>
           </div>
           <div className={styles.box2}>
             <div className={styles.box2Title}>
