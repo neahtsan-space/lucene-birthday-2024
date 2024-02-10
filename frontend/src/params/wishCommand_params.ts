@@ -29,6 +29,12 @@ export const STICKER_6_NAME = 'sticker6';
 export const STICKER_7_NAME = 'sticker7';
 export const STICKER_8_NAME = 'sticker8';
 
+// color name
+export const COLOR_1_NAME = 'color1';
+export const COLOR_2_NAME = 'color2';
+export const COLOR_3_NAME = 'color3';
+export const COLOR_4_NAME = 'color4';
+
 // decorate sticker
 export const STICKER_1 = getImagePath('1.1.1.png');
 export const STICKER_2 = getImagePath('1.1.2.png');
@@ -40,6 +46,7 @@ export const STICKER_5 = getImagePath('1.png');
 export const STICKER_6 = getImagePath('2.png');
 export const STICKER_7 = getImagePath('3.png');
 export const STICKER_8 = getImagePath('4.png');
+
 
 // view all wishcard params
 export const VIEW_ALL_WISHCARD_PATH = '/view-all-wishcard';

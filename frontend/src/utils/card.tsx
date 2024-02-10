@@ -37,7 +37,7 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
 
     return (
         <div>
-            <Card hoverable style={{ margin: 20, width: 300 }} cover={<Image alt="example" src={mappedWishCard ? mappedWishCard.stickerDOWN: 'defaultImageURL'} width={40} height={400} sizes='100vw' />} onClick={showModal}>
+            <Card hoverable style={{ margin: 30, width: 300 }} cover={<Image alt="example" src={mappedWishCard ? mappedWishCard.stickerDOWN: 'defaultImageURL'} width={40} height={400} sizes='100vw' />} onClick={showModal}>
                 <Meta title={`${wishCard.name} #${wishCard.cardNumber}`} description={wishCard.wish} />
             </Card>
             

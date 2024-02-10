@@ -1,14 +1,16 @@
 /* Container styles */
 .recent-wish-container {
     padding: 20px;
+    margin: 20px;
     border: 1px solid transparent; /* Start with transparent border */
   }
   /* Style for the wish card */
   .wish-card {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
+    background-color:white;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 10px;
