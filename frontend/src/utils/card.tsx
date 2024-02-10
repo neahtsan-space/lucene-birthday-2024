@@ -74,7 +74,9 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
                 </div>
 
                 <Button onClick={() => navigateWish('next')} icon={<RightOutlined />} />
+                </div>
             </Modal>
+            
         </div>
     );
     }
