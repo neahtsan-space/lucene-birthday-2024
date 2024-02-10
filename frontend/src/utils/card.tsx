@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
 import { IWishCardDB, IWishCardFront } from '@/interfaces/IWishcard';
 import { mapDbToFront } from './wishMapper';
-import { STICKER_7 } from '@/params/card_params';
+import { STICKER_1, STICKER_5, STICKER_7 } from '@/params/card_params';
 import { Card, Modal, Button } from 'antd';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 
@@ -40,16 +40,31 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
             <div>
                 <Image src={mappedWishCard?.stickerUP ?? ''} width={100} height={100} alt=''/>
                 <Card hoverable style={{ margin: 30, width: 300 }} onClick={showModal}>
-                    <Meta title={`${wishCard.name} #${wishCard.cardNumber}`} description={wishCard.wish} />
+                    <Meta title={`${currentWish.name} #${currentWish.cardNumber}`} description={
+                        <div>
+                            <p>{currentWish.time}</p>
+                            <p>{currentWish.wish}</p>
+                        </div>
+                    }  />
                 </Card>
                 <Image src={mappedWishCard?.stickerDOWN ?? ''} width={100} height={100} alt=''/>
             </div>
             
             <Modal open={isModalVisible} footer={null} onCancel={handleCancel} width={600}>
                 <Button onClick={() => navigateWish('prev')} icon={<LeftOutlined />}></Button>
-                <Card hoverable style={{ width: '100%' }} cover={<Image alt="example" src={currentWish ? currentWish.stickerDOWN : STICKER_7} width={40} height={400} sizes='100vw' />}>
-                    <Meta title={`${currentWish.name} #${currentWish.cardNumber}`} description={currentWish.wish} />
+                <div>
+                <Image alt="example" src={currentWish ? currentWish.stickerUP : STICKER_1} width={40} height={400} sizes='100vw' />
+                <Card hoverable style={{ width: '100%' }} >
+                    <Meta title={`${currentWish.name} #${currentWish.cardNumber}`} description={
+                        <div>
+                            <p>{currentWish.time}</p>
+                            <p>{currentWish.wish}</p>
+                        </div>
+                    }  />
                 </Card>
+                <Image alt="example" src={currentWish ? currentWish.stickerDOWN : STICKER_5} width={40} height={400} sizes='100vw' />
+                </div>
+
                 <Button onClick={() => navigateWish('next')} icon={<RightOutlined />} />
             </Modal>
         </div>
