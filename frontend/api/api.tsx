@@ -7,6 +7,12 @@ async function GetWishData(): Promise<IWishCardDB[]> {
     return data;
   }
 
+async function GetLastestFourWish(): Promise<IWishCardDB[]> {
+    const response = await fetch(API_PATH.GET_LASTEST_FOUR_WISH);
+    const data: IWishCardDB[] = await response.json();
+    return data;
+}
+
 
 async function CreateWishCard(data: IWishCardDB): Promise<IWishCardDB> {
     const response = await fetch(API_PATH.POST_WISH, {
@@ -21,4 +27,4 @@ async function CreateWishCard(data: IWishCardDB): Promise<IWishCardDB> {
 }
 
 
-export { GetWishData, CreateWishCard }
+export { GetWishData, GetLastestFourWish, CreateWishCard }

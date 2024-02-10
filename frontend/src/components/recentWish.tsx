@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import '@/css/recentWish.css';
 import { WishCardTemplate } from '@/utils/card';
-import { GetWishData } from '../../api/api';
+import { GetLastestFourWish } from '../../api/api';
 import { IWishCardDB } from '@/interfaces/IWishcard';
 
 const RecentWish: React.FC = () => {
@@ -11,20 +11,18 @@ const RecentWish: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await GetWishData();
+      const data = await GetLastestFourWish();
       setWishData(data);
     };
 
     fetchData();
   }, []);
 
-  const lastFourWishes = wishData.slice(-4).reverse();
-
   return (
     <div className="recent-wish-container">
       <div className="wish-card">
-      {lastFourWishes.map((wish, index) => (
-          <WishCardTemplate key={index} wishCard={wish} allWishes={lastFourWishes} currentIndex={index} />
+      {wishData.map((wish, index) => (
+          <WishCardTemplate key={index} wishCard={wish} allWishes={wishData} currentIndex={index} />
       ))}
       </div>
     </div>
