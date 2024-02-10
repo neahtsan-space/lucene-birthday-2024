@@ -1,40 +1,35 @@
 import React from 'react';
 import '@/css/header.css';
 import { Table } from 'antd';
-import WishCardTemplate from '@/utils/card'; // Import wishCardTemplate component
-import wishCard from '@/interfaces/IWishcard'; // Assuming you have defined IWishCard interface
-import { mock_data } from '@/params/mockdata_params'; // Import mock data
+import WishCardTemplate from '@/utils/card';
+import { IWishCardDB } from '@/interfaces/IWishcard';
 
 interface CardTableProps {
-  data: typeof mock_data; // Replace with your actual data type
+  data: IWishCardDB[];
 }
 
-const CardTable: React.FC<CardTableProps> = ({ data: tableData }) => {
-  if (!mock_data || mock_data.length === 0) {
+const CardTable: React.FC<CardTableProps> = ({ data }) => {
+  if (!data || data.length === 0) {
     return <div>No wish cards available.</div>;
   }
   
-  const numRows = Math.ceil(mock_data.length / 4);
+  const numRows = Math.ceil(data.length / 4);
 
   const columns = Array.from({ length: 4 }).map((_, index) => ({
-    title: `Row ${index + 1}`,
-    dataIndex: `row${index + 1}`,
+    title: `Column ${index + 1}`,
+    key: `column${index + 1}`,
     render: (_: any, record: any) => (
       <div className="card-container">
-        {/* Check if record[`row${index + 1}`] is defined before mapping */}
-        {record[`row${index + 1}`] && record[`row${index + 1}`].map((wishCard: wishCard, idx: number) => (
-          <div key={idx} className="card">
-            <WishCardTemplate wishCard={wishCard} />
-          </div>
+        {record[`row${index + 1}`] && record[`row${index + 1}`].map((wishCard: IWishCardDB, idx: number) => (
+          <WishCardTemplate key={idx} wishCard={wishCard} allWishes={data} currentIndex={idx} />
         ))}
       </div>
     ),
   }));
   
-  const data = Array.from({ length: numRows }).map((_, index) => {
+  const dataSource = Array.from({ length: numRows }).map((_, index) => {
     const startIdx = index * 4;
-    const endIdx = startIdx + 4;
-    const rowData = mock_data.slice(startIdx, endIdx);
+    const rowData = data.slice(startIdx, startIdx + 4);
     return {
       key: index,
       ...rowData.reduce((acc, cur, i) => ({ ...acc, [`row${i + 1}`]: [cur] }), {}),
@@ -42,9 +37,7 @@ const CardTable: React.FC<CardTableProps> = ({ data: tableData }) => {
   });
 
   return (
-    <div className="card-container">
-      <Table columns={columns} dataSource={data} pagination={false} />
-    </div>
+    <Table columns={columns} dataSource={dataSource} pagination={false} bordered />
   );
 };
 
