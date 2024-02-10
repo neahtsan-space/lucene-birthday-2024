@@ -38,29 +38,30 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
     return (
         <div>
             <div>
-                <Image src={mappedWishCard?.stickerUP ?? ''} width={100} height={100} alt=''/>
+                <Image className='modal-img-style-top'src={mappedWishCard?.stickerUP ?? ''} width={100} height={100} alt=''/>
                 <Card hoverable style={{
                     position: "relative", 
-                    margin: 50, 
-                    height: 600, 
+                    margin: 40, 
+                    height: 400, 
                     width: 300,
                     overflow: "hidden",
                     borderColor: currentWish.borderColor,
                     borderWidth: 20 }} onClick={showModal}>
-                    <Meta title={`${wishCard.name} #${wishCard.cardNumber}`} description={
+                    <Meta className=''title={`${wishCard.name} #${wishCard.cardNumber}`} description={
                         <div>
                             <p>{wishCard.time}</p>
                             <p>{wishCard.wish}</p>
                         </div>
                     }  />
                 </Card>
-                <Image src={mappedWishCard?.stickerDOWN ?? ''} width={100} height={100} alt=''/>
+                <Image className='modal-img-style-buttom' src={mappedWishCard?.stickerDOWN ?? ''} width={100} height={100} alt=''/>
             </div>
             
-            <Modal open={isModalVisible} footer={null} onCancel={handleCancel} width={600}>
-                <Button onClick={() => navigateWish('prev')} icon={<LeftOutlined />}></Button>
+            <Modal className='modalStyle'open={isModalVisible} footer={null} onCancel={handleCancel} width={800}  >
                 <div>
-                <Image alt="example" src={currentWish ? currentWish.stickerUP : STICKER_1} width={40} height={400} sizes='100vw' />
+                <Button onClick={() => navigateWish('prev')} className='modal-icon-top' icon={<LeftOutlined />}></Button>
+                <div className='modal-body'>
+                <Image className='modal-img-style-top' alt="example" src={currentWish ? currentWish.stickerUP : STICKER_1} width={200} height={200} sizes='100vw' />
                 <Card hoverable style={{ width: '100%' }} >
                     <Meta title={`${currentWish.name} #${currentWish.cardNumber}`} description={
                         <div>
@@ -69,10 +70,10 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
                         </div>
                     }  />
                 </Card>
-                <Image alt="example" src={currentWish ? currentWish.stickerDOWN : STICKER_5} width={40} height={400} sizes='100vw' />
                 </div>
-
-                <Button onClick={() => navigateWish('next')} icon={<RightOutlined />} />
+                <Button onClick={() => navigateWish('next')} className='modal-icon-buttom' icon={<RightOutlined />} />
+                <Image className='modal-img-style-buttom'alt="example" src={currentWish ? currentWish.stickerDOWN : STICKER_5} width={200} height={200} sizes='100vw' />
+                </div>
             </Modal>
         </div>
     );
