@@ -101,7 +101,7 @@ const CreateWishCardButton: React.FC = () => {
             <Button type="primary" onClick={showModal}>
                 {WISHCONSTANT.CREATE_WISHCARD_BUTTON_TEXT}
             </Button>
-            <Modal title={WISHCONSTANT.CREATE_WISHCARD_MODAL_TITLE} visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+            <Modal title={WISHCONSTANT.CREATE_WISHCARD_MODAL_TITLE} open={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
                 <p>{WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME}</p>
                 <p>{WISHCONSTANT.CREATE_WISHCARD_BUTTON_NAME_WARNING}</p>
                 <Input placeholder={WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME_PLACEHOLDER} maxLength={WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME_TEXT_LIMIT}
