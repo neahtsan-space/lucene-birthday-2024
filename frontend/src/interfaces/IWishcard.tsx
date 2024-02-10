@@ -1,4 +1,4 @@
-type wishCard = {
+type IWishCardDB = {
     _id: string;
     name: string;
     wish: string;
@@ -9,4 +9,16 @@ type wishCard = {
     __v: number;
 };
 
-export default wishCard;
+type IWishCardFront = {
+    _id: string;
+    name: string;
+    wish: string;
+    time: string;
+    stickerUP: string;
+    stickerDOWN: string;
+    cardNumber: number;
+    borderColor: string;
+    __v: number;
+};
+
+export type { IWishCardDB, IWishCardFront }
