@@ -1,0 +1,89 @@
+.header2 {
+    position: static;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+  
+.header-left-side2 {
+    display: flex;
+    align-items: center;
+}
+
+.text-container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    padding-left: 20;
+    margin-left: 20px;
+  }
+  
+  .header-title2 {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: rgb(248, 255, 186); /* Consider changing the color for better contrast if needed */
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.5;
+  }
+  
+
+  .header-right-side2 {
+    display: flex;
+    align-items: center;
+    width: 70%;
+}
+  
+.header-button2 {
+    margin: 10px;
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+}
+
+.flowing-text{
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: rgb(143, 255, 240); /* Consider changing the color for better contrast if needed */
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+
+@keyframes slideLeft {
+    0%, 100% {
+      transform: translateX(0%);
+      color: rgba(255, 255, 255, 0.5); /* Initial and final color */
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.5); /* Initial and final shadow */
+    }
+    50% {
+      transform: translateX(-20%);
+      color: rgba(38, 222, 247, 0.829); /* Red */
+      text-shadow: 0 0 20px rgba(38, 222, 247, 0.829), 0 0 40px rgba(38, 222, 247, 0.829), 0 0 60px rgba(38, 222, 247, 0.829); /* Red */
+    }
+  }
+  
+  @keyframes slideRight {
+    0%, 100% {
+      transform: translateX(0%);
+      color: rgba(38, 222, 247, 0.829); /* Red */
+      text-shadow: 0 0 20px rgba(38, 222, 247, 0.829), 0 0 40px rgba(38, 222, 247, 0.829), 0 0 60px rgba(38, 222, 247, 0.829); /* Red */
+    }
+    50% {
+      transform: translateX(20%);
+      color: rgba(255, 255, 255, 0.5); /* Initial and final color */
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.5); /* Initial and final shadow */
+    }
+  }
+  
+  .animated-text {
+    animation: 
+                slideLeft 8s linear infinite,
+               slideRight 8s linear infinite;
+  }

@@ -1,5 +1,5 @@
 'use client';
-import Header from "@/components/header";
+import Header2 from "@/components/header2";
 import Footer from "@/components/footer";
 import './page.css';
 import React from 'react';
@@ -8,7 +8,7 @@ import WishTable from "@/components/view-all-wish";
 const ViewAllWishcard: React.FC = () => {
     return (
       <div>
-        <Header />
+        <Header2 />
         <WishTable />
         <Footer />
       </div>

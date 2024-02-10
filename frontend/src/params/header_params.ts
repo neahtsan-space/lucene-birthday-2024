@@ -39,3 +39,8 @@ export const modal_OK_EN = 'Leave this page'
 
 export const modal_Cancel_TH = 'ยังคงอยู่หน้าเดิม'
 export const modal_Cancel_EN = 'Stay on this page'
+
+export const go_back_title = 'กดที่นี่'
+export const go_back_desc= 'เพื่อกลับสู่หน้าแรก'
+
+export const dashing_text = 'คำอวยพรทั้งหมดอยู่ที่นี่แล้ว'
