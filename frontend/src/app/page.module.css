@@ -1,0 +1,80 @@
+/* MergedBoxesFlex.module.css */
+.flexContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.topRow {
+  display: flex;
+  flex: 1;
+}
+
+.dashboardContainer {
+  width: 50%;
+  height: 100%;
+}
+
+.box2 {
+  flex: 1;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ccc; /* Example background color */
+  border: 1px solid #000; /* Optional: adds a border between the boxes */
+}
+
+
+.fullWidthBox {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ddd; /* Slightly different color to distinguish */
+  border: 1px solid #000; /* Optional */
+}
+
+.text  {
+  font-size: 50px;
+  color: #5900ff;
+  text-shadow: 2px 2px #ffffff;
+}
+
+
+.text2  {
+  font-size: 50px;
+  color: #b71efd;
+  text-shadow: 2px 2px #ffffff;
+}
+
+.line {
+  border: 1px;
+  border-top: 1px solid black; /* Example line style */
+  margin-top: 10px; /* Example margin */
+}
+
+.buttoncontainer {
+  width: 100%;
+  flex: 0.4;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ccc; /* Example background color */
+}
+.custom-button {
+  width: 100px;
+  height: 100px; /* Maintain aspect ratio */
+  border-radius: 5%; /* Round the corners */
+  border: 2px solid #ccc; /* Add a border */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a shadow */
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: transform 0.2s;
+}
+
+.body-link:hover .custom-button {
+  transform: scale(2); /* Increase the size on hover */
+  border: 2px solid #9c3af8; /* Add a border */
+}

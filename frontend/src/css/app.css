@@ -1,0 +1,21 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%; /* Adjust as needed */
+}
+
+.item {
+  width: 50%; /* Each item takes half of the container's width */
+  height: 50vh; /* Each item takes half of the container's height */
+  border: 1px solid black;
+  box-sizing: content-box;
+}
+
