@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Button, Modal, Input, Radio, Card, Image } from 'antd';
 import { RadioChangeEvent } from 'antd/lib/radio';
-import *as WISHCONSTANT  from '@/params/wishCommand_params';
-// assuming you have a file with your constants
+import * as WISHCONSTANT  from '@/params/wishCommand_params';
+import { WishCardDemo } from './card';
 
 const { TextArea } = Input;
 
@@ -33,6 +33,27 @@ const third_options: Option[] = [
     { value: WISHCONSTANT.COLOR_4_NAME, label: 'Option 4', image: WISHCONSTANT.STICKER_8 },
 ];
 
+interface IMapInputToImage {
+    imageChoice: string;
+    imagePath: string;
+}
+
+const MapInputToImage: IMapInputToImage[] = [
+    { imageChoice: 'sticker1', imagePath: WISHCONSTANT.STICKER_1 },
+    { imageChoice: 'sticker2', imagePath: WISHCONSTANT.STICKER_2 },
+    { imageChoice: 'sticker3', imagePath: WISHCONSTANT.STICKER_3 },
+    { imageChoice: 'sticker4', imagePath: WISHCONSTANT.STICKER_4 },
+    { imageChoice: 'sticker5', imagePath: WISHCONSTANT.STICKER_5 },
+    { imageChoice: 'sticker6', imagePath: WISHCONSTANT.STICKER_6 },
+    { imageChoice: 'sticker7', imagePath: WISHCONSTANT.STICKER_7 },
+    { imageChoice: 'sticker8', imagePath: WISHCONSTANT.STICKER_8 },
+]
+
+const imageChoiceToPathMap = MapInputToImage.reduce((acc, cur) => {
+    acc[cur.imageChoice] = cur.imagePath;
+    return acc;
+}, {} as { [key: string]: string });
+
 const CreateWishCardButton: React.FC = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [nameInputValue, setNameInputValue] = useState('');
@@ -40,6 +61,9 @@ const CreateWishCardButton: React.FC = () => {
     const [selectedFirstOption, setSelectedFirstOption] = useState(first_options[0].value);
     const [selectedSecondOption, setSelectedSecondOption] = useState(second_options[0].value);
     const [selectedThirdOption, setSelectedThirdOption] = useState(third_options[0].value);
+
+    const getImagePathForOption = (optionValue: string): string => {
+        return imageChoiceToPathMap[optionValue] || ''}
 
     const showModal = () => {
         setIsModalVisible(true);
@@ -52,6 +76,8 @@ const CreateWishCardButton: React.FC = () => {
         console.log("Selected Option:", selectedFirstOption);
         console.log("Selected Option:", selectedSecondOption);
         console.log("Selected Option:", selectedThirdOption);
+        console.log("Selected Option:", getImagePathForOption(selectedFirstOption));
+        console.log("Selected Option:", getImagePathForOption(selectedSecondOption));
         // Here you can handle the submission or processing of input data
     };
 
@@ -144,30 +170,17 @@ const CreateWishCardButton: React.FC = () => {
                 )}
                 <p>Selected Options Preview:</p>
                 <div>
-                    <p>First Option: {first_options.find(option => option.value === selectedFirstOption)?.label}</p>
-                    <p>Second Option: {second_options.find(option => option.value === selectedSecondOption)?.label}</p>
-                    <p>Third Option: {third_options.find(option => option.value === selectedThirdOption)?.label}</p>
+                    <WishCardDemo wishCard={{ 
+                        name: nameInputValue, 
+                        wish: wishInputValue, 
+                        stickerUP: getImagePathForOption(selectedFirstOption),
+                        stickerDOWN: getImagePathForOption(selectedSecondOption),
+                        borderColor: selectedThirdOption,
+                        __v: 0,
+                        _id: '',
+                        time: '',
+                        cardNumber: 5 }} />
                 </div>
-                <div style={{ marginTop: '20px' }}>
-                {selectedFirstOption && (
-                    <Card title="Selected First Option" style={{ marginBottom: '10px' }}>
-                        <p>{selectedFirstOption}</p>
-                        <Image alt={selectedFirstOption} src={selectedFirstOption} width={40} height={40} />
-                    </Card>
-                )}
-                {selectedSecondOption && (
-                    <Card title="Selected Second Option" style={{ marginBottom: '10px' }}>
-                        <p>{selectedSecondOption}</p>
-                        <Image alt={selectedSecondOption} src={selectedSecondOption} width={40} height={40} />
-                    </Card>
-                )}
-                {selectedThirdOption && (
-                    <Card title="Selected Third Option" style={{ marginBottom: '10px' }}>
-                        <p>{selectedThirdOption}</p>
-                        <Image alt={selectedThirdOption} src={selectedThirdOption} width={40} height={40} />
-                    </Card>
-                )}
-            </div>
             </Modal>
         </>
     );

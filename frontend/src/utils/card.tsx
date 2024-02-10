@@ -52,4 +52,14 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
     );
     }
 
-export default WishCardTemplate;
+const WishCardDemo: React.FC<{wishCard: IWishCardFront}> = ({wishCard}) => {
+    return (
+        <div>
+            <Card hoverable style={{ margin: 30, width: 300}} cover={<Image alt='demo' src={wishCard.stickerDOWN} width={40} height={400} sizes='100vw' />}>
+                <Meta title={`${wishCard.name} #${wishCard.cardNumber}`} description={wishCard.wish} />
+            </Card>
+        </div>
+    )
+}
+
+export { WishCardTemplate, WishCardDemo}
