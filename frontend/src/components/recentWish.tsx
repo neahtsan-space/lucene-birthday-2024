@@ -1,8 +1,8 @@
 'use client'
 import React, { ReactNode } from 'react';
 import '@/css/recentWish.css';
-import wishCardTemplate from '@/utils/card';
 import { pictureToSticker, stickerToPicture } from '@/utils/wishMapper';
+import WishCardTemplate from '@/utils/card';
 import { 
   STICKER_1,
   STICKER_2,
@@ -14,18 +14,18 @@ import {
   STICKER_8 } from '../params/card_params';
 import { mock_data } from '../params/mockdata_params';
 
+
 const RecentWish: React.FC = () => {
+
+  const lastFourWishes = mock_data.slice(-4).reverse();
+
   return (
     <div className="recent-wish-container"> {/* Apply container class */}
       <div className="wish-card"> {/* Apply wish card class */}
-        {wishCardTemplate({wishCard: mock_data[0]})}
+      {lastFourWishes.map((wish, index) => (
+          <WishCardTemplate key={index} wishCard={wish} allWishes={lastFourWishes} currentIndex={index} />
+      ))}
       </div>
-      <p className="picture"> {/* Apply picture class */}
-        {pictureToSticker(mock_data[0].picture) as ReactNode}
-      </p>
-      <p className="sticker"> {/* Apply sticker class */}
-        {stickerToPicture([STICKER_5, STICKER_3])}
-      </p>
     </div>
   );
 };

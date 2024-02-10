@@ -10,6 +10,8 @@ import {
     STICKER_7,
     STICKER_8 } from '../params/card_params';
 
+import { IWishCardDB, IWishCardFront } from '@/interfaces/IWishcard';
+
 function pictureToSticker(picture: string) {
     switch (picture) {
         case '1':
@@ -46,6 +48,17 @@ function pictureToSticker(picture: string) {
             return [ STICKER_4, STICKER_8 ];
     }
 }
+
+const mapDbToFront = (allWishes: IWishCardDB[]): IWishCardFront[] => {
+    return allWishes.map((wish) => {
+        const [stickerUP = '', stickerDOWN = ''] = pictureToSticker(wish.picture) || [];
+        return {
+            ...wish,
+            stickerUP: stickerUP,
+            stickerDOWN: stickerDOWN
+        };
+    });
+};
 
 function stickerToPicture(sticker_choice: string[]) {
     if (JSON.stringify(sticker_choice) === JSON.stringify([STICKER_1, STICKER_5])) {
@@ -84,4 +97,4 @@ function stickerToPicture(sticker_choice: string[]) {
 }
 
 
-export {pictureToSticker, stickerToPicture};
+export {pictureToSticker, stickerToPicture, mapDbToFront};
