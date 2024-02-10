@@ -30,10 +30,11 @@ export const STICKER_7_NAME = 'sticker7';
 export const STICKER_8_NAME = 'sticker8';
 
 // color name
-export const COLOR_1_NAME = 'color1';
-export const COLOR_2_NAME = 'color2';
-export const COLOR_3_NAME = 'color3';
-export const COLOR_4_NAME = 'color4';
+export const COLOR_1 = '#5DBAC7' // rgb(93, 186, 199)
+export const COLOR_2 = '#E75185' // rgb(231, 81, 133)
+export const COLOR_3 = '#CECAB8' // rgb(206, 202, 184)
+export const COLOR_4 = '#1A3779' // rgb(206, 202, 184)
+
 
 // decorate sticker
 export const STICKER_1 = getImagePath('1.1.1.png');

@@ -39,7 +39,11 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
         <div>
             <div>
                 <Image src={mappedWishCard?.stickerUP ?? ''} width={100} height={100} alt=''/>
-                <Card hoverable style={{ margin: 30, width: 300 }} onClick={showModal}>
+                <Card hoverable style={{ 
+                    margin: 30, 
+                    width: 300, 
+                    borderColor: currentWish.borderColor,
+                    overflow: "hidden" }} onClick={showModal}>
                     <Meta title={`${currentWish.name} #${currentWish.cardNumber}`} description={
                         <div>
                             <p>{currentWish.time}</p>

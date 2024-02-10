@@ -26,11 +26,17 @@ const second_options: Option[] = [
     { value: WISHCONSTANT.STICKER_8_NAME, label: 'Option 4', image: WISHCONSTANT.STICKER_8 },
 ];
 
-const third_options: Option[] = [
-    { value: WISHCONSTANT.COLOR_1_NAME, label: 'Option 1', image: WISHCONSTANT.STICKER_5 },
-    { value: WISHCONSTANT.COLOR_2_NAME, label: 'Option 2', image: WISHCONSTANT.STICKER_6 },
-    { value: WISHCONSTANT.COLOR_3_NAME, label: 'Option 3', image: WISHCONSTANT.STICKER_7 },
-    { value: WISHCONSTANT.COLOR_4_NAME, label: 'Option 4', image: WISHCONSTANT.STICKER_8 },
+interface ColorOption {
+    label: string;
+    color: string;
+
+}
+
+const third_options: ColorOption[] = [
+    { label: 'Option 1', color: WISHCONSTANT.COLOR_1 },
+    { label: 'Option 2', color: WISHCONSTANT.COLOR_2 },
+    { label: 'Option 3', color: WISHCONSTANT.COLOR_3 },
+    { label: 'Option 4', color: WISHCONSTANT.COLOR_4 },
 ];
 
 interface IMapInputToImage {
@@ -60,7 +66,7 @@ const CreateWishCardButton: React.FC = () => {
     const [wishInputValue, setWishInputValue] = useState('');
     const [selectedFirstOption, setSelectedFirstOption] = useState(first_options[0].value);
     const [selectedSecondOption, setSelectedSecondOption] = useState(second_options[0].value);
-    const [selectedThirdOption, setSelectedThirdOption] = useState(third_options[0].value);
+    const [selectedThirdOption, setSelectedThirdOption] = useState(third_options[0].color);
 
     const getImagePathForOption = (optionValue: string): string => {
         return imageChoiceToPathMap[optionValue] || ''}
@@ -154,11 +160,10 @@ const CreateWishCardButton: React.FC = () => {
                         <Radio.Group onChange={handleThirdChange} value={selectedThirdOption} style={{ width: '100%' }}>
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
                                 {third_options.map((option) => (
-                                    <Radio value={option.value} key={option.value} style={{ flex: '1 1 calc(50% - 16px)' }}>
+                                    <Radio value={option.color} key={option.color} style={{ flex: '1 1 calc(50% - 16px)' }}>
                                         <Card
                                             hoverable
-                                            cover={<Image alt={option.label} src={option.image} width={40} height={40} />}
-                                            style={{ width: '100%' }}
+                                            style={{ width: '100%', backgroundColor: option.color}}
                                         >
                                             {option.label}
                                         </Card>
