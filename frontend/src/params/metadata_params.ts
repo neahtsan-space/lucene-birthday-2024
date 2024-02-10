@@ -1,0 +1,2 @@
+export const META_DATA_TITLE = 'Lucene Birthday 2024'
+export const META_DATA_DESCRIPTION = 'Lucene Birthday 2024 is a birthday wishcard application. You can create, view, and search for birthday wishcards.'
