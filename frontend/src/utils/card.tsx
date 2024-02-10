@@ -36,59 +36,113 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
       };
 
     return (
-        <div>
             <div>
-                <Image className='modal-img-style-top'src={mappedWishCard?.stickerUP ?? ''} width={100} height={100} alt=''/>
-                <Card hoverable style={{
-                    position: "relative", 
-                    margin: 40, 
-                    height: 400, 
-                    width: 300,
-                    overflow: "hidden",
-                    borderColor: currentWish.borderColor,
-                    borderWidth: 20 }} onClick={showModal}>
-                    <Meta className=''title={`${wishCard.name} #${wishCard.cardNumber}`} description={
-                        <div>
+                <div style={{ position: "relative", margin: "40px", width: "300px" }} onClick={showModal}>
+                    <div style={{ position: "absolute", top: -40, left: -40, zIndex: 1 }}>
+                        <Image src={mappedWishCard?.stickerUP ?? ''} width={100} height={100} alt='' />
+                    </div>
+                    <div style={{ position: "absolute", bottom: -40, right: -40, zIndex: 1 }}>
+                        <Image src={mappedWishCard?.stickerDOWN ?? ''} width={100} height={100} alt='' />
+                    </div>
+                    <Card
+                        hoverable
+                        style={{
+                        height: 500,
+                        width: 300,
+                        overflow: "visible",
+                        borderColor: wishCard.borderColor,
+                        borderWidth: 20,
+                        position: "relative", // Ensure Card is positioned relative to its new container.
+                        zIndex: 0, // Ensure Card is under the images.
+                        }}
+                    >
+                        <Meta
+                        title={`${wishCard.name} #${wishCard.cardNumber}`}
+                        description={
+                            <div>
                             <p>{wishCard.time}</p>
                             <p>{wishCard.wish}</p>
-                        </div>
-                    }  />
-                </Card>
-                <Image className='modal-img-style-buttom' src={mappedWishCard?.stickerDOWN ?? ''} width={100} height={100} alt=''/>
-            </div>
-            
-            <Modal className='modalStyle'open={isModalVisible} footer={null} onCancel={handleCancel} width={800}  >
-                <div>
-                <Button onClick={() => navigateWish('prev')} className='modal-icon-top' icon={<LeftOutlined />}></Button>
-                <div className='modal-body'>
-                <Image className='modal-img-style-top' alt="example" src={currentWish ? currentWish.stickerUP : STICKER_1} width={200} height={200} sizes='100vw' />
-                <Card hoverable style={{ width: '100%' }} >
-                    <Meta title={`${currentWish.name} #${currentWish.cardNumber}`} description={
-                        <div>
-                            <p>{currentWish.time}</p>
-                            <p>{currentWish.wish}</p>
-                        </div>
-                    }  />
-                </Card>
-                <Image alt="example" src={currentWish ? currentWish.stickerDOWN : STICKER_5} width={40} height={400} sizes='100vw' />
+                            </div>
+                        }
+                        />
+                    </Card>
                 </div>
+            
+                <Modal className='modalStyle' open={isModalVisible} footer={null} onCancel={handleCancel} style={{display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '6%'}}>
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+                        <Button onClick={() => navigateWish('prev')} className='modal-icon-top' icon={<LeftOutlined />}></Button>
+                        
+                        <div style={{ margin: "0 20px" }}> {/* This container ensures the card doesn't touch the buttons */}
+                            <div style={{ position: "relative", width: "300px" }} onClick={showModal}>
+                                <div style={{ position: "absolute", top: -40, left: -40, zIndex: 1 }}>
+                                    <Image src={mappedWishCard?.stickerUP ?? ''} width={100} height={100} alt='' />
+                                </div>
+                                <div style={{ position: "absolute", bottom: -40, right: -40, zIndex: 1 }}>
+                                    <Image src={mappedWishCard?.stickerDOWN ?? ''} width={100} height={100} alt='' />
+                                </div>
+                                <Card
+                                    hoverable
+                                    style={{
+                                        height: 500,
+                                        width: 300,
+                                        overflow: "visible",
+                                        borderColor: currentWish.borderColor,
+                                        borderWidth: 20,
+                                        position: "relative", // Ensure Card is positioned relative to its new container.
+                                        zIndex: 0, // Ensure Card is under the images.
+                                    }}
+                                >
+                                    <Meta
+                                        title={`${currentWish.name} #${currentWish.cardNumber}`}
+                                        description={
+                                            <div>
+                                                <p>{currentWish.time}</p>
+                                                <p>{currentWish.wish}</p>
+                                            </div>
+                                        }
+                                    />
+                                </Card>
+                            </div>
+                        </div>
 
-                <Button onClick={() => navigateWish('next')} icon={<RightOutlined />} />
-                </div>
-            </Modal>
-            
+                        <Button onClick={() => navigateWish('next')} icon={<RightOutlined />} />
+                    </div>
+                </Modal>
         </div>
     );
     }
 
 const WishCardDemo: React.FC<{wishCard: IWishCardFront}> = ({wishCard}) => {
     return (
-        <div>
-            <Image alt='demo' src={wishCard.stickerUP} width={40} height={400} sizes='100vw' />
-            <Card hoverable style={{ margin: 30, width: 300}} >
-                <Meta title={`${wishCard.name} #${wishCard.cardNumber}`} description={wishCard.wish} />
+        <div style={{ position: "relative", margin: "40px", width: "300px" }}>
+            <div style={{ position: "absolute", top: -40, left: -40, zIndex: 1 }}>
+                <Image src={wishCard.stickerUP} width={100} height={100} alt='' />
+            </div>
+            <div style={{ position: "absolute", bottom: -40, right: -40, zIndex: 1 }}>
+                <Image src={wishCard.stickerDOWN} width={100} height={100} alt='' />
+            </div>
+            <Card
+                hoverable
+                style={{
+                height: 500,
+                width: 300,
+                overflow: "visible",
+                borderColor: wishCard.borderColor,
+                borderWidth: 20,
+                position: "relative", // Ensure Card is positioned relative to its new container.
+                zIndex: 0, // Ensure Card is under the images.
+                }}
+            >
+                <Meta
+                title={`${wishCard.name} #${wishCard.cardNumber}`}
+                description={
+                    <div>
+                    <p>{wishCard.time}</p>
+                    <p>{wishCard.wish}</p>
+                    </div>
+                }
+                />
             </Card>
-            <Image alt='demo' src={wishCard.stickerDOWN} width={40} height={400} sizes='100vw' />
         </div>
     )
 }

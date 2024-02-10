@@ -184,7 +184,7 @@ const CreateWishCardButton: React.FC = () => {
                         __v: 0,
                         _id: '',
                         time: '',
-                        cardNumber: 5 }} />
+                        cardNumber: 0 }} />
                 </div>
             </Modal>
         </>
