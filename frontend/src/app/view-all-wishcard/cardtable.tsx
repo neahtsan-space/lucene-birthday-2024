@@ -1,7 +1,7 @@
 import React from 'react';
 import '@/css/header.css';
 import { Table } from 'antd';
-import WishCardTemplate from '@/utils/card';
+import { WishCardTemplate } from '@/utils/card';
 import { IWishCardDB } from '@/interfaces/IWishcard';
 
 interface CardTableProps {
