@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import '@/css/recentWish.css';
 import { WishCardTemplate } from '@/utils/card';
-import { GetWishData } from '@/api/api';
+import { GetWishData } from '../../api/api';
 import { IWishCardDB } from '@/interfaces/IWishcard';
 
 const RecentWish: React.FC = () => {
