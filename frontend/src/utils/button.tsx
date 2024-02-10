@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { Button, Modal, Divider, ConfigProvider  } from 'antd';
 import '@/css/button.css';
 import { 
@@ -96,9 +97,22 @@ const PrimaryButton: React.FC<{ text: string }> = ({ text }) => (
         <Button type="primary">{text}</Button>
 );
 
-const DefaultButton: React.FC<{ text: string }> = ({ text }) => (
-        <Button>{text}</Button>
-);
+interface DefaultButtonProps {
+  buttonName: string;
+  url: string;
+}
+
+const DefaultButton: React.FC<DefaultButtonProps> = ({ buttonName, url }) => {
+  const router = useRouter();
+
+  if (!router) return null;
+
+  const handleClick = () => {
+    router.push(url);
+  };
+
+  return <Button className='buttonEffect' onClick={handleClick}>{buttonName}</Button>;
+};
 
 const LinkButton: React.FC<{ text: string }> = ({ text }) => (
         <Button type="link">{text}</Button>

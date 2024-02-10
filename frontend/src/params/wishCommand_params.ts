@@ -40,3 +40,13 @@ export const STICKER_5 = getImagePath('1.png');
 export const STICKER_6 = getImagePath('2.png');
 export const STICKER_7 = getImagePath('3.png');
 export const STICKER_8 = getImagePath('4.png');
+
+// view all wishcard params
+export const VIEW_ALL_WISHCARD_PATH = '/view-all-wishcard';
+export const VIEW_ALL_WISHCARD_BUTTON_NAME = 'ดูคำอวยพรทั้งหมด'
+
+// search wishcard params
+export const SEARCH_WISHCARD_PATH = '/search-wishcard';
+export const SEARCH_WISHCARD_BUTTON_NAME = 'ค้นหาคำอวยพร'
+export const SEARCH_WISHCARD_MODAL_TITLE = 'ค้นหาคำอวยพร'
+export const SEARCH_WISHCARD_MODAL_NAME = 'กรุณากรอกชื่อที่ใช้ใน wish card'

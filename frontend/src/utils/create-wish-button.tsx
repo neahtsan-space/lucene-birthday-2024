@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { Button, Modal, Input, Radio, Card, RadioChangeEvent } from 'antd';
-import * as WISHCONSTANT from '@/params/createWish_params';
+import * as WISHCONSTANT from '@/params/wishCommand_params';
 
 const { TextArea } = Input;
 
