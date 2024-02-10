@@ -2,7 +2,10 @@
 .recent-wish-container {
     padding: 20px;
     margin: 20px;
-    border: 1px solid transparent; /* Start with transparent border */
+    border: 1px solid transparent;
+    width: 100%;
+    height: 100%;
+    display: flex;
   }
   /* Style for the wish card */
   .wish-card {
@@ -16,6 +19,8 @@
     padding: 10px;
     margin-bottom: 10px;
     animation: glow 5s infinite alternate; /* Apply glow animation */
+    width: 100%;
+    height: 100%;
   }
   @keyframes glow {
     from {
