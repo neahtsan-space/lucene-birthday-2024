@@ -177,12 +177,12 @@ const CreateWishCardButton: React.FC = () => {
             </Button>
             <Modal style={{fontWeight: 'bold',overflow: 'hidden' ,color: 'black'}} title= {WISHCONSTANT.CREATE_WISHCARD_MODAL_TITLE} open={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
 
-                <p style={{color:'blue'}}>{WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME}</p>
+                <p style={{color:'blue', paddingTop: '1vh'}}>{WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME}</p>
                 <p>จำกัด: {nameInputValue.length} / {WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME_TEXT_LIMIT}</p> 
                 <Input placeholder={WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME_PLACEHOLDER} maxLength={WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME_TEXT_LIMIT}
                     value={nameInputValue} onChange={e => setNameInputValue(e.target.value)}>
                 </Input>
-                <p>{WISHCONSTANT.CREATE_WISHCARD_MODAL_WISH_TITLE}</p>
+                <p style={{paddingTop: '1vh'}}>{WISHCONSTANT.CREATE_WISHCARD_MODAL_WISH_TITLE}</p>
                 <p>จำกัด: {wishInputValue.length} / {WISHCONSTANT.CREATE_WISHCARD_MODAL_WISH_TEXT_LIMIT}</p>
                 <TextArea
                     placeholder={WISHCONSTANT.CREATE_WISHCARD_MODAL_WISH_PLACEHOLDER}
@@ -191,17 +191,16 @@ const CreateWishCardButton: React.FC = () => {
                     onChange={e => setWishInputValue(e.target.value)}
                     autoSize={{ minRows: 2, maxRows: 6 }} // Adjust rows as needed
                 />
-                <p>{WISHCONSTANT.RADIO_TITLE_1}</p>
+                <p style={{paddingTop: '1vh', paddingBottom: '1vh'}}>{WISHCONSTANT.RADIO_TITLE_1}</p>
                 <Radio.Group onChange={handleFirstChange} value={selectedFirstOption} style={{ width: '100%' }}>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
                         {first_options.map((option) => (
-                            <Radio value={option.value} key={option.value} style={{ flex: '1 1 calc(50% - 16px)' }}>
+                            <Radio value={option.value} key={option.value} style={{ flex: '1 1 calc(50% - 16px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                 <Card
                                     hoverable
-                                    cover={<Image alt={option.label} src={option.image} width={40} height={40}  />}
-                                    style={{ width: '100%' }}
+                                    cover={<Image alt='' src={option.image} width={'10vh'} height={'10vh'}  />}
+                                    style={{ width: '10vh', height: '10vh' }}
                                 >
-                                    {option.label}
                                 </Card>
                             </Radio>
                         ))}
@@ -209,30 +208,29 @@ const CreateWishCardButton: React.FC = () => {
                 </Radio.Group>
                 {selectedFirstOption && (
                     <>
-                        <p>{WISHCONSTANT.RADIO_TITLE_2}</p>
+                        <p style={{paddingTop: '1vh', paddingBottom: '1vh'}}>{WISHCONSTANT.RADIO_TITLE_2}</p>
                         <Radio.Group onChange={handleSecondChange} value={selectedSecondOption} style={{ width: '100%' }}>
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
                                 {second_options.map((option) => (
-                                    <Radio value={option.value} key={option.value} style={{ flex: '1 1 calc(50% - 16px)' }}>
+                                    <Radio value={option.value} key={option.value} style={{ flex: '1 1 calc(50% - 16px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                         <Card
                                             hoverable
-                                            cover={<Image alt={option.label} src={option.image} width={40} height={40} />}
-                                            style={{ width: '100%' }}
+                                            cover={<Image alt='' src={option.image} width={'10vh'} height={'10vh'} />}
+                                            style={{ width: '10vh', height: '10vh' }}
                                         >
-                                            {option.label}
                                         </Card>
                                     </Radio>
                                 ))}
                             </div>
                         </Radio.Group>
-                        <p>{WISHCONSTANT.RADIO_TITLE_3}</p>
+                        <p style={{paddingTop: '1vh', paddingBottom: '1vh'}}>{WISHCONSTANT.RADIO_TITLE_3}</p>
                         <Radio.Group onChange={handleThirdChange} value={selectedThirdOption} style={{ width: '100%' }}>
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
                                 {third_options.map((option) => (
-                                    <Radio value={option.color} key={option.color} style={{ flex: '1 1 calc(50% - 16px)' }}>
+                                    <Radio value={option.color} key={option.color} style={{ flex: '1 1 calc(50% - 16px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                         <Card
                                             hoverable
-                                            style={{ width: '150px', height: '200px', backgroundColor: option.color}}
+                                            style={{ width: '10vh', height: '10vh', backgroundColor: option.color}}
                                         >
                                         </Card>
                                     </Radio>
@@ -241,8 +239,8 @@ const CreateWishCardButton: React.FC = () => {
                         </Radio.Group>
                     </>
                 )}
-                <p>{WISHCONSTANT.DEMO_TITLE}</p>
-                <div>
+                <p style={{paddingTop: '3vh'}}>{WISHCONSTANT.DEMO_TITLE}</p>
+                <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                     <WishCardDemo wishCard={{ 
                         name: nameInputValue, 
                         wish: wishInputValue, 
