@@ -96,10 +96,10 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
                         borderColor: currentWish.borderColor,
                         borderWidth: 10,
                         padding: '1%',
-                        backgroundImage: 'url(rrain.avif)',
-                        backgroundSize: 'auto',
-                        backgroundRepeat: 'repeat',
-                        backgroundBlendMode: '',
+                        // backgroundImage: 'url(rrain.avif)',
+                        // backgroundSize: 'auto',
+                        // backgroundRepeat: 'repeat',
+                        // backgroundBlendMode: '',
                         backgroundColor: 'rgba(255, 255, 255, 1)',
                         position: "relative", // Ensure Card is positioned relative to its new container.
                         zIndex: 0, // Ensure Card is under the images.
