@@ -13,19 +13,10 @@ import { DASHBOARD_BG, DASHBOARD_DESC_BG, DASHBOARD_TITLE_BG } from '@/params/ba
 const DashboardCarousel: React.FC = () => {
 
   const [currentDescription, setCurrentDescription] = useState('');
-
   const carouselRef = useRef<any>(null);
 
-  const goToNextSlide = () => {
-    if (carouselRef.current) {
-      carouselRef.current.next();
-    }
-  };
-  const goToPrevSlide = () => {
-    if (carouselRef.current) {
-      carouselRef.current.prev();
-    }
-  };
+  const goToNextSlide = () => carouselRef.current?.next();
+  const goToPrevSlide = () => carouselRef.current?.prev();
 
   useState(() => {
     setCurrentDescription(dashboardImages[0].description);
@@ -54,7 +45,9 @@ const DashboardCarousel: React.FC = () => {
       <Carousel autoplay ref={carouselRef} afterChange={handleAfterChange} className="carousel">
         {dashboardImages.map((image, index) => (
           <div key={index} className="carousel-container" style={imageStyle}>
-            <Image src={image.src} alt={image.alt} width={0} height={0} sizes="100vw" style={imageStyle}/>
+            <Image src={image.src} alt={image.alt} width={0} height={0} sizes="100vw" style={imageStyle} 
+            priority={index === 0}
+            loading={index === 0 ? 'eager' : 'lazy'}/>
           </div>
         ))}
       </Carousel>
