@@ -82,10 +82,10 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
                         <div style={{ width: '80%', textAlign: 'center' }}>
                         <div style={{ position: "relative" }} onClick={showModal}>
                         <div style={{ position: "absolute", top: -150, left: -150, zIndex: 1, transform: 'rotate(-30deg)' }}>
-                    <Image src={mappedWishCard?.stickerUP ?? ''} width={300} height={300} alt='' />
+                    <Image src={currentWish?.stickerUP ?? ''} width={300} height={300} alt='' />
                         </div>
                         <div style={{ position: "absolute", bottom: -170, right: -200, zIndex: 1, transform: 'rotate(15deg)' }}>
-                    <Image src={mappedWishCard?.stickerDOWN ?? ''} width={400} height={400} alt='' />
+                    <Image src={currentWish?.stickerDOWN ?? ''} width={400} height={400} alt='' />
                         </div>
                     <Card className='card' hoverable style={{
                         height:'750px',
