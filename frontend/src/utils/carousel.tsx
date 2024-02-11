@@ -3,7 +3,8 @@ import { Carousel, Button } from 'antd';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import Image from 'next/image';
 import '@/css/carousel.css';
-import { dashboardImages } from '@/params/dashboard_param';
+import { dashboardImages, DASHBOARD_TITLE } from '@/params/dashboard_param';
+import { DASHBOARD_BG, DASHBOARD_DESC_BG } from '@/params/background_params';
 
 
 
@@ -44,10 +45,12 @@ const DashboardCarousel: React.FC = () => {
     position: 'relative',
     margin: 'auto',
     maxHeight: '45vh',
+    backgroundColor: DASHBOARD_BG,
   };
 
   return (
-    <div>
+    <div style={{backgroundColor: DASHBOARD_BG}}>
+      <div className="carousel-description" style={{backgroundColor: DASHBOARD_DESC_BG}}>{DASHBOARD_TITLE}</div>
       <Carousel autoplay ref={carouselRef} afterChange={handleAfterChange} className="carousel">
         {dashboardImages.map((image, index) => (
           <div key={index} className="carousel-container" style={imageStyle}>
@@ -61,7 +64,7 @@ const DashboardCarousel: React.FC = () => {
       <Button type="text" onClick={goToNextSlide} style={{ position: 'absolute', top: '30%', right: '55%', zIndex: 2, transform: 'translateY(-50%)' }}>
           <RightOutlined style={{ fontSize: '2rem', color: 'white' }} />
       </Button>
-      <div className="carousel-description">{currentDescription}</div>
+      <div className="carousel-description" style={{backgroundColor: DASHBOARD_DESC_BG}}>{currentDescription}</div>
     </div>
   );
 };

@@ -2,13 +2,11 @@
     position: absolute;
     top: 100%;
     left: 0%;
-    background-color: brown;
   }
 
 .carousel-container {
     display: flex !important;
     justify-content: center;
-    background-color: hotpink;
     align-content: center;
 }
 
@@ -18,7 +16,6 @@
   }
 
 .carousel-description {
-  background-color: aquamarine;
   position: relative;
   margin: auto;
   overflow: hidden;

@@ -5,15 +5,20 @@
     height: 100%;
     display: flex;
   }
-  /* Style for the wish card */
+
+  
   .wish-card {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    background-color:'transparent';
+    background-color: transparent;
     padding-bottom: 5%;
     margin-bottom: 10px;
     width: 100%;
     height: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    gap: 5%;
   }
+  

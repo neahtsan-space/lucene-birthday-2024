@@ -1,3 +1,5 @@
+export const DASHBOARD_TITLE = 'Happy Lucene Day 2024';
+
 // Dashboard img
 export const DASHBOARD_IMG_1 = '/dashboard/1.jpg';
 export const DASHBOARD_IMG_2 = '/dashboard/2.jpg';
