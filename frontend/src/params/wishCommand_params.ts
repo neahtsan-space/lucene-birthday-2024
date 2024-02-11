@@ -1,4 +1,5 @@
 export const WISHCOMMAND_TITLE = 'Happy Lucene Day 2024'
+export const WISHCOMMAND_TITLE_COLOR = 'black'
 
 export const CREATE_WISHCARD_BUTTON_TEXT = 'ส่งคำอวยพร'
 export const CREATE_WISHCARD_MODAL_TITLE = 'ส่งคำอวยพรให้ Lucene🤍'

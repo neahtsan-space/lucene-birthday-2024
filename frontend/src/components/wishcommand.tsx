@@ -11,7 +11,7 @@ import { Divider } from 'antd';
 const WishCommand: React.FC = () => {
   return (
     <div className='wish-command-container' style={{width: '100%', marginLeft: '25%'}}>
-        <p style={{fontSize: '300%'}}>{WishCommandParams.WISHCOMMAND_TITLE}</p>
+        <p style={{fontSize: '300%', color: WishCommandParams.WISHCOMMAND_TITLE_COLOR}}>{WishCommandParams.WISHCOMMAND_TITLE}</p>
         <Divider />
         <div className='wish-command-button-container' style={{ display: 'flex', gap: '10%', flexDirection: 'row'}}>
             <div><CreateWishCardButton /></div>
