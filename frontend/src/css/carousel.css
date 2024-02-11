@@ -4,11 +4,12 @@
     left: 0%;
   }
 
-.carousel-container {
-    display: flex !important;
-    justify-content: center;
-    align-content: center;
-}
+  .carousel-container {
+    position: relative; /* This is crucial for 'fill' layout to work */
+    width: 100%; /* Adjust as necessary */
+    height: 500px; /* Adjust as necessary */
+  }
+  
 
 .carousel-container > img {
     width: 100vh;
