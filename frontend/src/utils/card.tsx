@@ -93,7 +93,7 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
                                         height: 700,
                                         width: 300,
                                         overflow: "visible",
-                                        borderColor: wishCard.borderColor,
+                                        borderColor: currentWish.borderColor,
                                         borderWidth: 20,
                                         backgroundImage: 'url(rrain.avif)', backgroundSize: 'auto',backgroundRepeat: 'repeat',backgroundBlendMode: '' ,backgroundColor: 'rgba(255, 255, 255, 1)',
                                         position: "relative", // Ensure Card is positioned relative to its new container.
@@ -103,14 +103,14 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
                                 <Meta style={{fontWeight: 'bold',overflow: 'hidden'}}
                                 title={
                                     <span style={{ color: 'blue', fontWeight: 'bold' }}>
-                                        {wishCard.name} #{wishCard.cardNumber}
+                                        {currentWish.name} #{currentWish.cardNumber}
                                     </span>
                                 }
                         
                                 description={
                                     <div>
-                                        <p style={{ color: 'black', fontSize: '100%' }}>{wishCard.time}</p>
-                                        <p style={{ color: 'rgb(93, 186, 199)', fontSize: '120%',  }}>{wishCard.wish}</p>
+                                        <p style={{ color: 'black', fontSize: '100%' }}>{currentWish.time}</p>
+                                        <p style={{ color: 'rgb(93, 186, 199)', fontSize: '120%',  }}>{currentWish.wish}</p>
                                     </div>
                                 }
                                 />
