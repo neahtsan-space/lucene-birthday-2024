@@ -1,28 +1,27 @@
 .carousel {
-    position: absolute;
-    top: 100%;
-    left: 0%;
-  }
+  position: absolute;
+  top: 100%;
+  left: 0%;
+}
 
-  .carousel-container {
-    position: relative; /* This is crucial for 'fill' layout to work */
-    width: 100%; /* Adjust as necessary */
-    height: 500px; /* Adjust as necessary */
-  }
-  
+.carousel-container {
+  display: flex !important;
+  justify-content: center;
+  align-content: center;
+}
 
 .carousel-container > img {
-    width: 100vh;
-    height: auto;
-  }
+  width: 100vh;
+  height: auto;
+}
 
 .carousel-description {
-  position: relative;
-  margin: auto;
-  overflow: hidden;
-  height: 100%;
-  font-size: clamp(16px, 2vw, 24px);
-  width: 100%; 
-  text-align: center; 
-  line-height: 3; 
+position: relative;
+margin: auto;
+overflow: hidden;
+height: 100%;
+font-size: clamp(16px, 2vw, 24px);
+width: 100%; 
+text-align: center; 
+line-height: 3; 
 }

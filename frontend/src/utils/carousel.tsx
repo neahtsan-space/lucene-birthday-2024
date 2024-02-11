@@ -27,12 +27,15 @@ const DashboardCarousel: React.FC = () => {
   };
   
   const imageStyle: React.CSSProperties = {
+    width: 'auto',
+    height: 'auto',
     overflow: 'hidden',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    position: 'relative',
     margin: 'auto',
-    maxHeight: '25vh',
+    maxHeight: '45vh',
     backgroundColor: DASHBOARD_BG,
   };
 
@@ -40,17 +43,13 @@ const DashboardCarousel: React.FC = () => {
     <div style={{backgroundColor: DASHBOARD_BG}}>
       <div className="carousel-description" style={{backgroundColor: DASHBOARD_TITLE_BG}}>{DASHBOARD_TITLE}</div>
       <Carousel autoplay ref={carouselRef} afterChange={handleAfterChange} className="carousel">
-      {dashboardImages.map((image, index) => (
-        <div key={index} className="carousel-container" style={imageStyle}>
-          <Image
-            src={image.src}
-            alt={image.alt}
-            layout="fill"
-            objectFit="contain" // Adjusts image to fit within the container, maintaining aspect ratio
+        {dashboardImages.map((image, index) => (
+          <div key={index} className="carousel-container" style={imageStyle}>
+            <Image src={image.src} alt={image.alt} width={0} height={0} sizes="100vw" style={imageStyle} 
             priority={index === 0}
-          />
-        </div>
-      ))}
+            loading={index === 0 ? 'eager' : 'lazy'}/>
+          </div>
+        ))}
       </Carousel>
       <Button type="text" onClick={goToPrevSlide} style={{ position: 'absolute', top: '39vh', left: '10vh', zIndex: 2, transform: 'translateY(-50%)' }}>
           <LeftOutlined style={{ fontSize: '2rem', color: 'white' }} />

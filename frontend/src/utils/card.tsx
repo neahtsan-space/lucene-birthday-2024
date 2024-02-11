@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { IWishCardDB, IWishCardFront } from '@/interfaces/IWishcard';
 import { mapDbToFront } from './wishMapper';
 import { STICKER_1, STICKER_5, STICKER_7 } from '@/params/card_params';
