@@ -69,6 +69,15 @@ const mapDbToFront = (allWishes: IWishCardDB[]): IWishCardFront[] => {
     });
 };
 
+const mapSingleDbToFront = (wish: IWishCardDB): IWishCardFront => {
+    const [stickerUP = '', stickerDOWN = ''] = pictureToSticker(wish.picture) || [];
+    return {
+        ...wish,
+        stickerUP: stickerUP,
+        stickerDOWN: stickerDOWN
+    };
+};
+
 const STICKER_COMBINATIONS = {
     [JSON.stringify([STICKER_1_NAME, STICKER_5_NAME])]: '1',
     [JSON.stringify([STICKER_1_NAME, STICKER_6_NAME])]: '2',
@@ -93,4 +102,4 @@ const STICKER_COMBINATIONS = {
   }
   
 
-export {pictureToSticker, stickerToPicture, mapDbToFront};
+export {pictureToSticker, stickerToPicture, mapDbToFront, mapSingleDbToFront};

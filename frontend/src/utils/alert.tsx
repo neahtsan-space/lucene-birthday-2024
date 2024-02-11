@@ -15,7 +15,6 @@ const SuccessAlert: React.FC<{ SuccessTitle: string, SuccessMessage: string, Ale
 
 const FailureAlert: React.FC<{ FailureTitle: string, FailureMessage: string, AlertStyle: React.CSSProperties }> = ({ FailureTitle, FailureMessage, AlertStyle }) => (
   <Space direction="vertical" style={{ width: '100%' }}>
-    <Alert message="Error" type="error" showIcon />
     <Alert
       message={FailureTitle}
       description={FailureMessage}

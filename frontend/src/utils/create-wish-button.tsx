@@ -127,6 +127,18 @@ const CreateWishCardButton: React.FC = () => {
         }
 
         CreateWishCard(wishCardObject).then((response) => {
+            const { status, body } = response as { status: number; body: any };
+
+            if(status !== 201) {
+                setErrorParams({
+                    FailureTitle: WISHCONSTANT.CREATE_WISHCARD_NAME_WARNING,
+                    FailureMessage: body.message,
+                    AlertStyle: {backgroundColor: 'white', color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center'}
+                });
+                setIsFailureAlertModalVisible(true);
+                return;
+            }
+
             setAlertParams({
                 SuccessTitle: WISHCONSTANT.CREATE_WISHCARD_SUCCESS_ALERT, 
                 SuccessMessage: WISHCONSTANT.CREATE_WISHCARD_SUCCESS_DESC,
@@ -140,7 +152,6 @@ const CreateWishCardButton: React.FC = () => {
                 window.location.reload();
             }, 5000);
         }).catch((error) => {
-            console.log("Error:", error);
         });
     };
 
@@ -266,7 +277,7 @@ const CreateWishCardButton: React.FC = () => {
             >
                 <FailureAlert 
                     FailureTitle={errorParams.FailureTitle}
-                    FailureMessage={`${WISHCONSTANT.CREATE_WISHCARD_NAME_WARNING_DESC}`}
+                    FailureMessage={`${errorParams.FailureMessage}`}
                     AlertStyle={errorParams.AlertStyle}
                 />
             </Modal>

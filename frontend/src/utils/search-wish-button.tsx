@@ -1,22 +1,55 @@
 import React, { useState } from 'react';
-import Image from 'next/image';
-import { Button, Modal, Input, Card, RadioChangeEvent } from 'antd';
+import { Button, Modal, Input } from 'antd';
 import * as WISHCONSTANT from '@/params/wishCommand_params';
-
-const { TextArea } = Input;
+import { GetWishByName } from '../../api/api';
+import { FailureAlert } from './alert';
+import { WishCardDemo } from './card';
+import { IWishCardFront } from '@/interfaces/IWishcard';
+import { mapSingleDbToFront } from './wishMapper';
 
 const SearchWishCardButton = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [nameInputValue, setNameInputValue] = useState('');
+    const [isFailureAlertModalVisible, setIsFailureAlertModalVisible] = useState(false);
+    const [wishCardDetails, setWishCardDetails] = useState<IWishCardFront | null>(null);
+    const [errorParams, setErrorParams] = useState({
+        FailureTitle: '',
+        FailureMessage: '',
+        AlertStyle: {}
+    });
 
     const showModal = () => {
         setIsModalVisible(true);
     };
 
-    const handleOk = () => {
+    const handleOk = async () => {
         setIsModalVisible(false);
-        console.log("Name Input Value:", nameInputValue);
-        // Here you can handle the submission or processing of input data
+
+        if (nameInputValue === '') {
+            setErrorParams({
+                FailureTitle: WISHCONSTANT.SEARCH_WISHCARD_INCOORECT_TITLE,
+                FailureMessage: WISHCONSTANT.SEARCH_WISHCARD_INCOORECT_DESC,
+                AlertStyle: { width: '100%' }
+            });
+            return;
+        }
+    
+        try {
+            const res = await GetWishByName(nameInputValue);
+            if (res !== null) {
+                const mappedWish = mapSingleDbToFront(res);
+                setWishCardDetails(mappedWish);
+                setIsModalVisible(false); 
+            } else {
+                setErrorParams({
+                    FailureTitle: WISHCONSTANT.SEARCH_WISHCARD_NOT_FOUND_TITLE,
+                    FailureMessage: WISHCONSTANT.SEARCH_WISHCARD_NOT_FOUND_DESC,
+                    AlertStyle: { width: '100%' }
+                });
+                setIsFailureAlertModalVisible(true);
+            }
+        } catch (error) {
+        }
     };
 
     const handleCancel = () => {
@@ -30,10 +63,18 @@ const SearchWishCardButton = () => {
             </Button>
             <Modal title={WISHCONSTANT.SEARCH_WISHCARD_MODAL_TITLE} open={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
                 <p>{WISHCONSTANT.SEARCH_WISHCARD_MODAL_NAME}</p>
-                <Input value={nameInputValue} maxLength={WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME_TEXT_LIMIT} onChange={(e) => setNameInputValue(e.target.value)} />
+                <Input value={nameInputValue} onChange={(e) => setNameInputValue(e.target.value)} />
             </Modal>
+            <Modal open={isFailureAlertModalVisible} onCancel={() => setIsFailureAlertModalVisible(false)}>
+                <FailureAlert {...errorParams} />
+            </Modal>
+            {wishCardDetails && (
+                <Modal title="Wish Card Details" open={true} onCancel={() => setWishCardDetails(null)} footer={null}>
+                    <WishCardDemo wishCard={wishCardDetails} />
+                </Modal>
+            )}
         </>
     )
 }
 
-export { SearchWishCardButton }
+export { SearchWishCardButton };

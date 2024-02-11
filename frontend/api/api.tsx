@@ -13,18 +13,39 @@ async function GetLastestFourWish(): Promise<IWishCardDB[]> {
     return data;
 }
 
+async function GetWishByName(name: string): Promise<IWishCardDB | null> {
+    try {
+        const encodedName = encodeURIComponent(name);
+        const API_PATH_GET_WISH_BY_NAME = `${API_PATH.GET_WISH_BY_NAME}?name=${encodedName}`;
 
-async function CreateWishCard(data: IWishCardPost): Promise<IWishCardPost> {
-    const response = await fetch(API_PATH.POST_WISH, {
+        const response = await fetch(API_PATH_GET_WISH_BY_NAME);
+
+        if (!response.ok) {
+            return null;
+        }
+
+        const data: IWishCardDB = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error fetching wish card");
+        return null;
+    }
+}
+
+
+
+function CreateWishCard(wishCardObject: IWishCardPost) {
+
+    return fetch(API_PATH.POST_WISH, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
-    });
-    const createdData: IWishCardPost = await response.json();
-    return createdData;
+        body: JSON.stringify(wishCardObject),
+    })
+    .then(response => response.json().then(data => ({ status: response.status, body: data })))
+    .catch(error => console.error('Error create wish card', error));
 }
 
 
-export { GetWishData, GetLastestFourWish, CreateWishCard }
+export { GetWishData, GetLastestFourWish, GetWishByName, CreateWishCard }

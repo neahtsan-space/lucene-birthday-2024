@@ -72,3 +72,9 @@ export const COUNT_DOWN_REFRESH_SEC = 5
 
 export const CREATE_WISHCARD_NAME_WARNING = 'ส่งคำอวยพรไม่สำเร็จ!!!'
 export const CREATE_WISHCARD_NAME_WARNING_DESC = 'ชื่อ หรือ คำอวยพร ไม่ถูกต้อง กรุณากรอกใหม่อีกครั้ง'
+
+export const SEARCH_WISHCARD_INCOORECT_TITLE = 'ค้นหาคำอวยพรไม่สำเร็จ!!!'
+export const SEARCH_WISHCARD_INCOORECT_DESC = 'กรุณากรอกชื่อที่ใช้ใน wish card ให้ถูกต้อง'
+
+export const SEARCH_WISHCARD_NOT_FOUND_TITLE = 'ไม่พบคำอวยพร!!!'
+export const SEARCH_WISHCARD_NOT_FOUND_DESC = 'ไม่พบคำอวยพร กรุณากรอกใหม่อีกครั้ง'
