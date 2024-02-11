@@ -41,7 +41,7 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
                     <div style={{ position: "absolute", top: -40, left: -40, zIndex: 1 , transform: 'rotate(-30deg)'}}>
                         <Image src={mappedWishCard?.stickerUP ?? ''} width={100} height={100} alt='' />
                     </div>
-                    <div style={{ position: "absolute", bottom: -40, right: -40, zIndex: 1 , transform: 'rotate(15deg)'}}>
+                    <div style={{ position: "absolute", bottom: -40, right: -40, zIndex: 1 , transform: 'rotate(15deg)', }}>
                         <Image src={mappedWishCard?.stickerDOWN ?? ''} width={100} height={100} alt='' />
                     </div>
                     <Card className='card2'
@@ -49,19 +49,26 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
                         style={{
                         height: 500,
                         width: 300,
-                        overflow: "visible",
+                        overflow: "hidden",
+                        textOverflow: 'ellipsis',
                         borderColor: wishCard.borderColor,
+                        backgroundImage: 'url(rrain.avif)', backgroundSize: 'auto',backgroundRepeat: 'repeat',backgroundColor: 'rgba(255, 255, 255, 0.1)',
                         borderWidth: 20,
                         position: "relative", // Ensure Card is positioned relative to its new container.
                         zIndex: 0, // Ensure Card is under the images.
                         }}
                     >
-                        <Meta style={{}}
-                        title={`${wishCard.name} #${wishCard.cardNumber}`}
+                        <Meta style={{fontWeight: 'bold',overflow: 'hidden'}}
+                        title={
+                            <span style={{ color: 'blue', fontWeight: 'bold' }}>
+                                {wishCard.name} #{wishCard.cardNumber}
+                            </span>
+                        }
+                        
                         description={
                             <div>
-                            <p style={{color: 'black'}}>{wishCard.time}</p>
-                            <p style={{color: 'rgb(93, 186, 199)'}}>{wishCard.wish}</p>
+                                <p style={{ color: 'black', fontSize: '100%' }}>{wishCard.time}</p>
+                                <p style={{ color: 'rgb(93, 186, 199)', fontSize: '120%',  }}>{wishCard.wish}</p>
                             </div>
                         }
                         />
@@ -83,24 +90,30 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
                                 <Card className='card'
                                     hoverable
                                     style={{
-                                        height: 500,
+                                        height: 700,
                                         width: 300,
                                         overflow: "visible",
                                         borderColor: wishCard.borderColor,
                                         borderWidth: 20,
+                                        backgroundImage: 'url(rrain.avif)', backgroundSize: 'auto',backgroundRepeat: 'repeat',backgroundBlendMode: '' ,backgroundColor: 'rgba(255, 255, 255, 1)',
                                         position: "relative", // Ensure Card is positioned relative to its new container.
                                         zIndex: 0, // Ensure Card is under the images.
                                     }}
                                 >
-                                    <Meta style={{fontWeight: 'bold'}}
-                                        title ={`${currentWish.name} #${currentWish.cardNumber}`}
-                                        description={
-                                            <div>
-                                                <p style={{color: 'black'}}>{wishCard.time}</p>
-                                                <p style={{color: 'rgb(93, 186, 199)'}}>{wishCard.wish}</p>
-                                            </div>
-                                        }
-                                    />
+                                <Meta style={{fontWeight: 'bold',overflow: 'hidden'}}
+                                title={
+                                    <span style={{ color: 'blue', fontWeight: 'bold' }}>
+                                        {wishCard.name} #{wishCard.cardNumber}
+                                    </span>
+                                }
+                        
+                                description={
+                                    <div>
+                                        <p style={{ color: 'black', fontSize: '100%' }}>{wishCard.time}</p>
+                                        <p style={{ color: 'rgb(93, 186, 199)', fontSize: '120%',  }}>{wishCard.wish}</p>
+                                    </div>
+                                }
+                                />
                                 </Card>
                             </div>
                         </div>
@@ -124,7 +137,7 @@ const WishCardDemo: React.FC<{wishCard: IWishCardFront}> = ({wishCard}) => {
             <Card
                 hoverable
                 style={{
-                height: 500,
+                height: 700,
                 width: 300,
                 overflow: "visible",
                 borderColor: wishCard.borderColor,

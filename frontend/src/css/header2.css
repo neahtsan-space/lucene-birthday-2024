@@ -77,13 +77,37 @@
     }
     50% {
       transform: translateX(20%);
-      color: rgba(255, 255, 255, 0.5); /* Initial and final color */
+      color: hsla(0, 0%, 100%, 0.5); /* Initial and final color */
       text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.5); /* Initial and final shadow */
     }
   }
   
   .animated-text {
     animation: 
-                slideLeft 8s linear infinite,
-               slideRight 8s linear infinite;
+                slideLeft 10s linear infinite,
+               slideRight 10s linear infinite;
+  }
+
+  @keyframes rotateleftAnimation {
+    0% {
+      transform: rotate(15deg);
+    }
+    100% {
+      transform: rotate(-15deg);
+    }
+  }
+
+  @keyframes rotaterightAnimation {
+    0% {
+      transform: rotate(-30deg);
+    }
+    100% {
+      transform: rotate(30deg);
+    }
+  }
+
+  .animated-text2 {
+    animation: 
+    rotateleftAnimation 8s linear infinite,
+    rotaterightAnimation 8s linear infinite;
   }

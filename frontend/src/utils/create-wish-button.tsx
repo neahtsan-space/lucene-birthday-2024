@@ -107,9 +107,10 @@ const CreateWishCardButton: React.FC = () => {
             <Button type="primary" onClick={showModal}>
                 {WISHCONSTANT.CREATE_WISHCARD_BUTTON_TEXT}
             </Button>
-            <Modal title={WISHCONSTANT.CREATE_WISHCARD_MODAL_TITLE} open={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-                <p>{WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME}</p>
-                <p>จำกัด: {nameInputValue.length} / {WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME_TEXT_LIMIT}</p>
+            <Modal style={{fontWeight: 'bold',overflow: 'hidden' ,color: 'black'}} title= {WISHCONSTANT.CREATE_WISHCARD_MODAL_TITLE} open={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+
+                <p style={{color:'blue'}}>{WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME}</p>
+                <p>จำกัด: {nameInputValue.length} / {WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME_TEXT_LIMIT}</p> 
                 <Input placeholder={WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME_PLACEHOLDER} maxLength={WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME_TEXT_LIMIT}
                     value={nameInputValue} onChange={e => setNameInputValue(e.target.value)}>
                 </Input>

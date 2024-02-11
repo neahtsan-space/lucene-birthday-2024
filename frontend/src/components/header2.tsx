@@ -7,9 +7,9 @@ import { TextButton, PrimaryButton, DefaultButton, LinkButton } from '@/utils/bu
 const Header2: React.FC = () => {
     return (
       <header className="header2">
-        <a href="../" className="header-left-side2">
-          <div className="text-container2">
-            <span className="header-title2">
+        <a href="../" className="header-left-side2 ">
+          <div className="text-container2 ">
+            <span className="header-title2 ">
               {HeaderParams.go_back_title}<br />
               {HeaderParams.go_back_desc}
             </span>

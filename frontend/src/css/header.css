@@ -42,6 +42,7 @@
     display: flex;
 }
 
+
 @keyframes colorChange {
 0%, 100% {
   color: rgb(255, 255, 255); /* Start and end color */
@@ -52,8 +53,8 @@
 }
 @keyframes headerglow {
 0%, 100% {
-  color: rgba(255, 255, 255, 0.5); /* Initial and final color */
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.5); /* Initial and final shadow */
+  color: rgba(53, 255, 211, 0.5); /* Initial and final color */
+  text-shadow: 0 0 10px rgba(53, 255, 211, 0.5), 0 0 20px rgba(53, 255, 211, 0.5), 0 0 30px rgba(53, 255, 211, 0.5); /* Initial and final shadow */
 }
 25%, 75% {
   color: rgbargba(255, 215, 0, 0.8); /* Yellow */
