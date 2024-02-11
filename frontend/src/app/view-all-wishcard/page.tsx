@@ -9,9 +9,7 @@ const ViewAllWishcard: React.FC = () => {
     return (
       <div>
         <Header2 />
-        <Suspense fallback={<div>Loading...</div>}>
-          <WishTable />
-        </Suspense>
+        <WishTable />
         <Footer />
       </div>
     );

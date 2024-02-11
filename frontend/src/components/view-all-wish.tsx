@@ -3,7 +3,7 @@ import CardTable from "@/app/view-all-wishcard/cardtable";
 import { GetWishData } from '../../api/api';
 import { IWishCardDB } from '@/interfaces/IWishcard';
 
-const WishTable: React.FC = () => {
+const WishTable: React.FC = async () => {
   const [wishData, setWishData] = useState<IWishCardDB[]>([]);
 
   useEffect(() => {
