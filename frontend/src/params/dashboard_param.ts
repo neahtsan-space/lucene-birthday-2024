@@ -1,13 +1,13 @@
 export const DASHBOARD_TITLE = 'Happy Lucene Day 2024';
 
 // Dashboard img
-export const DASHBOARD_IMG_1 = '/dashboard/1.jpg';
-export const DASHBOARD_IMG_2 = '/dashboard/2.jpg';
-export const DASHBOARD_IMG_3 = '/dashboard/3.jpg';
-export const DASHBOARD_IMG_4 = '/dashboard/4.jpg';
-export const DASHBOARD_IMG_5 = '/dashboard/5.jpg';
-export const DASHBOARD_IMG_6 = '/dashboard/6.jpg';
-export const DASHBOARD_IMG_7 = '/dashboard/7.jpg';
+export const DASHBOARD_IMG_1 = '/dashboard/1.webp';
+export const DASHBOARD_IMG_2 = '/dashboard/2.webp';
+export const DASHBOARD_IMG_3 = '/dashboard/3.webp';
+export const DASHBOARD_IMG_4 = '/dashboard/4.webp';
+export const DASHBOARD_IMG_5 = '/dashboard/5.webp';
+export const DASHBOARD_IMG_6 = '/dashboard/6.webp';
+export const DASHBOARD_IMG_7 = '/dashboard/7.webp';
 
 // Dashboard img description
 export const DASHBOARD_IMG_1_DESC = 'Mock Image 1 '
@@ -18,7 +18,7 @@ export const DASHBOARD_IMG_5_DESC = 'Mock Image 5 '
 export const DASHBOARD_IMG_6_DESC = 'Mock Image 6 '
 export const DASHBOARD_IMG_7_DESC = 'Mock Image 7 '
 
-// Dashboard total img (picture name must be 1.jpg, 2.jpg, 3.jpg, ... n.jpg)
+// Dashboard total img (picture name must be 1.webp, 2.webp, 3.webp, ... n.webp)
 const DASHBOARD_TOTAL_IMG = 7;
 
 
@@ -27,7 +27,7 @@ const createDashboardImages = (count: number) => {
     return Array.from({ length: count }, (_, i) => {
       const number = i + 1; 
       return {
-        src: `/dashboard/${number}.jpg`,
+        src: `/dashboard/${number}.webp`,
         alt: `Image ${number}`,
         description: `Mock Image ${number}`
       };
