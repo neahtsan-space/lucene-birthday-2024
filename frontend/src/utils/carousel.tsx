@@ -58,10 +58,10 @@ const DashboardCarousel: React.FC = () => {
           </div>
         ))}
       </Carousel>
-      <Button type="text" onClick={goToPrevSlide} style={{ position: 'absolute', top: '30%', left: '5%', zIndex: 2, transform: 'translateY(-50%)' }}>
+      <Button type="text" onClick={goToPrevSlide} style={{ position: 'absolute', top: '39vh', left: '10vh', zIndex: 2, transform: 'translateY(-50%)' }}>
           <LeftOutlined style={{ fontSize: '2rem', color: 'white' }} />
       </Button>
-      <Button type="text" onClick={goToNextSlide} style={{ position: 'absolute', top: '30%', right: '55%', zIndex: 2, transform: 'translateY(-50%)' }}>
+      <Button type="text" onClick={goToNextSlide} style={{ position: 'absolute', top: '39vh', right: '110vh', zIndex: 2, transform: 'translateY(-50%)' }}>
           <RightOutlined style={{ fontSize: '2rem', color: 'white' }} />
       </Button>
       <div className="carousel-description" style={{backgroundColor: DASHBOARD_DESC_BG}}>{currentDescription}</div>
