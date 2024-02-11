@@ -172,7 +172,7 @@ const CreateWishCardButton: React.FC = () => {
 
     return (
         <>
-            <Button type="primary" onClick={showModal}>
+            <Button type="primary" size='large' shape='round' onClick={showModal}>
                 {WISHCONSTANT.CREATE_WISHCARD_BUTTON_TEXT}
             </Button>
             <Modal style={{fontWeight: 'bold',overflow: 'hidden' ,color: 'black'}} title= {WISHCONSTANT.CREATE_WISHCARD_MODAL_TITLE} open={isModalVisible} onOk={handleOk} onCancel={handleCancel}>

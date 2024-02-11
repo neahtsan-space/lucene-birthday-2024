@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { Button, Modal, Divider, ConfigProvider  } from 'antd';
+import { Button, Modal, Divider, ConfigProvider } from 'antd';
 import '@/css/button.css';
 import { 
         modal_title_TH, 
@@ -94,7 +94,7 @@ const TextButton: React.FC<TextButtonProps> = ({ buttonName, url }) => {
       export default TextButton;
 
 const PrimaryButton: React.FC<{ text: string }> = ({ text }) => (
-        <Button type="primary">{text}</Button>
+  <Button type="primary">{text}</Button>
 );
 
 interface DefaultButtonProps {
@@ -111,7 +111,7 @@ const DefaultButton: React.FC<DefaultButtonProps> = ({ buttonName, url }) => {
     router.push(url);
   };
 
-  return <Button className='buttonEffect' onClick={handleClick}>{buttonName}</Button>;
+  return <Button className='buttonEffect' size='large' onClick={handleClick}>{buttonName}</Button>;
 };
 
 const LinkButton: React.FC<{ text: string }> = ({ text }) => (

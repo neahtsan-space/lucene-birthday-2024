@@ -10,13 +10,13 @@ import { Divider } from 'antd';
 
 const WishCommand: React.FC = () => {
   return (
-    <div className='wish-command-container'>
-        <p>{WishCommandParams.WISHCOMMAND_TITLE}</p>
+    <div className='wish-command-container' style={{width: '100%', marginLeft: '25%'}}>
+        <p style={{fontSize: '300%'}}>{WishCommandParams.WISHCOMMAND_TITLE}</p>
         <Divider />
-        <div className='wish-command-button-container'>
-            <CreateWishCardButton />
-            <DefaultButton buttonName={WishCommandParams.VIEW_ALL_WISHCARD_BUTTON_NAME} url={WishCommandParams.VIEW_ALL_WISHCARD_PATH} />
-            <SearchWishCardButton />
+        <div className='wish-command-button-container' style={{ display: 'flex', gap: '10%', flexDirection: 'row'}}>
+            <div><CreateWishCardButton /></div>
+            <div><DefaultButton buttonName={WishCommandParams.VIEW_ALL_WISHCARD_BUTTON_NAME} url={WishCommandParams.VIEW_ALL_WISHCARD_PATH} /></div>
+            <div><SearchWishCardButton /></div>
         </div>
     </div>
   );
