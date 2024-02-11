@@ -36,15 +36,16 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
       };
 
     return (
-            <div>
-                <div style={{ position: "relative", margin: "40px", width: "300px" }} onClick={showModal}>
-                    <div style={{ position: "absolute", top: -40, left: -40, zIndex: 1 , transform: 'rotate(-30deg)'}}>
+        <div>
+            <div style={{ position: "relative", margin: "40px", width: "300px" }} onClick={showModal}>
+                <div style={{ position: "relative", zIndex: 0 }}>
+                    <div style={{ position: "absolute", top: -40, left: -40, zIndex: 1, transform: 'rotate(-30deg)' }}>
                         <Image src={mappedWishCard?.stickerUP ?? ''} width={100} height={100} alt='' />
                     </div>
-                    <div style={{ position: "absolute", bottom: -40, right: -40, zIndex: 1 , transform: 'rotate(15deg)', }}>
+                    <div style={{ position: "absolute", bottom: -40, right: -40, zIndex: 1, transform: 'rotate(15deg)' }}>
                         <Image src={mappedWishCard?.stickerDOWN ?? ''} width={100} height={100} alt='' />
                     </div>
-                    <Card className='card2'
+                <Card className='card2'
                         hoverable
                         style={{
                         height: 500,
@@ -52,29 +53,30 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
                         overflow: "hidden",
                         textOverflow: 'ellipsis',
                         borderColor: wishCard.borderColor,
-                        backgroundColor:'white',
-                        /*backgroundImage: 'url(rrain.avif)', backgroundSize: 'auto',backgroundRepeat: 'repeat',backgroundColor: 'rgba(255, 255, 255, 0.1)',*/
+                        backgroundColor: 'white',
+                            /*backgroundImage: 'url(rrain.avif)', backgroundSize: 'auto',backgroundRepeat: 'repeat',backgroundColor: 'rgba(255, 255, 255, 0.1)',*/
                         borderWidth: 10,
                         position: "relative", // Ensure Card is positioned relative to its new container.
                         zIndex: 0, // Ensure Card is under the images.
                         }}
                     >
-                        <Meta style={{fontWeight: 'bold',overflow: 'hidden'}}
-                        title={
-                            <span style={{ color: 'blue', fontWeight: 'bold' }}>
-                                {wishCard.name} #{wishCard.cardNumber}
-                            </span>
-                        }
-                        
-                        description={
-                            <div>
-                                <p style={{ color: 'black', fontSize: '100%' }}>{wishCard.time}</p>
-                                <p style={{ paddingTop:'10%',color: 'rgb(93, 186, 199)', fontSize: '120%',  }}>{wishCard.wish}</p>
-                            </div>
-                        }
+                <Meta style={{ fontWeight: 'bold', overflow: 'hidden' }}
+                            title={
+                                <span style={{ color: 'blue', fontWeight: 'bold' }}>
+                                    {wishCard.name} #{wishCard.cardNumber}
+                                </span>
+                            }
+
+                            description={
+                                <div>
+                                    <p style={{ color: 'black', fontSize: '100%' }}>{wishCard.time}</p>
+                                    <p style={{ paddingTop: '10%', color: 'rgb(93, 186, 199)', fontSize: '120%' }}>{wishCard.wish}</p>
+                                </div>
+                            }
                         />
-                    </Card>
+                </Card>
                 </div>
+            </div>
             
                 <Modal open={isModalVisible} footer={null} onCancel={handleCancel}>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', width: '100%', padding: '10%' }}>
