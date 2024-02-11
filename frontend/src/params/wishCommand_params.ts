@@ -48,6 +48,12 @@ export const STICKER_6 = getImagePath('2.png');
 export const STICKER_7 = getImagePath('3.png');
 export const STICKER_8 = getImagePath('4.png');
 
+// Radio Group Params
+export const RADIO_TITLE_1 = 'เลือก Sticker การ์ด 1'
+export const RADIO_TITLE_2 = 'เลือก Sticker การ์ด 2'
+export const RADIO_TITLE_3 = 'เลือกสีกรอบการ์ด'
+export const DEMO_TITLE = 'ตัวอย่างการ์ดอวยพร:'
+
 
 // view all wishcard params
 export const VIEW_ALL_WISHCARD_PATH = '/view-all-wishcard';
@@ -58,3 +64,11 @@ export const SEARCH_WISHCARD_PATH = '/search-wishcard';
 export const SEARCH_WISHCARD_BUTTON_NAME = 'ค้นหาคำอวยพร'
 export const SEARCH_WISHCARD_MODAL_TITLE = 'ค้นหาคำอวยพร'
 export const SEARCH_WISHCARD_MODAL_NAME = 'กรุณากรอกชื่อที่ใช้ใน wish card'
+
+// Alert params
+export const CREATE_WISHCARD_SUCCESS_ALERT = 'ส่งคำอวยพรสำเร็จ!'
+export const CREATE_WISHCARD_SUCCESS_DESC = ' จะทำการรีเฟรชหน้าเว็บในอีก'
+export const COUNT_DOWN_REFRESH_SEC = 5
+
+export const CREATE_WISHCARD_NAME_WARNING = 'ส่งคำอวยพรไม่สำเร็จ!!!'
+export const CREATE_WISHCARD_NAME_WARNING_DESC = 'ชื่อ หรือ คำอวยพร ไม่ถูกต้อง กรุณากรอกใหม่อีกครั้ง'

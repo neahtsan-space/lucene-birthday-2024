@@ -21,4 +21,11 @@ type IWishCardFront = {
     __v: number;
 };
 
-export type { IWishCardDB, IWishCardFront }
+type IWishCardPost = {
+    name: string;
+    wish: string;
+    picture: string;
+    borderColor: string;
+};
+
+export type { IWishCardDB, IWishCardFront, IWishCardPost }

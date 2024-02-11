@@ -1,4 +1,4 @@
-import { IWishCardDB } from '@/interfaces/IWishcard';
+import { IWishCardDB, IWishCardPost } from '@/interfaces/IWishcard';
 import *  as API_PATH from '@/params/api_params'; 
 
 async function GetWishData(): Promise<IWishCardDB[]> {
@@ -14,7 +14,7 @@ async function GetLastestFourWish(): Promise<IWishCardDB[]> {
 }
 
 
-async function CreateWishCard(data: IWishCardDB): Promise<IWishCardDB> {
+async function CreateWishCard(data: IWishCardPost): Promise<IWishCardPost> {
     const response = await fetch(API_PATH.POST_WISH, {
         method: 'POST',
         headers: {
@@ -22,7 +22,7 @@ async function CreateWishCard(data: IWishCardDB): Promise<IWishCardDB> {
         },
         body: JSON.stringify(data),
     });
-    const createdData: IWishCardDB = await response.json();
+    const createdData: IWishCardPost = await response.json();
     return createdData;
 }
 

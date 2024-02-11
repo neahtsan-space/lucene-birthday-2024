@@ -1,6 +1,15 @@
 // Assuming we have 4 top-left sticker and 4 bottom-right sticker
 // We keep sticker choice as a string 1-16 in database
 import { 
+    STICKER_1_NAME,
+    STICKER_2_NAME,
+    STICKER_3_NAME,
+    STICKER_4_NAME,
+    STICKER_5_NAME,
+    STICKER_6_NAME,
+    STICKER_7_NAME,
+    STICKER_8_NAME } from '@/params/wishCommand_params';
+import { 
     STICKER_1,
     STICKER_2,
     STICKER_3,
@@ -60,41 +69,28 @@ const mapDbToFront = (allWishes: IWishCardDB[]): IWishCardFront[] => {
     });
 };
 
-function stickerToPicture(sticker_choice: string[]) {
-    if (JSON.stringify(sticker_choice) === JSON.stringify([STICKER_1, STICKER_5])) {
-        return '1';
-    } else if (JSON.stringify(sticker_choice) === JSON.stringify([STICKER_1, STICKER_6])) {
-        return '2';
-    } else if (JSON.stringify(sticker_choice) === JSON.stringify([STICKER_1, STICKER_7])) {
-        return '3';
-    } else if (JSON.stringify(sticker_choice) === JSON.stringify([STICKER_1, STICKER_8])) {
-        return '4';
-    } else if (JSON.stringify(sticker_choice) === JSON.stringify([STICKER_2, STICKER_5])) {
-        return '5';
-    } else if (JSON.stringify(sticker_choice) === JSON.stringify([STICKER_2, STICKER_6])) {
-        return '6';
-    } else if (JSON.stringify(sticker_choice) === JSON.stringify([STICKER_2, STICKER_7])) {
-        return '7';
-    } else if (JSON.stringify(sticker_choice) === JSON.stringify([STICKER_2, STICKER_8])) {
-        return '8';
-    } else if (JSON.stringify(sticker_choice) === JSON.stringify([STICKER_3, STICKER_5])) {
-        return '9';
-    } else if (JSON.stringify(sticker_choice) === JSON.stringify([STICKER_3, STICKER_6])) {
-        return '10';
-    } else if (JSON.stringify(sticker_choice) === JSON.stringify([STICKER_3, STICKER_7])) {
-        return '11';
-    } else if (JSON.stringify(sticker_choice) === JSON.stringify([STICKER_3, STICKER_8])) {
-        return '12';
-    } else if (JSON.stringify(sticker_choice) === JSON.stringify([STICKER_4, STICKER_5])) {
-        return '13';
-    } else if (JSON.stringify(sticker_choice) === JSON.stringify([STICKER_4, STICKER_6])) {
-        return '14';
-    } else if (JSON.stringify(sticker_choice) === JSON.stringify([STICKER_4, STICKER_7])) {
-        return '15';
-    } else if (JSON.stringify(sticker_choice) === JSON.stringify([STICKER_4, STICKER_8])) {
-        return '16';    
-    }
-}
-
+const STICKER_COMBINATIONS = {
+    [JSON.stringify([STICKER_1_NAME, STICKER_5_NAME])]: '1',
+    [JSON.stringify([STICKER_1_NAME, STICKER_6_NAME])]: '2',
+    [JSON.stringify([STICKER_1_NAME, STICKER_7_NAME])]: '3',
+    [JSON.stringify([STICKER_1_NAME, STICKER_8_NAME])]: '4',
+    [JSON.stringify([STICKER_2_NAME, STICKER_5_NAME])]: '5',
+    [JSON.stringify([STICKER_2_NAME, STICKER_6_NAME])]: '6',
+    [JSON.stringify([STICKER_2_NAME, STICKER_7_NAME])]: '7',
+    [JSON.stringify([STICKER_2_NAME, STICKER_8_NAME])]: '8',
+    [JSON.stringify([STICKER_3_NAME, STICKER_5_NAME])]: '9',
+    [JSON.stringify([STICKER_3_NAME, STICKER_6_NAME])]: '10',
+    [JSON.stringify([STICKER_3_NAME, STICKER_7_NAME])]: '11',
+    [JSON.stringify([STICKER_3_NAME, STICKER_8_NAME])]: '12',
+    [JSON.stringify([STICKER_4_NAME, STICKER_5_NAME])]: '13',
+    [JSON.stringify([STICKER_4_NAME, STICKER_6_NAME])]: '14',
+    [JSON.stringify([STICKER_4_NAME, STICKER_7_NAME])]: '15',
+    [JSON.stringify([STICKER_4_NAME, STICKER_8_NAME])]: '16'
+  };
+  
+  function stickerToPicture(sticker_choice: string[]): string | undefined {
+    return STICKER_COMBINATIONS[JSON.stringify(sticker_choice)];
+  }
+  
 
 export {pictureToSticker, stickerToPicture, mapDbToFront};

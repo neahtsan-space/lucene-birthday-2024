@@ -1,8 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button, Modal, Input, Radio, Card, Image } from 'antd';
 import { RadioChangeEvent } from 'antd/lib/radio';
 import * as WISHCONSTANT  from '@/params/wishCommand_params';
 import { WishCardDemo } from './card';
+import { IWishCardPost } from '@/interfaces/IWishcard';
+import { stickerToPicture } from './wishMapper';
+import { CreateWishCard } from '../../api/api';
+import { SuccessAlert, FailureAlert } from './alert';
 
 const { TextArea } = Input;
 
@@ -13,17 +17,17 @@ interface Option {
 }
 
 const first_options: Option[] = [
-    { value: WISHCONSTANT.STICKER_1_NAME, label: 'Option 1', image: WISHCONSTANT.STICKER_1 },
-    { value: WISHCONSTANT.STICKER_2_NAME, label: 'Option 2', image: WISHCONSTANT.STICKER_2 },
-    { value: WISHCONSTANT.STICKER_3_NAME, label: 'Option 3', image: WISHCONSTANT.STICKER_3 },
-    { value: WISHCONSTANT.STICKER_4_NAME, label: 'Option 4', image: WISHCONSTANT.STICKER_4 },
+    { value: WISHCONSTANT.STICKER_1_NAME, label: 'Sticker 1', image: WISHCONSTANT.STICKER_1 },
+    { value: WISHCONSTANT.STICKER_2_NAME, label: 'Sticker 2', image: WISHCONSTANT.STICKER_2 },
+    { value: WISHCONSTANT.STICKER_3_NAME, label: 'Sticker 3', image: WISHCONSTANT.STICKER_3 },
+    { value: WISHCONSTANT.STICKER_4_NAME, label: 'Sticker 4', image: WISHCONSTANT.STICKER_4 },
 ];
 
 const second_options: Option[] = [
-    { value: WISHCONSTANT.STICKER_5_NAME, label: 'Option 1', image: WISHCONSTANT.STICKER_5 },
-    { value: WISHCONSTANT.STICKER_6_NAME, label: 'Option 2', image: WISHCONSTANT.STICKER_6 },
-    { value: WISHCONSTANT.STICKER_7_NAME, label: 'Option 3', image: WISHCONSTANT.STICKER_7 },
-    { value: WISHCONSTANT.STICKER_8_NAME, label: 'Option 4', image: WISHCONSTANT.STICKER_8 },
+    { value: WISHCONSTANT.STICKER_5_NAME, label: 'Sticker 1', image: WISHCONSTANT.STICKER_5 },
+    { value: WISHCONSTANT.STICKER_6_NAME, label: 'Sticker 2', image: WISHCONSTANT.STICKER_6 },
+    { value: WISHCONSTANT.STICKER_7_NAME, label: 'Sticker 3', image: WISHCONSTANT.STICKER_7 },
+    { value: WISHCONSTANT.STICKER_8_NAME, label: 'Sticker 4', image: WISHCONSTANT.STICKER_8 },
 ];
 
 interface ColorOption {
@@ -33,10 +37,10 @@ interface ColorOption {
 }
 
 const third_options: ColorOption[] = [
-    { label: 'Option 1', color: WISHCONSTANT.COLOR_1 },
-    { label: 'Option 2', color: WISHCONSTANT.COLOR_2 },
-    { label: 'Option 3', color: WISHCONSTANT.COLOR_3 },
-    { label: 'Option 4', color: WISHCONSTANT.COLOR_4 },
+    { label: 'Color 1', color: WISHCONSTANT.COLOR_1 },
+    { label: 'Color 2', color: WISHCONSTANT.COLOR_2 },
+    { label: 'Color 3', color: WISHCONSTANT.COLOR_3 },
+    { label: 'Color 4', color: WISHCONSTANT.COLOR_4 },
 ];
 
 interface IMapInputToImage {
@@ -61,12 +65,37 @@ const imageChoiceToPathMap = MapInputToImage.reduce((acc, cur) => {
 }, {} as { [key: string]: string });
 
 const CreateWishCardButton: React.FC = () => {
+
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [nameInputValue, setNameInputValue] = useState('');
     const [wishInputValue, setWishInputValue] = useState('');
     const [selectedFirstOption, setSelectedFirstOption] = useState(first_options[0].value);
     const [selectedSecondOption, setSelectedSecondOption] = useState(second_options[0].value);
     const [selectedThirdOption, setSelectedThirdOption] = useState(third_options[0].color);
+    const [countdown, setCountdown] = useState(5);
+    const [isSuccessAlertModalVisible, setIsSuccessAlertModalVisible] = useState(false);
+    const [isFailureAlertModalVisible, setIsFailureAlertModalVisible] = useState(false);
+    const [alertParams, setAlertParams] = useState({
+        SuccessTitle: '',
+        SuccessMessage: '',
+        AlertStyle: {}
+    });
+    const [errorParams, setErrorParams] = useState({
+        FailureTitle: '',
+        FailureMessage: '',
+        AlertStyle: {}
+    });
+
+    useEffect(() => {
+        let timer: NodeJS.Timeout;
+        if (isSuccessAlertModalVisible && countdown > 0) {
+            timer = setTimeout(() => setCountdown(countdown - 1), 1000);
+        } else if (countdown === 0) {
+            setIsSuccessAlertModalVisible(false);
+            window.location.reload();
+        }
+        return () => clearTimeout(timer);
+    }, [isSuccessAlertModalVisible, countdown]);
 
     const getImagePathForOption = (optionValue: string): string => {
         return imageChoiceToPathMap[optionValue] || ''}
@@ -76,15 +105,43 @@ const CreateWishCardButton: React.FC = () => {
     };
 
     const handleOk = () => {
+
+        if (nameInputValue === '' || wishInputValue === '') {
+            setErrorParams({
+                FailureTitle: WISHCONSTANT.CREATE_WISHCARD_NAME_WARNING,
+                FailureMessage: WISHCONSTANT.CREATE_WISHCARD_NAME_WARNING_DESC,
+                AlertStyle: {backgroundColor: 'white', color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center'}
+            });
+            setIsFailureAlertModalVisible(true);
+            return;
+        }
+
+
         setIsModalVisible(false);
-        console.log("Name Input Value:", nameInputValue);
-        console.log("Wish Input Value:", wishInputValue);
-        console.log("Selected Option:", selectedFirstOption);
-        console.log("Selected Option:", selectedSecondOption);
-        console.log("Selected Option:", selectedThirdOption);
-        console.log("Selected Option:", getImagePathForOption(selectedFirstOption));
-        console.log("Selected Option:", getImagePathForOption(selectedSecondOption));
-        // Here you can handle the submission or processing of input data
+
+        const wishCardObject: IWishCardPost = {
+            name: nameInputValue,
+            wish: wishInputValue,
+            picture: stickerToPicture([selectedFirstOption, selectedSecondOption]) || '',
+            borderColor: selectedThirdOption,
+        }
+
+        CreateWishCard(wishCardObject).then((response) => {
+            setAlertParams({
+                SuccessTitle: WISHCONSTANT.CREATE_WISHCARD_SUCCESS_ALERT, 
+                SuccessMessage: WISHCONSTANT.CREATE_WISHCARD_SUCCESS_DESC,
+                AlertStyle: {backgroundColor: 'white', color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center'}
+            });
+            setIsSuccessAlertModalVisible(true);
+            setCountdown(WISHCONSTANT.COUNT_DOWN_REFRESH_SEC);
+
+            setTimeout(() => {
+                setIsSuccessAlertModalVisible(false);
+                window.location.reload();
+            }, 5000);
+        }).catch((error) => {
+            console.log("Error:", error);
+        });
     };
 
     const handleCancel = () => {
@@ -123,14 +180,14 @@ const CreateWishCardButton: React.FC = () => {
                     onChange={e => setWishInputValue(e.target.value)}
                     autoSize={{ minRows: 2, maxRows: 6 }} // Adjust rows as needed
                 />
-                <p>Test 1</p>
+                <p>{WISHCONSTANT.RADIO_TITLE_1}</p>
                 <Radio.Group onChange={handleFirstChange} value={selectedFirstOption} style={{ width: '100%' }}>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
                         {first_options.map((option) => (
                             <Radio value={option.value} key={option.value} style={{ flex: '1 1 calc(50% - 16px)' }}>
                                 <Card
                                     hoverable
-                                    cover={<Image alt={option.label} src={option.image} width={40} height={40} />}
+                                    cover={<Image alt={option.label} src={option.image} width={40} height={40}  />}
                                     style={{ width: '100%' }}
                                 >
                                     {option.label}
@@ -141,7 +198,7 @@ const CreateWishCardButton: React.FC = () => {
                 </Radio.Group>
                 {selectedFirstOption && (
                     <>
-                        <p>Test 2</p>
+                        <p>{WISHCONSTANT.RADIO_TITLE_2}</p>
                         <Radio.Group onChange={handleSecondChange} value={selectedSecondOption} style={{ width: '100%' }}>
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
                                 {second_options.map((option) => (
@@ -157,16 +214,15 @@ const CreateWishCardButton: React.FC = () => {
                                 ))}
                             </div>
                         </Radio.Group>
-                        <p>Test 3</p>
+                        <p>{WISHCONSTANT.RADIO_TITLE_3}</p>
                         <Radio.Group onChange={handleThirdChange} value={selectedThirdOption} style={{ width: '100%' }}>
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
                                 {third_options.map((option) => (
                                     <Radio value={option.color} key={option.color} style={{ flex: '1 1 calc(50% - 16px)' }}>
                                         <Card
                                             hoverable
-                                            style={{ width: '100%', backgroundColor: option.color}}
+                                            style={{ width: '150px', height: '200px', backgroundColor: option.color}}
                                         >
-                                            {option.label}
                                         </Card>
                                     </Radio>
                                 ))}
@@ -174,7 +230,7 @@ const CreateWishCardButton: React.FC = () => {
                         </Radio.Group>
                     </>
                 )}
-                <p>Selected Options Preview:</p>
+                <p>{WISHCONSTANT.DEMO_TITLE}</p>
                 <div>
                     <WishCardDemo wishCard={{ 
                         name: nameInputValue, 
@@ -187,6 +243,32 @@ const CreateWishCardButton: React.FC = () => {
                         time: '',
                         cardNumber: 0 }} />
                 </div>
+            </Modal>
+            <Modal
+                title="Success"
+                open={isSuccessAlertModalVisible}
+                onCancel={() => setIsSuccessAlertModalVisible(false)}
+                footer={null}
+            >
+                <SuccessAlert 
+                    SuccessTitle={alertParams.SuccessTitle}
+                    SuccessMessage={`${WISHCONSTANT.CREATE_WISHCARD_SUCCESS_DESC} ${countdown} วินาที`}
+                    AlertStyle={alertParams.AlertStyle}
+                />
+            </Modal>
+            <Modal>
+            </Modal>
+            <Modal
+                title="Error"
+                open={isFailureAlertModalVisible}
+                onCancel={() => setIsFailureAlertModalVisible(false)}
+                footer={null}
+            >
+                <FailureAlert 
+                    FailureTitle={errorParams.FailureTitle}
+                    FailureMessage={`${WISHCONSTANT.CREATE_WISHCARD_NAME_WARNING_DESC}`}
+                    AlertStyle={errorParams.AlertStyle}
+                />
             </Modal>
         </>
     );
