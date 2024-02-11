@@ -39,12 +39,12 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
         <div>
             <div style={{ position: "relative", margin: "40px", width: "300px" }} onClick={showModal}>
                 <div style={{ position: "relative", zIndex: 0 }}>
-                <div style={{ position: "absolute", top: "-5vh", left: "-5vh", zIndex: 1, transform: 'rotate(-30deg)' }}>
-                    <Image src={mappedWishCard?.stickerUP ?? ''} width={100} height={100} alt='' />
-                </div>
-                <div style={{ position: "absolute", bottom: "-5vh", right: "-5vh", zIndex: 1, transform: 'rotate(15deg)' }}>
-                    <Image src={mappedWishCard?.stickerDOWN ?? ''} width={100} height={100} alt='' />
-                </div>
+                    <div style={{ position: "absolute", top: -40, left: -40, zIndex: 1, transform: 'rotate(-30deg)' }}>
+                        <Image src={mappedWishCard?.stickerUP ?? ''} width={100} height={100} alt='' />
+                    </div>
+                    <div style={{ position: "absolute", bottom: -40, right: -40, zIndex: 1, transform: 'rotate(15deg)' }}>
+                        <Image src={mappedWishCard?.stickerDOWN ?? ''} width={100} height={100} alt='' />
+                    </div>
                 <Card className='card2'
                         hoverable
                         style={{
@@ -83,11 +83,11 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
                     <Button style={{marginRight:'15%'}}onClick={() => navigateWish('prev')} className='modal-icon-top' icon={<LeftOutlined />} />
                         <div style={{ width: '80%', textAlign: 'center' }}>
                         <div style={{ position: "relative" }} onClick={showModal}>
-                        <div style={{ position: "absolute", bottom: "45vh", right: "-22vh", zIndex: 1, transform: 'rotate(-30deg)' }}>
-                    <div style={{ width: '50vw', height: '50vh' }}><Image src={currentWish?.stickerUP ?? ''} width={300} height={300} alt='' /></div>
+                        <div style={{ position: "absolute", top: -150, left: -150, zIndex: 1, transform: 'rotate(-30deg)' }}>
+                    <Image src={currentWish?.stickerUP ?? ''} width={300} height={300} alt='' />
                         </div>
-                        <div style={{ position: "absolute", bottom: "-34vh", right: "-52vh", zIndex: 1, transform: 'rotate(15deg)' }}>
-                    <div style={{ width: '50vw', height: '50vh' }}><Image src={currentWish?.stickerDOWN ?? ''} width={300} height={300} alt='' /></div>
+                        <div style={{ position: "absolute", bottom: -170, right: -200, zIndex: 1, transform: 'rotate(15deg)' }}>
+                    <Image src={currentWish?.stickerDOWN ?? ''} width={400} height={400} alt='' />
                         </div>
                     <Card className='card' hoverable style={{
                         height:'750px',
