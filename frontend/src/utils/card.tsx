@@ -38,13 +38,13 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
     return (
             <div>
                 <div style={{ position: "relative", margin: "40px", width: "300px" }} onClick={showModal}>
-                    <div style={{ position: "absolute", top: -40, left: -40, zIndex: 1 }}>
+                    <div style={{ position: "absolute", top: -40, left: -40, zIndex: 1 , transform: 'rotate(-30deg)'}}>
                         <Image src={mappedWishCard?.stickerUP ?? ''} width={100} height={100} alt='' />
                     </div>
-                    <div style={{ position: "absolute", bottom: -40, right: -40, zIndex: 1 }}>
+                    <div style={{ position: "absolute", bottom: -40, right: -40, zIndex: 1 , transform: 'rotate(15deg)'}}>
                         <Image src={mappedWishCard?.stickerDOWN ?? ''} width={100} height={100} alt='' />
                     </div>
-                    <Card
+                    <Card className='card2'
                         hoverable
                         style={{
                         height: 500,
@@ -56,48 +56,48 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
                         zIndex: 0, // Ensure Card is under the images.
                         }}
                     >
-                        <Meta
+                        <Meta style={{}}
                         title={`${wishCard.name} #${wishCard.cardNumber}`}
                         description={
                             <div>
-                            <p>{wishCard.time}</p>
-                            <p>{wishCard.wish}</p>
+                            <p style={{color: 'black'}}>{wishCard.time}</p>
+                            <p style={{color: 'rgb(93, 186, 199)'}}>{wishCard.wish}</p>
                             </div>
                         }
                         />
                     </Card>
                 </div>
             
-                <Modal className='modalStyle' open={isModalVisible} footer={null} onCancel={handleCancel} style={{display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '6%'}}>
-                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+                <Modal className='modalStyle' open={isModalVisible} footer={null} onCancel={handleCancel }>
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%'}}>
                         <Button onClick={() => navigateWish('prev')} className='modal-icon-top' icon={<LeftOutlined />}></Button>
                         
                         <div style={{ margin: "0 20px" }}> {/* This container ensures the card doesn't touch the buttons */}
                             <div style={{ position: "relative", width: "300px" }} onClick={showModal}>
-                                <div style={{ position: "absolute", top: -40, left: -40, zIndex: 1 }}>
-                                    <Image src={mappedWishCard?.stickerUP ?? ''} width={100} height={100} alt='' />
+                                <div style={{ position: "absolute", top: -90, left: -90, zIndex: 1, transform: 'rotate(-30deg)'}}>
+                                    <Image src={mappedWishCard?.stickerUP ?? ''} width={200} height={200} alt='' />
                                 </div>
-                                <div style={{ position: "absolute", bottom: -40, right: -40, zIndex: 1 }}>
-                                    <Image src={mappedWishCard?.stickerDOWN ?? ''} width={100} height={100} alt='' />
+                                <div style={{ position: "absolute", bottom: -90, right: -90, zIndex: 1 ,transform: 'rotate(15deg)'}}>
+                                    <Image src={mappedWishCard?.stickerDOWN ?? ''} width={200} height={200} alt='' />
                                 </div>
-                                <Card
+                                <Card className='card'
                                     hoverable
                                     style={{
                                         height: 500,
                                         width: 300,
                                         overflow: "visible",
-                                        borderColor: currentWish.borderColor,
+                                        borderColor: wishCard.borderColor,
                                         borderWidth: 20,
                                         position: "relative", // Ensure Card is positioned relative to its new container.
                                         zIndex: 0, // Ensure Card is under the images.
                                     }}
                                 >
-                                    <Meta
-                                        title={`${currentWish.name} #${currentWish.cardNumber}`}
+                                    <Meta style={{fontWeight: 'bold'}}
+                                        title ={`${currentWish.name} #${currentWish.cardNumber}`}
                                         description={
                                             <div>
-                                                <p>{currentWish.time}</p>
-                                                <p>{currentWish.wish}</p>
+                                                <p style={{color: 'black'}}>{wishCard.time}</p>
+                                                <p style={{color: 'rgb(93, 186, 199)'}}>{wishCard.wish}</p>
                                             </div>
                                         }
                                     />
