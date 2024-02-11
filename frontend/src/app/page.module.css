@@ -21,8 +21,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ccc; /* Example background color */
-  border: 1px solid #000; /* Optional: adds a border between the boxes */
 }
 
 
@@ -32,7 +30,6 @@
   align-items: center;
   justify-content: center;
   background-color: #ddd; /* Slightly different color to distinguish */
-  border: 1px solid #000; /* Optional */
 }
 
 .text  {

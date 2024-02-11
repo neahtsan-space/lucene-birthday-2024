@@ -3,13 +3,7 @@ import { Carousel, Button } from 'antd';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import Image from 'next/image';
 import '@/css/carousel.css';
-import { 
-  DASHBOARD_IMG_1, DASHBOARD_IMG_1_DESC,
-  DASHBOARD_IMG_2, DASHBOARD_IMG_2_DESC,
-  DASHBOARD_IMG_3, DASHBOARD_IMG_3_DESC,
-  DASHBOARD_IMG_4, DASHBOARD_IMG_4_DESC,
-  DASHBOARD_IMG_5, DASHBOARD_IMG_5_DESC,
-} from '@/params/dashboard_param';
+import { dashboardImages } from '@/params/dashboard_param';
 
 
 
@@ -18,13 +12,6 @@ import {
 const DashboardCarousel: React.FC = () => {
 
   const [currentDescription, setCurrentDescription] = useState('');
-
-  const images = [
-    { src: DASHBOARD_IMG_1, alt: "Image 1", description: DASHBOARD_IMG_1_DESC },
-    { src: DASHBOARD_IMG_2, alt: "Image 2", description: DASHBOARD_IMG_2_DESC },
-    { src: DASHBOARD_IMG_5, alt: "Image 3", description: DASHBOARD_IMG_3_DESC },
-    { src: DASHBOARD_IMG_4, alt: "Image 4", description: DASHBOARD_IMG_4_DESC },
-  ];
 
   const carouselRef = useRef<any>(null);
 
@@ -40,11 +27,11 @@ const DashboardCarousel: React.FC = () => {
   };
 
   useState(() => {
-    setCurrentDescription(images[0].description);
+    setCurrentDescription(dashboardImages[0].description);
   });
 
   const handleAfterChange = (currentSlide: number) => {
-    setCurrentDescription(images[currentSlide].description);
+    setCurrentDescription(dashboardImages[currentSlide].description);
   };
   
   const imageStyle: React.CSSProperties = {
@@ -62,7 +49,7 @@ const DashboardCarousel: React.FC = () => {
   return (
     <div>
       <Carousel autoplay ref={carouselRef} afterChange={handleAfterChange} className="carousel">
-        {images.map((image, index) => (
+        {dashboardImages.map((image, index) => (
           <div key={index} className="carousel-container" style={imageStyle}>
             <Image src={image.src} alt={image.alt} width={0} height={0} sizes="100vw" style={imageStyle}/>
           </div>

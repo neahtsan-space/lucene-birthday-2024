@@ -6,6 +6,7 @@ import WishCommand from '@/components/wishcommand';
 import RecentWish from '@/components/recentWish';
 import Footer from '../components/footer';
 import styles from './page.module.css';
+import { WISHCOMMAND_BG } from '@/params/background_params';
 
 
 const Home: React.FC = () => {
@@ -16,11 +17,9 @@ const Home: React.FC = () => {
         <Link href="/view-all-wishcard" />
         <div className={styles.topRow}>
           <div className={styles.dashboardContainer}>
-            <Suspense fallback={<div>Loading...</div>}>
-              <DashBoard />
-            </Suspense>
+            <DashBoard />
           </div>
-          <div className={styles.box2}>
+          <div className={styles.box2} style={{backgroundColor: WISHCOMMAND_BG}}>
             <div className={styles.box2Title}>
               <WishCommand />
             </div>
