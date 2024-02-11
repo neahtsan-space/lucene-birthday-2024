@@ -15,7 +15,7 @@ const CardTable: React.FC<CardTableProps> = ({ data }) => {
   // Adjusted flexbox grid layout for cards
   return (
     <div className="card-grid" style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', justifyContent: 'space-between', margin: '-16px', padding:'3%',
-      backgroundImage: 'url(lc_bg2.jpg)', backgroundSize: 'contain',backgroundRepeat: 'repeat',}}>
+      backgroundImage: 'url(lc_bg2.jpg)', backgroundSize: 'contain',backgroundPositionX:'center',backgroundPositionY:'center',backgroundRepeat: 'repeat'}}>
       {data.map((wishCard: IWishCardDB, index: number) => (
         <div key={index} style={{ flex: '1 1 calc(25% - 32px)', maxWidth: 'calc(25% - 32px)' }}> {/* Adjust the card container */}
           <WishCardTemplate wishCard={wishCard} allWishes={data} currentIndex={index} />

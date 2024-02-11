@@ -19,7 +19,8 @@ const RecentWish: React.FC = () => {
   }, []);
 
   return (
-    <div className="recent-wish-container">
+    <div className="recent-wish-container" 
+    style={{backgroundImage: 'url(lc_bg3.jpg)', backgroundSize: 'cover',backgroundPositionX:'center',backgroundPositionY:'center',backgroundRepeat: 'no-repeat',}}>
       <div className="wish-card">
       {wishData.map((wish, index) => (
           <WishCardTemplate key={index} wishCard={wish} allWishes={wishData} currentIndex={index} />

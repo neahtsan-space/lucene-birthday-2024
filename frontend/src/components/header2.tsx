@@ -11,7 +11,7 @@ const Header2: React.FC = () => {
           <div className="text-container2 ">
             <span className="header-title2 ">
               {HeaderParams.go_back_title}<br />
-              {HeaderParams.go_back_desc}
+              
             </span>
           </div>
         </a>
@@ -25,3 +25,5 @@ const Header2: React.FC = () => {
   };
   
   export default Header2;
+
+/*{HeaderParams.go_back_desc}*/
