@@ -4,7 +4,7 @@ import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import Image from 'next/image';
 import '@/css/carousel.css';
 import { dashboardImages, DASHBOARD_TITLE } from '@/params/dashboard_param';
-import { DASHBOARD_BG, DASHBOARD_DESC_BG } from '@/params/background_params';
+import { DASHBOARD_BG, DASHBOARD_DESC_BG, DASHBOARD_TITLE_BG } from '@/params/background_params';
 
 
 
@@ -50,7 +50,7 @@ const DashboardCarousel: React.FC = () => {
 
   return (
     <div style={{backgroundColor: DASHBOARD_BG}}>
-      <div className="carousel-description" style={{backgroundColor: DASHBOARD_DESC_BG}}>{DASHBOARD_TITLE}</div>
+      <div className="carousel-description" style={{backgroundColor: DASHBOARD_TITLE_BG}}>{DASHBOARD_TITLE}</div>
       <Carousel autoplay ref={carouselRef} afterChange={handleAfterChange} className="carousel">
         {dashboardImages.map((image, index) => (
           <div key={index} className="carousel-container" style={imageStyle}>
