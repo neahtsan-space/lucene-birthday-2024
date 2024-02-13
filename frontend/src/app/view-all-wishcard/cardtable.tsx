@@ -9,16 +9,26 @@ interface CardTableProps {
 }
 
 const CardTable: React.FC<CardTableProps> = ({ data }) => {
-  if (!data || data.length === 0) {
-    return <div>No wish cards available.</div>;
-  }
 
-  // Adjusted flexbox grid layout for cards
   return (
-    <div className="card-grid" style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', justifyContent: 'space-between', margin: '-16px', padding:'3%',
-      backgroundColor: VIEWALLWISH_BG}}>
+    <div className="card-grid" style={{
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: '16px',
+      justifyContent: 'flex-start', 
+      alignItems: 'flex-start', 
+      margin: '0 auto',
+      padding: '3%',
+      backgroundColor: VIEWALLWISH_BG,
+    }}>
       {data.map((wishCard: IWishCardDB, index: number) => (
-        <div key={index} style={{ flex: '1 1 calc(25% - 32px)', maxWidth: 'calc(25% - 32px)' }}> {/* Adjust the card container */}
+        <div key={index} style={{
+          flex: '1 1 calc(25% - 32px)', 
+          maxWidth: 'calc(25% - 32px)', 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'center',
+        }}>
           <WishCardTemplate wishCard={wishCard} allWishes={data} currentIndex={index} />
         </div>
       ))}
@@ -27,4 +37,3 @@ const CardTable: React.FC<CardTableProps> = ({ data }) => {
 };
 
 export default CardTable;
-
