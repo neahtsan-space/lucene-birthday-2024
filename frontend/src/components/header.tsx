@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import '@/css/header.css';
 import * as HeaderParams from '@/params/header_params';
 import { TextButton, PrimaryButton, DefaultButton, LinkButton } from '@/utils/button';
+import Image from 'next/image';
 
 
 const Header: React.FC = () => {
@@ -23,7 +24,7 @@ const Header: React.FC = () => {
         </div>
       </div>
       <div className='header-right-side'>
-      <button className='retract' onClick={toggleMenu}>X</button>
+      <div className='retract' onClick={toggleMenu}>X </div>
       <div className={`header-button ${isMenuOpen ? 'menu-open' : ''}`}>
         <div className='header-button-1'>{TextButton({buttonName: HeaderParams.button1_TH,url: HeaderParams.button1_URL})}</div>
         <div className='header-button-2'>{TextButton({buttonName: HeaderParams.button2_TH,url: HeaderParams.button2_URL})}</div>

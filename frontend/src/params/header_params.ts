@@ -44,3 +44,6 @@ export const go_back_title = 'กลับสู่หน้าแรก'
 export const go_back_desc= 'เพื่อกลับสู่หน้าแรก'
 
 export const dashing_text = 'คำอวยพรทั้งหมดอยู่ที่นี่แล้ว'
+
+export const imgname = ''
+export const imgsrc = '/icon.png'

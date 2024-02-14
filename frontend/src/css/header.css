@@ -25,7 +25,7 @@
   .retract {
     display: flex;
     visibility: visible;
-    height: 1%;
+    justify-content: center;
   }
 
   .header-left-side {
@@ -47,6 +47,7 @@
   }
   .header-right-side{
     display: flex;
+    flex-direction: column;
   }
   
   .header-button {
