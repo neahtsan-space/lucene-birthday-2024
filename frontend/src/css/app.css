@@ -1,3 +1,4 @@
+/*pc css*/
 @media screen and (min-width: 600px) {
 
 .app {
@@ -22,8 +23,14 @@
 }
 }
 
+/*mobile css*/
 @media (max-width: 600px) {
   .item {
     height: 25vh; /* Each item takes one-fourth of the container's height on mobile */
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; /* Adjust as needed */
   }
 }

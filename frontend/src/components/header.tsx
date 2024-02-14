@@ -6,8 +6,14 @@ import { TextButton, PrimaryButton, DefaultButton, LinkButton } from '@/utils/bu
 
 
 const Header: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <header className="header">
+    <header className={`header ${isMenuOpen ? 'menu-open' : ''}`}>
       <div className="header-left-side">
         <div className="text-container">
           <span className="header-title">
@@ -16,12 +22,15 @@ const Header: React.FC = () => {
           </span>
         </div>
       </div>
-      <div className="header-button">
+      <div className='header-right-side'>
+      <button className='retract' onClick={toggleMenu}>X</button>
+      <div className={`header-button ${isMenuOpen ? 'menu-open' : ''}`}>
         <div className='header-button-1'>{TextButton({buttonName: HeaderParams.button1_TH,url: HeaderParams.button1_URL})}</div>
         <div className='header-button-2'>{TextButton({buttonName: HeaderParams.button2_TH,url: HeaderParams.button2_URL})}</div>
         <div className='header-button-3'>{TextButton({buttonName: HeaderParams.button3_TH,url: HeaderParams.button3_URL})}</div>
         <div className='header-button-4'>{TextButton({buttonName: HeaderParams.button4_TH,url: HeaderParams.button4_URL})}</div>
         <div className='header-button-5'>{TextButton({buttonName: HeaderParams.button5_TH,url: HeaderParams.button5_URL})}</div>
+      </div>
       </div>
     </header>
   );

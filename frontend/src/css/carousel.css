@@ -9,11 +9,11 @@
 .carousel-container {
   display: block; /* Change display to block */
   text-align: center; /* Center align content */
-  width: 25%;
+  width: 100%;
 }
 
 .carousel-container > img {
-  max-width: 25%; /* Set max-width to ensure images are responsive */
+  max-width: 100%; /* Set max-width to ensure images are responsive */
   height: auto;
 }
 

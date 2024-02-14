@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: '50%';
+    width: 100%;
   }
 
 .footer {
@@ -17,17 +17,20 @@
   background-color: #333;
   color: white;
   text-align: center;
-  padding: 1px;
+  padding: 2px;
 }
 .footer-discord-name {
+  font-size: small;
   display: flex;
   font-weight:bold;
-
+  margin-left: 5px;
 }
 
 .footer-follow-talent {
-  padding-left: 3px;
+  padding-left: 2px;
+  padding-right: 2px;
   font-weight:bold;
+  font-size: small;
 
 }
 
@@ -35,7 +38,7 @@
   text-decoration: underline;
 }
   .textbox {
-  
+    margin: 2px;
 }
 
   .custom-img {
@@ -46,28 +49,7 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a shadow */
     margin-left: 2px;
     margin-right: 2px;
-    transition: transform 0.2s;
 }
-
-  .discord:hover .custom-img {
-    transform: scale(1.5); /* Increase the size on hover */
-    border: 2px solid #9c3af8; /* Add a border */
-}
-
-  .youtube:hover .custom-img {
-  transform: scale(1.5); /* Increase the size on hover */
-  border: 2px solid #9c3af8; /* Add a border */
-}
-  .x_twitter:hover .custom-img {
-    transform: scale(1.5); /* Increase the size on hover */
-    border: 2px solid #9c3af8; /* Add a border */
-  }
-
-  .facebook:hover .custom-img {
-  transform: scale(1.5); /* Increase the size on hover */
-  border: 2px solid #9c3af8; /* Add a border */
-  }
-
 }
 /*pc css*/
 @media (min-width: 600px){
@@ -95,13 +77,13 @@
 .footer-discord-name {
   display: flex;
   font-weight:bold;
-
+  font-size: medium;
 }
 
 .footer-follow-talent {
   padding-left: 30px;
   font-weight:bold;
-
+  font-size: medium;
 }
 
 .footer-name-underline{

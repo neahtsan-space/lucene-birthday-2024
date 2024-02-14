@@ -24,7 +24,7 @@ const DashboardCarousel: React.FC = () => {
 
   return (
     <div style={{backgroundColor: DASHBOARD_BG}}>
-      <div style={{ backgroundColor: DASHBOARD_TITLE_BG, display: 'flex', alignItems: 'center', justifyContent: 'center', height: '2.5vw' }}>{DASHBOARD_TITLE}</div>
+      <div className='dashboard-title' style={{ backgroundColor: DASHBOARD_TITLE_BG}}>{DASHBOARD_TITLE}</div>
       <Swiper
         thumbs={{ swiper: thumbsSwiper }}
         slidesPerView={1}
@@ -95,7 +95,7 @@ const DashboardCarousel: React.FC = () => {
           ))}
         </Swiper>
       </div>
-      <div style={{ backgroundColor: DASHBOARD_DESC_BG, display: 'flex', alignItems: 'center', justifyContent: 'center', height: '2.5vw' }}>
+      <div className='dashboard-description' style={{ backgroundColor: DASHBOARD_DESC_BG}}>
         {currentDescription}
       </div>
     </div>

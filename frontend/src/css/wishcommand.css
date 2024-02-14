@@ -1,0 +1,59 @@
+/*mobilecss*/
+@media screen and (max-width: 600px){
+.wish-command-container {
+    width: 100%;
+    margin-left: 25%;
+    margin-right: 20%;
+  }
+  
+  .wish-command-title {
+    width: 100%;
+    font-size: large;
+    padding: 5vh;
+    padding-bottom: 3vh;
+  }
+  
+  .wish-command-divider {
+    border-color: turquoise;
+    border-width: 0.3vw;
+    padding: 2vh;
+    margin: 10px 0;
+    padding-left: 5vh;
+  }
+  
+  .wish-command-button-container {
+    display: flex;
+    gap: 10%;
+    flex-direction: row;
+  }
+}
+
+/*pc css*/
+@media (min-width: 600px){
+    .wish-command-container {
+        width: 100%;
+        margin-left: 25%;
+        margin-right: 20%;
+      }
+      
+      .wish-command-title {
+        width: 100%;
+        font-size: 8vh;
+        padding: 5vh;
+        padding-bottom: 3vh;
+      }
+      
+      .wish-command-divider {
+        border-color: turquoise;
+        border-width: 0.3vw;
+        padding: 2vh;
+        margin: 10px 0;
+        padding-left: 5vh;
+      }
+      
+      .wish-command-button-container {
+        display: flex;
+        gap: 10%;
+        flex-direction: row;
+      }
+    }

@@ -1,11 +1,20 @@
 /*mobilecss*/
 @media screen and (max-width: 600px){
+  .menu-open .header-button {
+    visibility: hidden;
+    display: none;
+  }
+  .menu-open .header-right-side{
+    visibility: hidden;
+  }
+
   .header {
     position: static;
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 1px;
@@ -13,8 +22,15 @@
     transition: top 0.3s;
   }
   
+  .retract {
+    display: flex;
+    visibility: visible;
+    height: 1%;
+  }
+
   .header-left-side {
-    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
   }
   
   .text-container {
@@ -25,11 +41,16 @@
   }
   
   .header-title {
-    font-size: 14px;
+    font-size: 20px;
     line-height: 1.3;
+    padding: 2%;
+  }
+  .header-right-side{
+    display: flex;
   }
   
   .header-button {
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
@@ -64,6 +85,11 @@
 }
 /*pc css*/
 @media (min-width: 600px){
+
+.retract{
+  visibility: hidden;
+
+  }
 .header {
   position: static;
   display: flex;
@@ -74,9 +100,9 @@
   color: #fff;
 }
 
-.header-left-side {
+.header-right-side {
     display: flex;
-    align-items: center;
+    justify-content: flex-start;
 }
 
 .text-container {
@@ -98,8 +124,11 @@
     animation: headerglow 20s infinite
     ,colorChange 20s infinite
   }
-  
-  
+  .header-right-side {
+    display: flex;
+    align-items: right;
+    justify-content: flex-end;
+}
 .header-button {
     margin: 10px;
     text-decoration: none;

@@ -56,7 +56,7 @@
 }
 }
 
-@media screen and (min-width: 600px){
+@media (min-width: 600px){
 .header2 {
     position: static;
     display: flex;

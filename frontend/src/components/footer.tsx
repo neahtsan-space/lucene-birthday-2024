@@ -3,6 +3,7 @@ import '@/css/footer.css';
 import * as FooterParams from '@/params/footer_params';
 import Image from "next/image";
 
+
 const Footer: React.FC = () => {
   return (
     <footer>
