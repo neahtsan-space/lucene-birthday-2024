@@ -46,11 +46,12 @@ const DashboardCarousel: React.FC = () => {
       >
         {dashboardImages.map((image, index) => (
           <SwiperSlide key={index}>
-            <div style={{
+            <div className='carousel-picture'
+            style={{
               position: 'relative',
-              width: '50vw',
-              height: '25vw',
-              backgroundColor: DASHBOARD_BG
+              width: '100%',
+              backgroundColor: DASHBOARD_BG,
+              minWidth: '25vw',
             }}>
               <Image
                 src={image.src}

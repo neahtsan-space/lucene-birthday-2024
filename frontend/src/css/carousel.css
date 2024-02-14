@@ -104,3 +104,31 @@ line-height: 3;
   line-height: 3; 
   }
   
+  .carousel-picture {
+    height: 25vw;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .carousel-picture img {
+      width: 100vw !important;
+      height: 100vh !important;
+      object-fit: contain !important;
+    }
+  }
+  
+
+@media (max-width: 600px) {
+  .swiper-button-prev {
+    left: -20vw;
+    z-index: 10;
+  }
+  .swiper-button-next {
+    right: -20vw;
+    z-index: 10;
+  }
+}
+
+.mySwiper {
+  overflow: visible !important;
+}
+
