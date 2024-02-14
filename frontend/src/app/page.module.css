@@ -1,3 +1,45 @@
+
+/* For screens smaller than 600px (typical mobile devices) */
+@media only screen and (max-width: 600px) {
+  .flexContainer {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .topRow {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .dashboardContainer {
+    width: 100%; /* Occupy full width */
+    margin-bottom: 1px; /* Add some space between elements */
+    height: 100%;
+  }
+  
+  .box2Title{
+    width: 25%; /* Occupy full width */
+  }
+  
+  .fullWidthBox{
+    flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #ddd;
+  }
+
+  .buttoncontainer {
+    flex-direction: column; /* Stack buttons vertically */
+    width: 25%;
+  }
+  
+  .custom-button {
+    width: 25%; /* Adjust button width */
+    margin: 5px auto; /* Center buttons with some spacing */
+  }
+}
+
+@media only screen and (min-width: 600px){
 /* MergedBoxesFlex.module.css */
 .flexContainer {
   display: flex;
@@ -34,7 +76,6 @@
 
 
 .fullWidthBox {
-  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,4 +124,5 @@
 .body-link:hover .custom-button {
   transform: scale(2); /* Increase the size on hover */
   border: 2px solid #9c3af8; /* Add a border */
+}
 }

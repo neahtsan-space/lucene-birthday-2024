@@ -1,3 +1,5 @@
+@media screen and (min-width: 600px) {
+
 .app {
   width: 100vw;
   height: 100vh;
@@ -18,4 +20,10 @@
   border: 1px solid black;
   box-sizing: content-box;
 }
+}
 
+@media (max-width: 600px) {
+  .item {
+    height: 25vh; /* Each item takes one-fourth of the container's height on mobile */
+  }
+}

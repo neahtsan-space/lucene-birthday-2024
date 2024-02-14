@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '@/css/header.css';
 import * as HeaderParams from '@/params/header_params';
 import { TextButton, PrimaryButton, DefaultButton, LinkButton } from '@/utils/button';

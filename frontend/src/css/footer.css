@@ -1,3 +1,85 @@
+/*mobilecss*/
+@media screen and (max-width: 600px) {
+  .footer-text-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: '50%';
+  }
+
+.footer {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1px;
+}
+.footer-discord-name {
+  display: flex;
+  font-weight:bold;
+
+}
+
+.footer-follow-talent {
+  padding-left: 3px;
+  font-weight:bold;
+
+}
+
+.footer-name-underline{
+  text-decoration: underline;
+}
+  .textbox {
+  
+}
+
+  .custom-img {
+    width: 20px; 
+    height: 20px; /* Maintain aspect ratio */
+    border-radius: 50%; /* Round the corners */
+    border: 2px solid #ccc; /* Add a border */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a shadow */
+    margin-left: 2px;
+    margin-right: 2px;
+    transition: transform 0.2s;
+}
+
+  .discord:hover .custom-img {
+    transform: scale(1.5); /* Increase the size on hover */
+    border: 2px solid #9c3af8; /* Add a border */
+}
+
+  .youtube:hover .custom-img {
+  transform: scale(1.5); /* Increase the size on hover */
+  border: 2px solid #9c3af8; /* Add a border */
+}
+  .x_twitter:hover .custom-img {
+    transform: scale(1.5); /* Increase the size on hover */
+    border: 2px solid #9c3af8; /* Add a border */
+  }
+
+  .facebook:hover .custom-img {
+  transform: scale(1.5); /* Increase the size on hover */
+  border: 2px solid #9c3af8; /* Add a border */
+  }
+
+}
+/*pc css*/
+@media (min-width: 600px){
+
+
+  .footer-text-container {
+    display: flex;
+    align-items: center;
+    margin: -13px;
+    padding: -13px;
+}
+
 .footer {
   position: fixed;
   display: flex;
@@ -10,14 +92,6 @@
   text-align: center;
   padding: 20px;
 }
-  
-  .footer-text-container {
-    display: flex;
-    align-items: center;
-    margin: -13px;
-    padding: -13px;
-}
-
 .footer-discord-name {
   display: flex;
   font-weight:bold;
@@ -67,4 +141,4 @@
   border: 2px solid #9c3af8; /* Add a border */
   }
 
-
+}
