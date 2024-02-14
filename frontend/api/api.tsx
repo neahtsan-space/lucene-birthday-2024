@@ -1,3 +1,5 @@
+'use server';
+
 import { IWishCardDB, IWishCardPost } from '@/interfaces/IWishcard';
 import *  as API_PATH from '@/params/api_params'; 
 
