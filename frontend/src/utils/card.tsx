@@ -1,23 +1,17 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import Image from "next/legacy/image";
-import { IWishCardDB, IWishCardFront } from '@/interfaces/IWishcard';
-import { mapDbToFront } from './wishMapper';
-import { STICKER_1, STICKER_5, STICKER_7 } from '@/params/card_params';
+import { IWishCard } from '@/interfaces/IWishcard';
 import { Card, Modal, Button } from 'antd';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 
 const { Meta } = Card;
 
-const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[], currentIndex: number}> = ({wishCard, allWishes, currentIndex}) => {
+const WishCardTemplate: React.FC<{wishCard: IWishCard, allWishes: IWishCard[], currentIndex: number}> = ({wishCard, allWishes, currentIndex}) => {
 
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [currentWishIndex, setCurrentWishIndex] = useState(currentIndex);
 
-    const allWishesMap = mapDbToFront(allWishes);
-
-    const currentWish = allWishesMap[currentWishIndex];
-
-    const mappedWishCard = allWishesMap.find(item => item._id === wishCard._id);
+    const currentWish = allWishes[currentWishIndex];
 
     const showModal = () => {
         setIsModalVisible(true);
@@ -40,10 +34,10 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
             <div style={{ position: "relative", margin: "40px", width: "300px" }} onClick={showModal}>
                 <div style={{ position: "relative", zIndex: 0 }}>
                     <div style={{ position: "absolute", top: -40, left: -40, zIndex: 1, transform: 'rotate(-30deg)' }}>
-                        <Image src={mappedWishCard?.stickerUP ?? ''} width={100} height={100} alt='' />
+                        <Image src={wishCard?.stickerUp ?? ''} width={100} height={100} alt='' />
                     </div>
                     <div style={{ position: "absolute", bottom: -40, right: -40, zIndex: 1, transform: 'rotate(15deg)' }}>
-                        <Image src={mappedWishCard?.stickerDOWN ?? ''} width={100} height={100} alt='' />
+                        <Image src={wishCard?.stickerDown ?? ''} width={100} height={100} alt='' />
                     </div>
                 <Card className='card2'
                         hoverable
@@ -54,10 +48,9 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
                         textOverflow: 'ellipsis',
                         borderColor: wishCard.borderColor,
                         backgroundColor: 'white',
-                            /*backgroundImage: 'url(rrain.avif)', backgroundSize: 'auto',backgroundRepeat: 'repeat',backgroundColor: 'rgba(255, 255, 255, 0.1)',*/
                         borderWidth: 10,
-                        position: "relative", // Ensure Card is positioned relative to its new container.
-                        zIndex: 0, // Ensure Card is under the images.
+                        position: "relative",
+                        zIndex: 0, 
                         }}
                     >
                 <Meta style={{ fontWeight: 'bold', overflow: 'hidden' }}
@@ -84,10 +77,10 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
                         <div style={{ width: '80%', textAlign: 'center' }}>
                         <div style={{ position: "relative" }} onClick={showModal}>
                         <div style={{ position: "absolute", top: -150, left: -150, zIndex: 1, transform: 'rotate(-30deg)' }}>
-                    <Image src={currentWish?.stickerUP ?? ''} width={300} height={300} alt='' />
+                    <Image src={currentWish?.stickerUp ?? ''} width={300} height={300} alt='' />
                         </div>
                         <div style={{ position: "absolute", bottom: -170, right: -250, zIndex: 1, transform: 'rotate(15deg)' }}>
-                    <Image src={currentWish?.stickerDOWN ?? ''} width={400} height={400} alt='' />
+                    <Image src={currentWish?.stickerDown ?? ''} width={400} height={400} alt='' />
                         </div>
                     <Card className='card' hoverable style={{
                         height:'750px',
@@ -96,14 +89,10 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
                         borderColor: currentWish.borderColor,
                         borderWidth: 10,
                         padding: '1%',
-                        // backgroundImage: 'url(rrain.avif)',
-                        // backgroundSize: 'auto',
-                        // backgroundRepeat: 'repeat',
-                        // backgroundBlendMode: '',
                         backgroundColor: 'rgba(255, 255, 255, 1)',
-                        position: "relative", // Ensure Card is positioned relative to its new container.
-                        zIndex: 0, // Ensure Card is under the images.
-                        margin: '0 auto' // Center the card horizontally
+                        position: "relative",
+                        zIndex: 0,
+                        margin: '0 auto'
                     }}>
                     <Meta style={{ fontWeight: 'bold', overflow: 'hidden' }}
                         title={
@@ -128,14 +117,14 @@ const WishCardTemplate: React.FC<{wishCard: IWishCardDB, allWishes: IWishCardDB[
     );
     }
 
-const WishCardDemo: React.FC<{wishCard: IWishCardFront}> = ({wishCard}) => {
+const WishCardDemo: React.FC<{wishCard: IWishCard}> = ({wishCard}) => {
     return (
         <div style={{ position: "relative", margin: "40px", width: "300px" }}>
             <div style={{ position: "absolute", top: -40, left: -40, zIndex: 1 }}>
-                <Image src={wishCard.stickerUP} width={100} height={100} alt='' />
+                <Image src={wishCard.stickerUp} width={100} height={100} alt='' />
             </div>
             <div style={{ position: "absolute", bottom: -40, right: -40, zIndex: 1 }}>
-                <Image src={wishCard.stickerDOWN} width={100} height={100} alt='' />
+                <Image src={wishCard.stickerDown} width={100} height={100} alt='' />
             </div>
             <Card
                 hoverable
@@ -145,8 +134,8 @@ const WishCardDemo: React.FC<{wishCard: IWishCardFront}> = ({wishCard}) => {
                 overflow: "visible",
                 borderColor: wishCard.borderColor,
                 borderWidth: 20,
-                position: "relative", // Ensure Card is positioned relative to its new container.
-                zIndex: 0, // Ensure Card is under the images.
+                position: "relative",
+                zIndex: 0,
                 }}
             >
                 <Meta

@@ -1,12 +1,12 @@
 import React from 'react';
 import '@/css/header.css'; // Assuming this contains your CSS styles
 import { WishCardTemplate } from '@/utils/card';
-import { IWishCardDB } from '@/interfaces/IWishcard';
+import { IWishCard } from '@/interfaces/IWishcard';
 import { VIEWALLWISH_BG } from '@/params/background_params';
 import '../view-all-wishcard/cardtable.css';
 
 interface CardTableProps {
-  data: IWishCardDB[];
+  data: IWishCard[];
 }
 
 const CardTable: React.FC<CardTableProps> = ({ data }) => {
@@ -15,7 +15,7 @@ const CardTable: React.FC<CardTableProps> = ({ data }) => {
     <div className="card-grid" style={{
       backgroundColor: VIEWALLWISH_BG,
     }}>
-      {data.map((wishCard: IWishCardDB, index: number) => (
+      {data.map((wishCard: IWishCard, index: number) => (
         <div className="class-grid-item" key={index} style={{
         }}>
           <WishCardTemplate wishCard={wishCard} allWishes={data} currentIndex={index} />

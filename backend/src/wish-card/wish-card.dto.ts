@@ -2,7 +2,8 @@ export interface wishCardDto {
     name: string;
     wish: string;
     time: string;
-    picture: string;
+    stickerUp: string;
+    stickerDown: string;
     cardNumber: number;
     borderColor: string;
 }

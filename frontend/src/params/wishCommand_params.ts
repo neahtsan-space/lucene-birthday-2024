@@ -69,7 +69,7 @@ export const SEARCH_WISHCARD_MODAL_NAME = 'กรุณากรอกชื่�
 // Alert params
 export const CREATE_WISHCARD_SUCCESS_ALERT = 'ส่งคำอวยพรสำเร็จ!'
 export const CREATE_WISHCARD_SUCCESS_DESC = ' จะทำการรีเฟรชหน้าเว็บในอีก'
-export const COUNT_DOWN_REFRESH_SEC = 5
+export const COUNT_DOWN_REFRESH_SEC = 3
 
 export const CREATE_WISHCARD_NAME_WARNING = 'ส่งคำอวยพรไม่สำเร็จ!!!'
 export const CREATE_WISHCARD_NAME_WARNING_DESC = 'ชื่อ หรือ คำอวยพร ไม่ถูกต้อง กรุณากรอกใหม่อีกครั้ง'

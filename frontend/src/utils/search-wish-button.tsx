@@ -4,14 +4,14 @@ import * as WISHCONSTANT from '@/params/wishCommand_params';
 import { GetWishByName } from '../../api/api';
 import { FailureAlert } from './alert';
 import { WishCardDemo } from './card';
-import { IWishCardFront } from '@/interfaces/IWishcard';
-import { mapSingleDbToFront } from './wishMapper';
+import { IWishCard } from '@/interfaces/IWishcard';
+
 
 const SearchWishCardButton = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [nameInputValue, setNameInputValue] = useState('');
     const [isFailureAlertModalVisible, setIsFailureAlertModalVisible] = useState(false);
-    const [wishCardDetails, setWishCardDetails] = useState<IWishCardFront | null>(null);
+    const [wishCardDetails, setWishCardDetails] = useState<IWishCard | null>(null);
     const [errorParams, setErrorParams] = useState({
         FailureTitle: '',
         FailureMessage: '',
@@ -37,7 +37,7 @@ const SearchWishCardButton = () => {
         try {
             const res = await GetWishByName(nameInputValue);
             if (res !== null) {
-                const mappedWish = mapSingleDbToFront(res);
+                const mappedWish = res;
                 setWishCardDetails(mappedWish);
                 setIsModalVisible(false); 
             } else {

@@ -15,7 +15,10 @@ export class wishCard{
     time: string;
 
     @Prop()
-    picture: string;
+    stickerUp: string;
+
+    @Prop()
+    stickerDown: string;
 
     @Prop()
     cardNumber: number;

@@ -3,12 +3,12 @@ import React, { useEffect, useState } from 'react';
 import '@/css/recentWish.css';
 import { WishCardTemplate } from '@/utils/card';
 import { GetLastestFourWish } from '../../api/api';
-import { IWishCardDB } from '@/interfaces/IWishcard';
+import { IWishCard } from '@/interfaces/IWishcard';
 import * as BACKGROUND_COLOR from '@/params/background_params';
 
 const RecentWish: React.FC = () => {
 
-  const [wishData, setWishData] = useState<IWishCardDB[]>([]);
+  const [wishData, setWishData] = useState<IWishCard[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {

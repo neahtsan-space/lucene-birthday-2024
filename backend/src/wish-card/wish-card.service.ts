@@ -63,8 +63,11 @@ export class WishCardService {
 
     async createWishCard(wishCard: wishCardDto): Promise<wishCard> {
         //check if the picture and border color number is valid
-        if (parseInt(wishCard.picture) > 16){
-            throw new BadRequestException(`Invalid picture number, please choose a number between 1-16 / หมายเลขรูปภาพไม่ถูกต้อง โปรดเลือกหมายเลขระหว่าง 1-4 ครับ~, ${wishCard.picture}`)
+        if (parseInt(wishCard.stickerUp) > 4){
+            throw new BadRequestException(`Invalid stickerUp, ${wishCard.stickerUp}`)
+        }
+        if (parseInt(wishCard.stickerDown) > 4){
+            throw new BadRequestException(`Invalid stickerDown, , ${wishCard.stickerDown}`)
         }
         const searchDbResult = await this.checkNameExists(wishCard.name);
         if (searchDbResult){

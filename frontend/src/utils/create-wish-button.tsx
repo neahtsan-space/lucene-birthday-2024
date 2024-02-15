@@ -4,9 +4,9 @@ import { RadioChangeEvent } from 'antd/lib/radio';
 import * as WISHCONSTANT  from '@/params/wishCommand_params';
 import { WishCardDemo } from './card';
 import { IWishCardPost } from '@/interfaces/IWishcard';
-import { stickerToPicture } from './wishMapper';
 import { CreateWishCard } from '../../api/api';
 import { SuccessAlert, FailureAlert } from './alert';
+import { revalidatePath } from 'next/cache';
 
 const { TextArea } = Input;
 
@@ -122,7 +122,8 @@ const CreateWishCardButton: React.FC = () => {
         const wishCardObject: IWishCardPost = {
             name: nameInputValue,
             wish: wishInputValue,
-            picture: stickerToPicture([selectedFirstOption, selectedSecondOption]) || '',
+            stickerUp: getImagePathForOption(selectedFirstOption),
+            stickerDown: getImagePathForOption(selectedSecondOption),
             borderColor: selectedThirdOption,
         }
 
@@ -147,10 +148,9 @@ const CreateWishCardButton: React.FC = () => {
             setIsSuccessAlertModalVisible(true);
             setCountdown(WISHCONSTANT.COUNT_DOWN_REFRESH_SEC);
 
-            setTimeout(() => {
-                setIsSuccessAlertModalVisible(false);
-                window.location.reload();
-            }, 5000);
+            revalidatePath('/')
+            setIsSuccessAlertModalVisible(false);
+
         }).catch((error) => {
         });
     };
@@ -244,8 +244,8 @@ const CreateWishCardButton: React.FC = () => {
                     <WishCardDemo wishCard={{ 
                         name: nameInputValue, 
                         wish: wishInputValue, 
-                        stickerUP: getImagePathForOption(selectedFirstOption),
-                        stickerDOWN: getImagePathForOption(selectedSecondOption),
+                        stickerUp: getImagePathForOption(selectedFirstOption),
+                        stickerDown: getImagePathForOption(selectedSecondOption),
                         borderColor: selectedThirdOption,
                         __v: 0,
                         _id: '',
