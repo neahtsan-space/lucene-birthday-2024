@@ -3,11 +3,10 @@
 .card-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
-    justify-content: flex-start;
-    align-items: flex-start;
+    flex-direction: column;
+    align-content: space-around;
+    gap: 2px;
     margin: 0 auto;
-    padding: 3%;
   }
   
   .card-grid-item {
@@ -20,6 +19,7 @@
 }
 
 /*pc css*/
+@media (min-width: 600px){
 .card-grid {
     display: flex;
     flex-wrap: wrap;
@@ -37,3 +37,4 @@
     align-items: center;
     justify-content: center;
   }
+}

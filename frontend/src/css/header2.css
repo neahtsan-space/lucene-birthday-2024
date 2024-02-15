@@ -21,7 +21,6 @@
   align-items: center;
   max-width: 600px;
   padding: '2%';
-  margin-left: 20px;
 }
 
 .header-title2 {
@@ -54,6 +53,7 @@
   font-weight: bold;
   line-height: 1.5;
 }
+
 }
 
 @media (min-width: 600px){
@@ -113,7 +113,6 @@
     font-weight: bold;
     line-height: 1.5;
 }
-
 
 @keyframes slideLeft {
     0%, 100% {
