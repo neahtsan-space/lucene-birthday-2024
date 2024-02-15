@@ -1,16 +1,5 @@
-
-/* cardTable.css */
-
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .card {
-    flex: 1 0 25%; /* Each card occupies 25% width */
-    margin: 0 10px 20px 0; /* Add margin between cards */
-  }
-  
-  .card p {
-    color: #333;
-  }
+.view-all-wish {
+  width: auto;
+  height: auto;
+  min-height: 100vh;
+}
