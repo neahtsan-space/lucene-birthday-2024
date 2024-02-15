@@ -3,6 +3,7 @@ import { useState, useCallback, useEffect } from 'react';
 import Head from 'next/head';
 import '@/app/popcat/style.css';
 import Image from 'next/image';
+import Aud from './play';
 
 const PopCatApp: React.FC = () => {
   const [popcatSrc, setPopcatSrc] = useState<string>('/popcat/close.png');
@@ -53,6 +54,8 @@ const PopCatApp: React.FC = () => {
         >
           <Image src={popcatSrc} alt="Pop Cat" layout='fill' objectFit='contain' />
         </div>
+        <p><Aud></Aud>
+        </p>
         <p>Pop Count: {popCount}</p>
       </div>
     </>
