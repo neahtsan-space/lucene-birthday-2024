@@ -61,7 +61,7 @@ const SearchWishCardButton = () => {
             <Button type='default' size='large' onClick={showModal}>
                 {WISHCONSTANT.SEARCH_WISHCARD_BUTTON_NAME}
             </Button>
-            <Modal title={WISHCONSTANT.SEARCH_WISHCARD_MODAL_TITLE} open={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+            <Modal title={WISHCONSTANT.SEARCH_WISHCARD_MODAL_TITLE} open={isModalVisible} onOk={handleOk} onCancel={handleCancel} centered={true}>
                 <p>{WISHCONSTANT.SEARCH_WISHCARD_MODAL_NAME}</p>
                 <Input value={nameInputValue} onChange={(e) => setNameInputValue(e.target.value)} />
             </Modal>

@@ -81,15 +81,15 @@ const WishCardTemplate: React.FC<{wishCard: IWishCard, allWishes: IWishCard[], c
                 </div>
             </div>
             
-                <Modal open={isModalVisible} footer={null} onCancel={handleCancel}>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', width: '100%', padding: '10%' }}>
-                    <Button style={{marginRight:'15%'}}onClick={() => navigateWish('prev')} className='modal-icon-top' icon={<LeftOutlined />} />
+                <Modal open={isModalVisible} footer={null} onCancel={handleCancel} centered={true}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'row', padding: '2vw'}}>
+                    <Button classNames={{ icon: 'modal-icon-top' }} style={{marginRight: '2vw'}} onClick={() => navigateWish('prev')} className='modal-icon-top' icon={<LeftOutlined />} />
                         <div style={{ width: '80%', textAlign: 'center' }}>
                         <div style={{ position: "relative" }} onClick={showModal}>
                         <div style={{ position: "absolute", top: -150, left: -150, zIndex: 1, transform: 'rotate(-30deg)' }}>
                     <Image src={currentWish?.stickerUp ?? ''} width={300} height={300} alt='' />
                         </div>
-                        <div style={{ position: "absolute", bottom: -170, right: -250, zIndex: 1, transform: 'rotate(15deg)' }}>
+                        <div style={{ position: "absolute", bottom: -200, right: -200, zIndex: 1, transform: 'rotate(15deg)' }}>
                     <Image src={currentWish?.stickerDown ?? ''} width={400} height={400} alt='' />
                         </div>
                     <Card className='card' hoverable style={{
@@ -101,7 +101,6 @@ const WishCardTemplate: React.FC<{wishCard: IWishCard, allWishes: IWishCard[], c
                         backgroundColor: 'rgba(255, 255, 255, 1)',
                         position: "relative",
                         zIndex: 0,
-                        margin: '0 auto'
                     }}>
                     <Meta style={{ fontWeight: 'bold', overflow: 'hidden' }}
                         title={
@@ -119,7 +118,7 @@ const WishCardTemplate: React.FC<{wishCard: IWishCard, allWishes: IWishCard[], c
                     </Card>
                         </div>
                         </div>
-                    <Button style={{marginLeft:'25%'}} onClick={() => navigateWish('next')} icon={<RightOutlined />} />
+                    <Button classNames={{ icon: 'modal-icon-bottom' }} style={{marginLeft: '2vw'}} onClick={() => navigateWish('next')} icon={<RightOutlined />} />
                 </div>
             </Modal>
         </div>

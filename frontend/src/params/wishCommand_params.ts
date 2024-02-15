@@ -1,6 +1,12 @@
 export const WISHCOMMAND_TITLE = 'Happy Lucene Day 2024'
 export const WISHCOMMAND_TITLE_COLOR = 'black'
 
+export const WISHCOMMAND_DESC1 = 'ถ้านายยังไม่แน่ใจว่าส่งคำอวยพรหรือยัง '
+export const WISHCOMMAND_CONTACT_NAME = 'ติดต่อนาย neaht ได้เลย'
+export const WISHCOMMAND_DESC2 = `If you're not sure that you have send the wish yet,`
+export const WISHCOMMAND_DESC3 = 'Feel free to contact '
+export const WISHCOMMAND_CONTACT_NAME2 = 'Neaht here!'
+
 export const CREATE_WISHCARD_BUTTON_TEXT = 'ส่งคำอวยพร'
 export const CREATE_WISHCARD_MODAL_TITLE = 'ส่งคำอวยพรให้ Lucene🤍'
 
