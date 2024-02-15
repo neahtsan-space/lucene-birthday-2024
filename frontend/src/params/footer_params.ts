@@ -1,6 +1,6 @@
 export const footertext = "Lucene Birthday 2024"
 
-export const imglink1_URL = "https://discord.com/"
+export const imglink1_URL = "https://discord.gg/ZmsayHGBtp"
 export const imglink2_URL = "https://www.youtube.com/@LucenePLG/"
 export const imglink3_URL = "https://twitter.com/LucenePLG/"
 export const imglink4_URL = "https://facebook.com/Lucene-Polygon-106823787843326/"
