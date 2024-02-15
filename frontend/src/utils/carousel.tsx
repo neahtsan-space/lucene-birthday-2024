@@ -9,7 +9,7 @@ import { Pagination, Navigation, EffectFade, Autoplay, FreeMode, Thumbs } from '
 import '@/css/carousel.css';
 import { dashboardImages, DASHBOARD_TITLE } from '@/params/dashboard_param';
 import { DASHBOARD_BG, DASHBOARD_DESC_BG, DASHBOARD_TITLE_BG } from '@/params/background_params';
-
+import '@/css/dashboard.css';
 const DashboardCarousel: React.FC<{ showThumbs: boolean }> = ({ showThumbs }) => {
   const [currentDescription, setCurrentDescription] = useState<string>('');
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
