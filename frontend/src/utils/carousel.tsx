@@ -7,10 +7,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
 import { Pagination, Navigation, EffectFade, Autoplay, FreeMode, Thumbs } from 'swiper/modules';
 import '@/css/carousel.css';
-import { dashboardImages, DASHBOARD_TITLE, DASHBOARD_NAVIGATION_COLOR, DASHBOARD_PAGINATION_COLOR } from '@/params/dashboard_param';
+import { dashboardImages, DASHBOARD_TITLE, DASHBOARD_NAVIGATION_COLOR, DASHBOARD_PAGINATION_COLOR, EMOJI_DASHBOARD_TITLE } from '@/params/dashboard_param';
 import { DASHBOARD_BG, DASHBOARD_DESC_BG, DASHBOARD_TITLE_BG } from '@/params/background_params';
 import '@/css/dashboard.css';
-import { EMOJI2 } from '@/params/header_params';
 const DashboardCarousel: React.FC<{ showThumbs: boolean }> = ({ showThumbs }) => {
   const [currentDescription, setCurrentDescription] = useState<string>('');
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
@@ -25,7 +24,7 @@ const DashboardCarousel: React.FC<{ showThumbs: boolean }> = ({ showThumbs }) =>
 
   return (
     <div style={{backgroundColor: DASHBOARD_BG}}>
-      <div className='dashboard-title' style={{ backgroundColor: DASHBOARD_TITLE_BG}}>{DASHBOARD_TITLE} {EMOJI2}</div>
+      <div className='dashboard-title' style={{ backgroundColor: DASHBOARD_TITLE_BG}}>{DASHBOARD_TITLE} {EMOJI_DASHBOARD_TITLE}</div>
       <Swiper
         thumbs={{ swiper: thumbsSwiper }}
         slidesPerView={1}

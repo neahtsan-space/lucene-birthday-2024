@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { COUNTDOWN_DATE, COUNTDOWN_MONTH } from '@/params/header_params';
 import '@/css/countdown.css'; 
-import { EMOJI2, EMOJI3 } from '@/params/header_params';
 
 const getNextLeapYear = () => {
   let year = new Date().getFullYear();

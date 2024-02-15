@@ -1,4 +1,5 @@
 export const DASHBOARD_TITLE = 'Happy Lucene Day 2024';
+export const EMOJI_DASHBOARD_TITLE = '💕'
 
 export const DASHBOARD_NAVIGATION_COLOR = '#000';
 export const DASHBOARD_PAGINATION_COLOR = '#fff';
