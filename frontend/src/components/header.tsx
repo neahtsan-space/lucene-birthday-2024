@@ -24,7 +24,7 @@ const Header: React.FC = () => {
         </div>
       </div>
       <div className='header-right-side'>
-      <div className='retract' onClick={toggleMenu}>X </div>
+      <div className='retract' onClick={toggleMenu}> ... </div>
       <div className={`header-button ${isMenuOpen ? 'menu-open' : ''}`}>
         <div className='header-button-1'>{TextButton({buttonName: HeaderParams.button1_TH,url: HeaderParams.button1_URL})}</div>
         <div className='header-button-2'>{TextButton({buttonName: HeaderParams.button2_TH,url: HeaderParams.button2_URL})}</div>

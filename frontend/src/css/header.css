@@ -1,11 +1,15 @@
 /*mobilecss*/
 @media screen and (max-width: 600px){
+
+  .menu-open .retract{
+    color: aquamarine ;
+  }
   .menu-open .header-button {
-    visibility: hidden;
+    visibility: collapse ;
     display: none;
   }
   .menu-open .header-right-side{
-    visibility: hidden;
+    visibility: collapse;
   }
 
   .header {
