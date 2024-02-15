@@ -1,0 +1,46 @@
+body {
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#popcat {
+    width: 400px;
+}
+
+#btn {
+    width: 150px;
+    height: 70px;
+    font-size: 2em;
+    letter-spacing: 3px;
+    border: 3px solid #E0D0C6;
+    background-color: transparent;
+    color: #E0D0C6;
+    margin-top: 40px;
+    user-select: none;
+    border-radius: 30px;
+}
+
+#btn:focus {
+    outline: none;
+}
+
+#btn:active {
+    border: 3px solid darkgray;
+    color: darkgray;
+}
+
+@media only screen and (max-width: 480px) {
+    #popcat {
+        width: 200px;
+    }
+}
