@@ -29,6 +29,16 @@ const WishCardTemplate: React.FC<{wishCard: IWishCard, allWishes: IWishCard[], c
         }
       };
 
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 600;
+
+    const cardStyle = isMobile ? {
+        height: '700px',
+        width: '280px',
+      } : {
+        height: '700px',
+        width: '300px',
+      };
+
     return (
         <div>
             <div style={{ position: "relative", margin: "40px", width: "300px" }} onClick={showModal}>
@@ -83,8 +93,7 @@ const WishCardTemplate: React.FC<{wishCard: IWishCard, allWishes: IWishCard[], c
                     <Image src={currentWish?.stickerDown ?? ''} width={400} height={400} alt='' />
                         </div>
                     <Card className='card' hoverable style={{
-                        height:'750px',
-                        width: '350px',
+                        ...cardStyle,
                         overflow: "visible",
                         borderColor: currentWish.borderColor,
                         borderWidth: 10,
@@ -118,6 +127,16 @@ const WishCardTemplate: React.FC<{wishCard: IWishCard, allWishes: IWishCard[], c
     }
 
 const WishCardDemo: React.FC<{wishCard: IWishCard}> = ({wishCard}) => {
+    
+    const windowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
+
+    const cardStyle = windowWidth < 600 ? {
+        height: '700px',
+        width: '280px',
+      } : {
+        height: '700px',
+        width: '300px',
+      };
     return (
         <div style={{ position: "relative", margin: "40px", width: "300px" }}>
             <div style={{ position: "absolute", top: -40, left: -40, zIndex: 1 }}>
@@ -129,8 +148,7 @@ const WishCardDemo: React.FC<{wishCard: IWishCard}> = ({wishCard}) => {
             <Card
                 hoverable
                 style={{
-                height: 700,
-                width: 300,
+                ...cardStyle,
                 overflow: "visible",
                 borderColor: wishCard.borderColor,
                 borderWidth: 20,
