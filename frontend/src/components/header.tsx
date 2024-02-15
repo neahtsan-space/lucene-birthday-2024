@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import '@/css/header.css';
 import * as HeaderParams from '@/params/header_params';
 import { TextButton, PrimaryButton, DefaultButton, LinkButton } from '@/utils/button';
-import Image from 'next/image';
+import FlipCountdown from '@/utils/countdown';
 
 
 const Header: React.FC = () => {
@@ -15,13 +15,16 @@ const Header: React.FC = () => {
 
   return (
     <header className={`header ${isMenuOpen ? 'menu-open' : ''}`}>
-      <div className="header-left-side">
+      <div className="header-flex-container header-left-side">
         <div className="text-container">
           <span className="header-title">
             {HeaderParams.topic}<br />
             {HeaderParams.description}
           </span>
         </div>
+      </div>
+      <div className='header-flex-container header-center'>
+      <FlipCountdown />
       </div>
       <div className='header-right-side'>
       <div className='retract' onClick={toggleMenu}> ... </div>

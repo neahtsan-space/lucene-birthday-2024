@@ -95,15 +95,32 @@
   visibility: hidden;
 
   }
+/* Adjustments for header.css */
+
+/* header.css */
+
 .header {
-  position: static;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2vh;
+  width: 100%;
+  padding: 1rem;
   background-color: #333;
   color: #fff;
 }
+
+.header-left-side, .header-right-side {
+  flex: 1;
+  text-align: center; /* Center text for visual consistency */
+}
+
+.header-center {
+  flex: 2; /* Allows the center section to take more space, adjust as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .header-right-side {
     display: flex;

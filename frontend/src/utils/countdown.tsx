@@ -1,30 +1,71 @@
-import React from 'react';
-import type { CountdownProps } from 'antd';
-import { Col, Row, Statistic } from 'antd';
+import React, { useEffect, useState } from 'react';
+import '@/css/countdown.css'; 
 
-const { Countdown } = Statistic;
-
-const deadline = Date.now() + 1000 * 60 * 60 * 24 * 2 + 1000 * 30; // Dayjs is also OK
-
-const onFinish: CountdownProps['onFinish'] = () => {
-  console.log('finished!');
-};
-
-const onChange: CountdownProps['onChange'] = (val) => {
-  if (typeof val === 'number' && 4.95 * 1000 < val && val < 5 * 1000) {
-    console.log('changed!');
+const getNextLeapYear = () => {
+  let year = new Date().getFullYear();
+  while ((year % 4 !== 0) || (year % 100 === 0 && year % 400 !== 0)) {
+    year++;
   }
+  return year;
 };
 
-const Countdown_HBD: React.FC = () => (
-  <Row gutter={16}>
-    <Col span={12}>
-      <Countdown title="Countdown" value={deadline} onFinish={onFinish} />
-    </Col>
-    <Col span={12}>
-      <Countdown title="Countdown" value={Date.now() + 10 * 1000} onChange={onChange} />
-    </Col>
-  </Row>
-);
+const calculateTimeLeft = (countToDate: Date) => {
+  const now = new Date();
+  const difference = countToDate.getTime() - now.getTime();
+  
+  let timeLeft = {
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  };
 
-export default Countdown_HBD;
+  if (difference > 0) {
+    timeLeft = {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / 1000 / 60) % 60),
+      seconds: Math.floor((difference / 1000) % 60),
+    };
+  }
+
+  return timeLeft;
+};
+
+const FlipCountdown: React.FC = () => {
+    const leapYear = getNextLeapYear();
+    // Adjust here to set the countdown date to February 29th of the next leap year
+    const [countToDate] = useState<Date>(new Date(`${leapYear}-02-29T00:00:00`));
+    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(countToDate));
+
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setTimeLeft(calculateTimeLeft(countToDate));
+      }, 1000);
+
+      return () => clearTimeout(timer);
+    });
+
+    return (
+      <div className="container">
+        <div className="container-segment">
+          <span className="segment-title"></span>
+          <span className="flip-card">{String(timeLeft.days).padStart(2, '0')}D</span>:
+        </div>
+        <div className="container-segment">
+          <span className="segment-title"></span>
+          <span className="flip-card">{String(timeLeft.hours).padStart(2, '0')}HR</span>:
+        </div>
+        <div className="container-segment">
+          <span className="segment-title"></span>
+          <span className="flip-card">{String(timeLeft.minutes).padStart(2, '0')}M</span>:
+        </div>
+        <div className="container-segment">
+          <span className="segment-title"></span>
+          <span className="flip-card">{String(timeLeft.seconds).padStart(2, '0')}S</span>
+        </div>
+      </div>
+    );
+};
+
+export default FlipCountdown;
