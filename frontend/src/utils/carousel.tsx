@@ -58,13 +58,13 @@ const DashboardCarousel: React.FC = () => {
                 alt={image.alt}
                 layout='fill'
                 objectFit='contain'
-                sizes='(max-width: 600px) 100vw, (max-width: 1024px) 25vw, 1024px'
+                priority={index === 0}
               />
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
-      <div style={{ marginTop: '20px' }}> 
+      {/* <div style={{ marginTop: '20px' }}> 
         <Swiper
           onSwiper={setThumbsSwiper}
           loop={true}
@@ -95,7 +95,7 @@ const DashboardCarousel: React.FC = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </div> */}
       <div className='dashboard-description' style={{ backgroundColor: DASHBOARD_DESC_BG}}>
         {currentDescription}
       </div>
