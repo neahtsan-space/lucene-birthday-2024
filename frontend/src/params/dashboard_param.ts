@@ -1,5 +1,9 @@
 export const DASHBOARD_TITLE = 'Happy Lucene Day 2024';
 
+export const DASHBOARD_NAVIGATION_COLOR = '#000';
+export const DASHBOARD_PAGINATION_COLOR = '#fff';
+
+
 // Dashboard img
 export const DASHBOARD_IMG_1 = '/dashboard/1.webp';
 export const DASHBOARD_IMG_2 = '/dashboard/2.webp';
