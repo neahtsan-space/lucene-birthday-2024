@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { COUNTDOWN_DATE, COUNTDOWN_MONTH } from '@/params/header_params';
 import '@/css/countdown.css'; 
+import { EMOJI2, EMOJI3 } from '@/params/header_params';
 
 const getNextLeapYear = () => {
   let year = new Date().getFullYear();
@@ -34,22 +35,37 @@ const calculateTimeLeft = (countToDate: Date) => {
 };
 
 const FlipCountdown: React.FC = () => {
-    const leapYear = getNextLeapYear();
-    const [countToDate] = useState<Date>(new Date(`${leapYear}-${COUNTDOWN_MONTH}-${COUNTDOWN_MONTH}T00:00:00`));
-    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(countToDate));
+  const countToDate = useMemo(() => {
+    const now = new Date();
+    const year = now.getFullYear();
+    const isLeapYear = (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0));
+    const afterFeb29 = now > new Date(year, 1, 29);
+    const nextLeapYear = isLeapYear && !afterFeb29 ? year : year + (4 - year % 4);
 
-    useEffect(() => {
-      const timer = setTimeout(() => {
-        setTimeLeft(calculateTimeLeft(countToDate));
-      }, 1000);
+    const untilDate = COUNTDOWN_DATE;
+    const untilMonth = COUNTDOWN_MONTH - 1;
 
-      return () => clearTimeout(timer);
-    });
+    return new Date(nextLeapYear, untilMonth, untilDate);
+  }, []);
+
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTimeLeft(calculateTimeLeft(countToDate));
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [timeLeft, countToDate]); 
 
     return (
       <div className="container">
         <div className="container-segment">
-          <span className="segment-title"></span>
           <span className="flip-card">{String(timeLeft.days).padStart(2, '0')}D</span>:
         </div>
         <div className="container-segment">

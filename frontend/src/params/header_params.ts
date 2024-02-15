@@ -2,8 +2,13 @@ export const topic = "Lucene Birthday 2024"
 export const description = "Fanclub Project"
 
 // Countdown timer at header (until 29th Feb 2024 00:00:00)
-export const COUNTDOWN_DATE = "29"
-export const COUNTDOWN_MONTH = "02"
+export const COUNTDOWN_DATE = 29
+export const COUNTDOWN_MONTH = 2
+
+// Emoji
+export const EMOJI1 = ' ≽^•⩊•^≼ ₊˚⊹♡'
+export const EMOJI2 = '💕'
+export const EMOJI3 = '🎉'
 
 // Button in EN
 export const button1_EN = "AboutPolygon"
