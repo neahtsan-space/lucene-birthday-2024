@@ -29,7 +29,7 @@ const WishCardTemplate: React.FC<{wishCard: IWishCard, allWishes: IWishCard[], c
         }
       };
 
-    const isMobile = typeof window !== 'undefined' && window.innerWidth < 600;
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
     const cardStyle = isMobile ? {
         height: '700px',
@@ -129,7 +129,7 @@ const WishCardDemo: React.FC<{wishCard: IWishCard}> = ({wishCard}) => {
     
     const windowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
 
-    const cardStyle = windowWidth < 600 ? {
+    const cardStyle = windowWidth < 768 ? {
         height: '700px',
         width: '280px',
       } : {

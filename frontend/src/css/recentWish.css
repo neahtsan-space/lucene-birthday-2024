@@ -1,5 +1,5 @@
 /* Mobile responsiveness */
-@media screen and(max-width: 600px) {
+@media screen and(max-width: 768px) {
 .recent-wish-container {
   border: 1px solid transparent;
   width: 100%;
@@ -27,7 +27,7 @@
 
 
 /* pc Container styles */
-@media (min-width: 600px){
+@media (min-width: 768px){
 .recent-wish-container {
     border: 1px solid transparent;
     width: 100%;

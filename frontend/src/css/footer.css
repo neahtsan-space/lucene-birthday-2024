@@ -1,9 +1,10 @@
 /*mobilecss*/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .footer-text-container {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content:space-evenly;
     width: 100%;
   }
 
@@ -52,7 +53,7 @@
 }
 }
 /*pc css*/
-@media (min-width: 600px){
+@media (min-width: 768px){
 
 
   .footer-text-container {

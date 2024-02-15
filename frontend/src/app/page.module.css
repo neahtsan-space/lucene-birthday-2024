@@ -1,6 +1,6 @@
 
-/* For screens smaller than 600px (typical mobile devices) */
-@media screen and (max-width: 600px) {
+/* For screens smaller than 768px (typical mobile devices) */
+@media screen and (max-width: 768px) {
   .flexContainer {
     flex-direction: column;
     width: 100%;
@@ -19,13 +19,16 @@
   }
   
   .box2 {
+
     width: 100%;
     flex-direction: column;
     display: flex;
+    flex: auto;
     justify-content: center;
   }
   .box2Title{
-    width:2%; /* Occupy full width */
+    width:100%; /* Occupy full width */
+
     
   }
   
@@ -38,7 +41,7 @@
 
   .buttoncontainer {
     flex-direction: column; /* Stack buttons vertically */
-    width: 25%;
+    width: 2%;
   }
   
   .custom-button {
@@ -47,7 +50,7 @@
   }
 }
 
-@media (min-width: 600px){
+@media (min-width: 768px){
 /* MergedBoxesFlex.module.css */
 .flexContainer {
   display: flex;

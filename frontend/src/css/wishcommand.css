@@ -1,13 +1,18 @@
 /*mobilecss*/
-@media screen and (max-width: 600px){
+@media screen and (max-width: 768px){
 .wish-command-container {
     width: 100%;
-    margin-left: 25%;
-    margin-right: 20%;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
   }
   
   .wish-command-title {
-    width: 100%;
+    display: flex;
+    flex: 1;
+    justify-self: center;
+    align-items: center;
     font-size: large;
     padding: 5vh;
     padding-bottom: 3vh;
@@ -15,21 +20,37 @@
   
   .wish-command-divider {
     border-color: turquoise;
-    border-width: 0.3vw;
+    border-width: 0.1vw;
+    border-radius: 0.1vw;
     padding: 2vh;
-    margin: 10px 0;
-    padding-left: 5vh;
   }
   
   .wish-command-button-container {
     display: flex;
-    gap: 10%;
-    flex-direction: row;
+    align-items: center;
+    flex-direction: column;
+  }
+  .wish-command-style{
+    justify-self: center;
+    align-items: center;
+    opacity: '0.5';
+    font-size: '70%';
+    padding-top: '10%';
+
+  }
+  .wish-command-desc{
+    align-items: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+  .wish-command-over{
+    align-items: center;
+
   }
 }
 
 /*pc css*/
-@media (min-width: 600px){
+@media (min-width: 768px){
     .wish-command-container {
         width: 100%;
         margin-left: 25%;

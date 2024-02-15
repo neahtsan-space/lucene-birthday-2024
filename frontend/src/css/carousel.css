@@ -1,5 +1,5 @@
 /* Mobile responsiveness */
-@media screen and (max-width: 600px){
+@media screen and (max-width: 768px){
 .carousel {
   position: static; /* Change position to relative */
   top: 0; /* Reset top */
@@ -52,7 +52,7 @@ text-align: center;
 line-height: 3; 
 }
 /* pc responsiveness */
-@media (min-width: 600px){
+@media (min-width: 768px){
   .carousel {
     position: relative; /* Change position to relative */
     top: 0; /* Reset top */
@@ -108,7 +108,7 @@ line-height: 3;
     height: 25vw;
   }
   
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 768px) {
     .carousel-picture img {
       width: 100vw !important;
       height: 100vh !important;
@@ -117,7 +117,7 @@ line-height: 3;
   }
   
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .swiper-button-prev {
     left: -20vw;
     z-index: 10;

@@ -19,13 +19,13 @@ const WishCommand: React.FC = () => {
         <div><DefaultButton buttonName={WishCommandParams.VIEW_ALL_WISHCARD_BUTTON_NAME} url={WishCommandParams.VIEW_ALL_WISHCARD_PATH} /></div>
         <div><SearchWishCardButton /></div>
       </div>
-      <div style={{opacity: '0.5', fontSize: '50%', paddingTop: '10%'}}>
+      <div className='wish-command-style' style={{opacity: '0.5',fontSize: '50%',paddingTop: '10%'}}>
         <p className='wish-command-desc'>{WishCommandParams.WISHCOMMAND_DESC1}
-          <a href={button5_URL} style={{textDecorationLine: 'underline'}}>{WishCommandParams.WISHCOMMAND_CONTACT_NAME}</a>
+          <a className='wish-command-over' href={button5_URL} style={{textDecorationLine: 'underline'}}>{WishCommandParams.WISHCOMMAND_CONTACT_NAME}</a>
         </p>
         <p className='wish-command-desc'>{WishCommandParams.WISHCOMMAND_DESC2}</p>
         <p className='wish-command-desc'>{WishCommandParams.WISHCOMMAND_DESC3} 
-          <a href={button5_URL} style={{textDecorationLine: 'underline'}}>{WishCommandParams.WISHCOMMAND_CONTACT_NAME2}</a>
+          <a className='wish-command-over' href={button5_URL} style={{textDecorationLine: 'underline'}}>{WishCommandParams.WISHCOMMAND_CONTACT_NAME2}</a>
         </p>
       </div>
     </div>

@@ -1,5 +1,5 @@
 /*mobilecss*/
-@media screen and (max-width: 600px){
+@media screen and (max-width: 768px){
 
   .menu-open .retract{
     color: aquamarine ;
@@ -89,7 +89,7 @@
 }
 }
 /*pc css*/
-@media (min-width: 600px){
+@media (min-width: 768px){
 
 .retract{
   visibility: hidden;
@@ -131,7 +131,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 600px;
+    max-width: 768px;
     padding-left: 20;
     margin-left: 20px;
   }

@@ -1,4 +1,4 @@
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .dashboard-image-container {
     width: 100vw;
     height: auto;
@@ -27,7 +27,7 @@
   }
 }
 
-@media (min-width: 600px){
+@media (min-width: 768px){
 
   
   .dashboard-title {

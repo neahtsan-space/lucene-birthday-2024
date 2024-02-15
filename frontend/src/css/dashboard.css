@@ -1,5 +1,5 @@
 /* mobile css*/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   #app {
     height: 100%;
   }
@@ -60,7 +60,7 @@
 
 }
 /*pc css*/
-@media (min-width: 600px){
+@media (min-width: 768px){
 #app {
     height: 100%;
   }
