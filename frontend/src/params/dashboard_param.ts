@@ -18,6 +18,8 @@ export const DASHBOARD_IMG_5_DESC = 'Mock Image 5 '
 export const DASHBOARD_IMG_6_DESC = 'Mock Image 6 '
 export const DASHBOARD_IMG_7_DESC = 'Mock Image 7 '
 
+export const ENABLE_CAROUSEL_THUMBS = false;
+
 // Dashboard total img (picture name must be 1.webp, 2.webp, 3.webp, ... n.webp)
 const DASHBOARD_TOTAL_IMG = 7;
 

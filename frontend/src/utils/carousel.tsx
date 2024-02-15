@@ -10,7 +10,7 @@ import '@/css/carousel.css';
 import { dashboardImages, DASHBOARD_TITLE } from '@/params/dashboard_param';
 import { DASHBOARD_BG, DASHBOARD_DESC_BG, DASHBOARD_TITLE_BG } from '@/params/background_params';
 
-const DashboardCarousel: React.FC = () => {
+const DashboardCarousel: React.FC<{ showThumbs: boolean }> = ({ showThumbs }) => {
   const [currentDescription, setCurrentDescription] = useState<string>('');
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
 
@@ -64,7 +64,8 @@ const DashboardCarousel: React.FC = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      {/* <div style={{ marginTop: '20px' }}> 
+      {showThumbs && (
+      <div style={{ marginTop: '20px' }}> 
         <Swiper
           onSwiper={setThumbsSwiper}
           loop={true}
@@ -95,7 +96,8 @@ const DashboardCarousel: React.FC = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div> */}
+      </div>
+      )}
       <div className='dashboard-description' style={{ backgroundColor: DASHBOARD_DESC_BG}}>
         {currentDescription}
       </div>
