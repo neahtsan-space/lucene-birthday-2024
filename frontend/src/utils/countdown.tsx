@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { COUNTDOWN_DATE, COUNTDOWN_MONTH } from '@/params/header_params';
 import '@/css/countdown.css'; 
 
 const getNextLeapYear = () => {
@@ -34,8 +35,7 @@ const calculateTimeLeft = (countToDate: Date) => {
 
 const FlipCountdown: React.FC = () => {
     const leapYear = getNextLeapYear();
-    // Adjust here to set the countdown date to February 29th of the next leap year
-    const [countToDate] = useState<Date>(new Date(`${leapYear}-02-29T00:00:00`));
+    const [countToDate] = useState<Date>(new Date(`${leapYear}-${COUNTDOWN_MONTH}-${COUNTDOWN_MONTH}T00:00:00`));
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(countToDate));
 
     useEffect(() => {

@@ -1,6 +1,10 @@
 export const topic = "Lucene Birthday 2024"
 export const description = "Fanclub Project"
 
+// Countdown timer at header (until 29th Feb 2024 00:00:00)
+export const COUNTDOWN_DATE = "29"
+export const COUNTDOWN_MONTH = "02"
+
 // Button in EN
 export const button1_EN = "AboutPolygon"
 export const button2_EN = "Polygon goods"
