@@ -16,7 +16,7 @@ const CardTable: React.FC<CardTableProps> = ({ data }) => {
       backgroundColor: VIEWALLWISH_BG,
     }}>
       {data.map((wishCard: IWishCard, index: number) => (
-        <div className="class-grid-item" key={index} style={{
+        <div className="card-grid-item" key={index} style={{
         }}>
           <WishCardTemplate wishCard={wishCard} allWishes={data} currentIndex={index} />
         </div>

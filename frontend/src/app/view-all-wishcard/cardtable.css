@@ -20,7 +20,6 @@
 }
 
 /*pc css*/
-@media (min-width: 600px){
 .card-grid {
     display: flex;
     flex-wrap: wrap;
@@ -31,11 +30,10 @@
     padding: 3%;
   }
   
-  .card-grid-item {
+.card-grid-item {
     flex: 1 1 calc(25% - 32px);
     max-width: calc(25% - 32px);
     display: flex;
     align-items: center;
     justify-content: center;
   }
-}
