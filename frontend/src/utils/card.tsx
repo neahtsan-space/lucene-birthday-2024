@@ -3,6 +3,7 @@ import Image from "next/legacy/image";
 import { IWishCard } from '@/interfaces/IWishcard';
 import { Card, Modal, Button } from 'antd';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+import * as CARD_PARAMS from '@/params/card_params';
 
 const { Meta } = Card;
 
@@ -46,7 +47,7 @@ const WishCardTemplate: React.FC<{wishCard: IWishCard, allWishes: IWishCard[], c
                     <div style={{ position: "absolute", top: -40, left: -40, zIndex: 1, transform: 'rotate(-30deg)' }}>
                         <Image src={wishCard?.stickerUp ?? ''} width={100} height={100} alt='' />
                     </div>
-                    <div style={{ position: "absolute", bottom: -40, right: -40, zIndex: 1, transform: 'rotate(15deg)' }}>
+                    <div style={{ position: "absolute", bottom: -40, right: -40, zIndex: 1 }}>
                         <Image src={wishCard?.stickerDown ?? ''} width={100} height={100} alt='' />
                     </div>
                 <Card className='card2'
@@ -73,7 +74,7 @@ const WishCardTemplate: React.FC<{wishCard: IWishCard, allWishes: IWishCard[], c
                             description={
                                 <div>
                                     <p style={{ color: 'black', fontSize: '100%' }}>{wishCard.time}</p>
-                                    <p style={{ paddingTop: '10%', color: 'rgb(93, 186, 199)', fontSize: '120%' }}>{wishCard.wish}</p>
+                                    <p style={{ paddingTop: '10%', color: CARD_PARAMS.TEXT_COLOR, fontSize: '120%' }}>{wishCard.wish}</p>
                                 </div>
                             }
                         />
@@ -86,11 +87,11 @@ const WishCardTemplate: React.FC<{wishCard: IWishCard, allWishes: IWishCard[], c
                     <Button classNames={{ icon: 'modal-icon-top' }} style={{marginRight: '2vw'}} onClick={() => navigateWish('prev')} className='modal-icon-top' icon={<LeftOutlined />} />
                         <div style={{ width: '80%', textAlign: 'center' }}>
                         <div style={{ position: "relative" }} onClick={showModal}>
-                        <div style={{ position: "absolute", top: -150, left: -150, zIndex: 1, transform: 'rotate(-30deg)' }}>
-                    <Image src={currentWish?.stickerUp ?? ''} width={300} height={300} alt='' />
+                        <div style={{ position: "absolute", top: -100, left: -100, zIndex: 1, transform: 'rotate(-30deg)' }}>
+                    <Image src={currentWish?.stickerUp ?? ''} width={200} height={200} alt='' />
                         </div>
-                        <div style={{ position: "absolute", bottom: -200, right: -200, zIndex: 1, transform: 'rotate(15deg)' }}>
-                    <Image src={currentWish?.stickerDown ?? ''} width={400} height={400} alt='' />
+                        <div style={{ position: "absolute", bottom: -100, right: -100, zIndex: 1}}>
+                    <Image src={currentWish?.stickerDown ?? ''} width={200} height={200} alt='' />
                         </div>
                     <Card className='card' hoverable style={{
                         ...cardStyle,
@@ -111,7 +112,7 @@ const WishCardTemplate: React.FC<{wishCard: IWishCard, allWishes: IWishCard[], c
                         description={
                             <div>
                                 <p style={{ color: 'black', fontSize: '100%' }}>{currentWish.time}</p>
-                                <p style={{ paddingTop:'10%' ,color: 'rgb(93, 186, 199)', fontSize: '120%', }}>{currentWish.wish}</p>
+                                <p style={{ paddingTop:'10%' ,color: CARD_PARAMS.TEXT_COLOR, fontSize: '120%', }}>{currentWish.wish}</p>
                             </div>
                         }
                     />

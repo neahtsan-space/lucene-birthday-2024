@@ -22,7 +22,7 @@ export const CREATE_WISHCARD_BUTTON_WISH_WARNING = 'จำกัด: อัก�
 export const CREATE_WISHCARD_MODAL_WISH_PLACEHOLDER = 'อยากจะใส่คำอวยพร ความปราถนา หรือคำทักทายใส่มาได้เลยยย'
 
 // sticker directory name
-export const DIR_NAME = '/imgHoku';
+export const DIR_NAME = '/lucene_stickers';
 const getImagePath = (fileName: string) => `${DIR_NAME}/${fileName}`;
 
 
@@ -45,16 +45,16 @@ export const COLOR_4 = '#1A3779' // rgb(206, 202, 184)
 
 
 // decorate sticker
-export const STICKER_1 = getImagePath('1.1.1.png');
-export const STICKER_2 = getImagePath('1.1.2.png');
-export const STICKER_3 = getImagePath('1.1.3.png');
-export const STICKER_4 = getImagePath('1.1.png');
+export const STICKER_1 = getImagePath('ne1.webp');
+export const STICKER_2 = getImagePath('ne2.webp');
+export const STICKER_3 = getImagePath('ne3.webp');
+export const STICKER_4 = getImagePath('ne4.webp');
 
 // hoku sticker
-export const STICKER_5 = getImagePath('1.png');
-export const STICKER_6 = getImagePath('2.png');
-export const STICKER_7 = getImagePath('3.png');
-export const STICKER_8 = getImagePath('4.png');
+export const STICKER_5 = getImagePath('ne1.webp');
+export const STICKER_6 = getImagePath('ne2.webp');
+export const STICKER_7 = getImagePath('ne3.webp');
+export const STICKER_8 = getImagePath('ne4.webp');
 
 // Radio Group Params
 export const RADIO_TITLE_1 = 'เลือก Sticker การ์ด 1'

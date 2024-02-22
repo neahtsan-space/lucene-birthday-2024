@@ -1,16 +1,18 @@
 // sticker directory name
-export const DIR_NAME = '/imgHoku';
+export const DIR_NAME = '/lucene_stickers';
 const getImagePath = (fileName: string) => `${DIR_NAME}/${fileName}`;
 
-// decorate sticker
-export const STICKER_1 = getImagePath('1.1.1.png');
-export const STICKER_2 = getImagePath('1.1.2.png');
-export const STICKER_3 = getImagePath('1.1.3.png');
-export const STICKER_4 = getImagePath('1.1.png');
+// upper-left
+export const STICKER_1 = getImagePath('ne1.webp');
+export const STICKER_2 = getImagePath('ne2.webp');
+export const STICKER_3 = getImagePath('ne3.webp');
+export const STICKER_4 = getImagePath('ne4.webp');
 
-// hoku sticker
-export const STICKER_5 = getImagePath('1.png');
-export const STICKER_6 = getImagePath('2.png');
-export const STICKER_7 = getImagePath('3.png');
-export const STICKER_8 = getImagePath('4.png');
+// bottom-right sticker
+export const STICKER_5 = getImagePath('ne1.webp');
+export const STICKER_6 = getImagePath('ne2.webp');
+export const STICKER_7 = getImagePath('ne3.webp');
+export const STICKER_8 = getImagePath('ne4.webp');
 
+// text color
+export const TEXT_COLOR = 'black';
