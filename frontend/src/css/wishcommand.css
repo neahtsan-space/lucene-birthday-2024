@@ -77,4 +77,8 @@
         gap: 10%;
         flex-direction: row;
       }
+      .wish-command-over:hover{
+        color: aquamarine;
+        
+      }
     }

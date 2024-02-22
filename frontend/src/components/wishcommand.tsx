@@ -8,6 +8,7 @@ import { DefaultButton } from '@/utils/button';
 import { SearchWishCardButton } from '@/utils/search-wish-button';
 import { Divider } from 'antd';
 import '@/css/wishcommand.css';
+import { POPCAT_PATH } from '@/params/wishCommand_params';
 
 const WishCommand: React.FC = () => {
   return (
@@ -27,7 +28,7 @@ const WishCommand: React.FC = () => {
         <p className='wish-command-desc'>{WishCommandParams.WISHCOMMAND_DESC2}</p>
         <p className='wish-command-desc'>{WishCommandParams.WISHCOMMAND_DESC3} 
           <a className='wish-command-over' href={button5_URL} target='_blank' style={{textDecorationLine: 'underline'}}>{WishCommandParams.WISHCOMMAND_CONTACT_NAME2}</a>
-          {WishCommandParams.EMOJI_CAT}
+          <a className='cat' href={POPCAT_PATH} > {WishCommandParams.EMOJI_CAT} </a>
         </p>
       </div>
     </div>

@@ -7,6 +7,7 @@ export const WISHCOMMAND_DESC2 = `Whether you have sent the wish or not, please 
 export const WISHCOMMAND_DESC3 = 'Here I am, '
 export const WISHCOMMAND_CONTACT_NAME2 = 'Neaht.!'
 export const EMOJI_CAT = ' ≽^•⩊•^≼ ₊˚⊹♡'
+export const POPCAT_PATH ='/popcat'
 
 export const CREATE_WISHCARD_BUTTON_TEXT = 'ส่งคำอวยพร'
 export const CREATE_WISHCARD_MODAL_TITLE = 'ส่งคำอวยพรให้ Lucene🤍'
