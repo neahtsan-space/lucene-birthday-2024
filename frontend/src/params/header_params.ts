@@ -26,6 +26,7 @@ export const button2_URL = "https://www.vforgeshop.com/category/19/polygon"
 export const button3_URL = "https://www.vforgeshop.com/category/14/polygon/lucene"
 export const button4_URL = "https://tipme.in.th/luceneplg"
 export const button5_URL = "https://twitter.com/NeahtSan2nd"
+export const CREDIT_PATH = '/credit'
 
 export const button_ALL_TH = [button1_TH, button2_TH, button3_TH, button4_TH, button5_TH]
 export const button_ALL_EN = [button1_EN, button2_EN, button3_EN, button4_EN, button5_EN]
