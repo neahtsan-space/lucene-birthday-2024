@@ -143,8 +143,8 @@
     font-size: 30px;
     font-weight: bold;
     line-height: 1.5;
-    animation: headerglow 20s infinite
-    ,colorChange 20s infinite
+    display: inline-block;
+    animation: rainbow-wave 3s infinite;
   }
   .header-right-side {
     display: flex;
@@ -181,4 +181,14 @@
   text-shadow: 0 0 20px rgba(38, 222, 247, 0.829), 0 0 40px rgba(38, 222, 247, 0.829), 0 0 60px rgba(38, 222, 247, 0.829); /* Red */
 }
 }
+}
+
+@keyframes rainbow-wave {
+  0% { color: red; }
+  16.666% { color: orange; }
+  33.333% { color: yellow; }
+  50% { color: green; }
+  66.666% { color: blue; }
+  83.333% { color: indigo; }
+  100% { color: violet; }
 }

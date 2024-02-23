@@ -56,11 +56,15 @@
 @media (min-width: 768px){
 
 
-  .footer-text-container {
+.footer-text-container {
     display: flex;
     align-items: center;
     margin: -13px;
     padding: -13px;
+}
+
+.footer-text-container:hover {
+  animation: rainbow-wave 4s infinite;
 }
 
 .footer {
@@ -125,3 +129,15 @@
   }
 
 }
+
+@keyframes rainbow-wave {
+  0% { color: red; }
+  16.666% { color: orange; }
+  33.333% { color: yellow; }
+  50% { color: green; }
+  66.666% { color: blue; }
+  83.333% { color: indigo; }
+  100% { color: violet; }
+}
+
+

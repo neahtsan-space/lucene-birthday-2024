@@ -55,6 +55,7 @@
         width: 100%;
         margin-left: 25%;
         margin-right: 20%;
+        text-shadow: 2px 2px white;
       }
       
       .wish-command-title {
@@ -62,6 +63,7 @@
         font-size: 8vh;
         padding: 5vh;
         padding-bottom: 3vh;
+        text-shadow: 4px 4px rgb(255, 255, 255); 
       }
       
       .wish-command-divider {
@@ -78,7 +80,7 @@
         flex-direction: row;
       }
       .wish-command-over:hover{
-        color: aquamarine;
+        color: teal;
         
       }
     }
