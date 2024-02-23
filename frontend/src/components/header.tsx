@@ -15,7 +15,7 @@ const Header: React.FC = () => {
 
   return (
     <header className={`header ${isMenuOpen ? 'menu-open' : ''}`}>
-      <div className="header-flex-container header-left-side">
+      <div className="header-flex-container header-left-side" style={{userSelect: 'none'}}>
         <div className="text-container">
           <span className="header-title">
             {HeaderParams.topic}<br />
@@ -23,7 +23,7 @@ const Header: React.FC = () => {
           </span>
         </div>
       </div>
-      <div className='header-flex-container header-center'>
+      <div className='header-flex-container header-center' style={{userSelect: 'none'}}>
       <FlipCountdown />
       </div>
       <div className='header-right-side'>

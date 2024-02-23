@@ -1,3 +1,4 @@
+/*mobile css*/
 @media screen and (max-width: 768px) {
   .dashboard-image-container {
     width: 100vw;
@@ -27,6 +28,7 @@
   }
 }
 
+/*pc css*/
 @media (min-width: 768px){
 
   
@@ -48,6 +50,7 @@
     justify-content: 'center'; 
     height: '2.5vw' ;
   }
+  
   
   .thumbs-container {
     margin-top: 20px;

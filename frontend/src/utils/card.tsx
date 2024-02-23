@@ -44,10 +44,10 @@ const WishCardTemplate: React.FC<{wishCard: IWishCard, allWishes: IWishCard[], c
         <div>
             <div style={{ position: "relative", margin: "40px", width: "300px" }} onClick={showModal}>
                 <div style={{ position: "relative", zIndex: 0 }}>
-                    <div style={{ position: "absolute", top: -40, left: -40, zIndex: 1, transform: 'rotate(-30deg)' }}>
+                    <div style={{ position: "absolute", top: -40, left: -40, zIndex: 1, transform: 'rotate(-30deg)',userSelect: 'none'}}>
                         <Image src={wishCard?.stickerUp ?? ''} width={100} height={100} alt='' />
                     </div>
-                    <div style={{ position: "absolute", bottom: -40, right: -40, zIndex: 1 }}>
+                    <div style={{ position: "absolute", bottom: -40, right: -40, zIndex: 1 ,userSelect: 'none'}}>
                         <Image src={wishCard?.stickerDown ?? ''} width={100} height={100} alt='' />
                     </div>
                 <Card className='card2'
@@ -64,7 +64,7 @@ const WishCardTemplate: React.FC<{wishCard: IWishCard, allWishes: IWishCard[], c
                         zIndex: 0, 
                         }}
                     >
-                <Meta style={{ fontWeight: 'bold', overflow: 'hidden' }}
+                <Meta style={{ fontWeight: 'bold', overflow: 'hidden' ,userSelect: 'none'}}
                             title={
                                 <span style={{ color: 'blue', fontWeight: 'bold' }}>
                                     {wishCard.name} #{wishCard.cardNumber}
@@ -83,14 +83,14 @@ const WishCardTemplate: React.FC<{wishCard: IWishCard, allWishes: IWishCard[], c
             </div>
             
                 <Modal open={isModalVisible} footer={null} onCancel={handleCancel} centered={true}>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'row', padding: '2vw'}}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'row', padding: '2vw',userSelect: 'none'}}>
                     <Button classNames={{ icon: 'modal-icon-top' }} style={{marginRight: '2vw'}} onClick={() => navigateWish('prev')} className='modal-icon-top' icon={<LeftOutlined />} />
                         <div style={{ width: '80%', textAlign: 'center' }}>
                         <div style={{ position: "relative" }} onClick={showModal}>
-                        <div style={{ position: "absolute", top: -100, left: -100, zIndex: 1, transform: 'rotate(-30deg)' }}>
+                        <div style={{ position: "absolute", top: -100, left: -100, zIndex: 1, transform: 'rotate(-30deg)' ,userSelect: 'none'}}>
                     <Image src={currentWish?.stickerUp ?? ''} width={200} height={200} alt='' />
                         </div>
-                        <div style={{ position: "absolute", bottom: -100, right: -100, zIndex: 1}}>
+                        <div style={{ position: "absolute", bottom: -100, right: -100, zIndex: 1,userSelect: 'none'}}>
                     <Image src={currentWish?.stickerDown ?? ''} width={200} height={200} alt='' />
                         </div>
                     <Card className='card' hoverable style={{
