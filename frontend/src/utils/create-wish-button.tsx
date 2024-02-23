@@ -64,7 +64,8 @@ const imageChoiceToPathMap = MapInputToImage.reduce((acc, cur) => {
     return acc;
 }, {} as { [key: string]: string });
 
-const CreateWishCardButton: React.FC = () => {
+
+const CreateWishCardButton: React.FC<{ showbutton: boolean }> = ({ showbutton }) => {
 
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [nameInputValue, setNameInputValue] = useState('');
@@ -172,46 +173,29 @@ const CreateWishCardButton: React.FC = () => {
 
     return (
         <>
-            <Button type="primary" size='large' shape='round' onClick={showModal}>
-                {WISHCONSTANT.CREATE_WISHCARD_BUTTON_TEXT}
-            </Button>
-            <Modal style={{fontWeight: 'bold',overflow: 'hidden' ,color: 'black'}} title= {WISHCONSTANT.CREATE_WISHCARD_MODAL_TITLE} open={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+        {showbutton && (
+            <><Button type="primary" size='large' shape='round' onClick={showModal}>
+                    {WISHCONSTANT.CREATE_WISHCARD_BUTTON_TEXT}
+                </Button><Modal style={{ fontWeight: 'bold', overflow: 'hidden', color: 'black', userSelect: 'none' }} title={WISHCONSTANT.CREATE_WISHCARD_MODAL_TITLE} open={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
 
-                <p style={{color:'blue', paddingTop: '1vh'}}>{WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME}</p>
-                <p>จำกัด: {nameInputValue.length} / {WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME_TEXT_LIMIT}</p> 
-                <Input placeholder={WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME_PLACEHOLDER} maxLength={WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME_TEXT_LIMIT}
-                    value={nameInputValue} onChange={e => setNameInputValue(e.target.value)}>
-                </Input>
-                <p style={{paddingTop: '1vh'}}>{WISHCONSTANT.CREATE_WISHCARD_MODAL_WISH_TITLE}</p>
-                <p>จำกัด: {wishInputValue.length} / {WISHCONSTANT.CREATE_WISHCARD_MODAL_WISH_TEXT_LIMIT}</p>
-                <TextArea
-                    placeholder={WISHCONSTANT.CREATE_WISHCARD_MODAL_WISH_PLACEHOLDER}
-                    maxLength={WISHCONSTANT.CREATE_WISHCARD_MODAL_WISH_TEXT_LIMIT}
-                    value={wishInputValue}
-                    onChange={e => setWishInputValue(e.target.value)}
-                    autoSize={{ minRows: 2, maxRows: 6 }} // Adjust rows as needed
-                />
-                <p style={{paddingTop: '1vh', paddingBottom: '1vh'}}>{WISHCONSTANT.RADIO_TITLE_1}</p>
-                <Radio.Group onChange={handleFirstChange} value={selectedFirstOption} style={{ width: '100%' }}>
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
-                        {first_options.map((option) => (
-                            <Radio value={option.value} key={option.value} style={{ flex: '1 1 calc(50% - 16px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                <Card
-                                    hoverable
-                                    cover={<Image alt='' src={option.image} width={'10vh'} height={'10vh'}  />}
-                                    style={{ width: '10vh', height: '10vh' }}
-                                >
-                                </Card>
-                            </Radio>
-                        ))}
-                    </div>
-                </Radio.Group>
-                {selectedFirstOption && (
-                    <>
-                        <p style={{paddingTop: '1vh', paddingBottom: '1vh'}}>{WISHCONSTANT.RADIO_TITLE_2}</p>
-                        <Radio.Group onChange={handleSecondChange} value={selectedSecondOption} style={{ width: '100%' }}>
+                        <p style={{ color: 'blue', paddingTop: '1vh' }}>{WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME}</p>
+                        <p>จำกัด: {nameInputValue.length} / {WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME_TEXT_LIMIT}</p>
+                        <Input placeholder={WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME_PLACEHOLDER} maxLength={WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME_TEXT_LIMIT}
+                            value={nameInputValue} onChange={e => setNameInputValue(e.target.value)}>
+                        </Input>
+                        <p style={{ paddingTop: '1vh' }}>{WISHCONSTANT.CREATE_WISHCARD_MODAL_WISH_TITLE}</p>
+                        <p>จำกัด: {wishInputValue.length} / {WISHCONSTANT.CREATE_WISHCARD_MODAL_WISH_TEXT_LIMIT}</p>
+                        <TextArea
+                            placeholder={WISHCONSTANT.CREATE_WISHCARD_MODAL_WISH_PLACEHOLDER}
+                            maxLength={WISHCONSTANT.CREATE_WISHCARD_MODAL_WISH_TEXT_LIMIT}
+                            value={wishInputValue}
+                            onChange={e => setWishInputValue(e.target.value)}
+                            autoSize={{ minRows: 2, maxRows: 6 }} // Adjust rows as needed
+                        />
+                        <p style={{ paddingTop: '1vh', paddingBottom: '1vh' }}>{WISHCONSTANT.RADIO_TITLE_1}</p>
+                        <Radio.Group onChange={handleFirstChange} value={selectedFirstOption} style={{ width: '100%' }}>
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
-                                {second_options.map((option) => (
+                                {first_options.map((option) => (
                                     <Radio value={option.value} key={option.value} style={{ flex: '1 1 calc(50% - 16px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                         <Card
                                             hoverable
@@ -223,62 +207,76 @@ const CreateWishCardButton: React.FC = () => {
                                 ))}
                             </div>
                         </Radio.Group>
-                        <p style={{paddingTop: '1vh', paddingBottom: '1vh'}}>{WISHCONSTANT.RADIO_TITLE_3}</p>
-                        <Radio.Group onChange={handleThirdChange} value={selectedThirdOption} style={{ width: '100%' }}>
-                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
-                                {third_options.map((option) => (
-                                    <Radio value={option.color} key={option.color} style={{ flex: '1 1 calc(50% - 16px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                        <Card
-                                            hoverable
-                                            style={{ width: '10vh', height: '10vh', backgroundColor: option.color}}
-                                        >
-                                        </Card>
-                                    </Radio>
-                                ))}
-                            </div>
-                        </Radio.Group>
-                    </>
-                )}
-                <p style={{paddingTop: '3vh'}}>{WISHCONSTANT.DEMO_TITLE}</p>
-                <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                    <WishCardDemo wishCard={{ 
-                        name: nameInputValue, 
-                        wish: wishInputValue, 
-                        stickerUp: getImagePathForOption(selectedFirstOption),
-                        stickerDown: getImagePathForOption(selectedSecondOption),
-                        borderColor: selectedThirdOption,
-                        __v: 0,
-                        _id: '',
-                        time: '',
-                        cardNumber: 0 }} />
-                </div>
-            </Modal>
-            <Modal
-                title="Success"
-                open={isSuccessAlertModalVisible}
-                onCancel={() => setIsSuccessAlertModalVisible(false)}
-                footer={null}
-            >
-                <SuccessAlert 
-                    SuccessTitle={alertParams.SuccessTitle}
-                    SuccessMessage={`${WISHCONSTANT.CREATE_WISHCARD_SUCCESS_DESC} ${countdown} วินาที`}
-                    AlertStyle={alertParams.AlertStyle}
-                />
-            </Modal>
-            <Modal>
-            </Modal>
-            <Modal
-                title="Error"
-                open={isFailureAlertModalVisible}
-                onCancel={() => setIsFailureAlertModalVisible(false)}
-                footer={null}
-            >
-                <FailureAlert 
-                    FailureTitle={errorParams.FailureTitle}
-                    FailureMessage={`${errorParams.FailureMessage}`}
-                    AlertStyle={errorParams.AlertStyle}
-                />
-            </Modal>
+                        {selectedFirstOption && (
+                            <>
+                                <p style={{ paddingTop: '1vh', paddingBottom: '1vh' }}>{WISHCONSTANT.RADIO_TITLE_2}</p>
+                                <Radio.Group onChange={handleSecondChange} value={selectedSecondOption} style={{ width: '100%' }}>
+                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
+                                        {second_options.map((option) => (
+                                            <Radio value={option.value} key={option.value} style={{ flex: '1 1 calc(50% - 16px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                                <Card
+                                                    hoverable
+                                                    cover={<Image alt='' src={option.image} width={'10vh'} height={'10vh'} />}
+                                                    style={{ width: '10vh', height: '10vh' }}
+                                                >
+                                                </Card>
+                                            </Radio>
+                                        ))}
+                                    </div>
+                                </Radio.Group>
+                                <p style={{ paddingTop: '1vh', paddingBottom: '1vh' }}>{WISHCONSTANT.RADIO_TITLE_3}</p>
+                                <Radio.Group onChange={handleThirdChange} value={selectedThirdOption} style={{ width: '100%' }}>
+                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
+                                        {third_options.map((option) => (
+                                            <Radio value={option.color} key={option.color} style={{ flex: '1 1 calc(50% - 16px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                                <Card
+                                                    hoverable
+                                                    style={{ width: '10vh', height: '10vh', backgroundColor: option.color }}
+                                                >
+                                                </Card>
+                                            </Radio>
+                                        ))}
+                                    </div>
+                                </Radio.Group>
+                            </>
+                        )}
+                        <p style={{ paddingTop: '3vh' }}>{WISHCONSTANT.DEMO_TITLE}</p>
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <WishCardDemo wishCard={{
+                                name: nameInputValue,
+                                wish: wishInputValue,
+                                stickerUp: getImagePathForOption(selectedFirstOption),
+                                stickerDown: getImagePathForOption(selectedSecondOption),
+                                borderColor: selectedThirdOption,
+                                __v: 0,
+                                _id: '',
+                                time: '',
+                                cardNumber: 0
+                            }} />
+                        </div>
+                    </Modal><Modal
+                        title="Success"
+                        open={isSuccessAlertModalVisible}
+                        onCancel={() => setIsSuccessAlertModalVisible(false)}
+                        footer={null}
+                    >
+                        <SuccessAlert
+                            SuccessTitle={alertParams.SuccessTitle}
+                            SuccessMessage={`${WISHCONSTANT.CREATE_WISHCARD_SUCCESS_DESC} ${countdown} วินาที`}
+                            AlertStyle={alertParams.AlertStyle} />
+                    </Modal><Modal>
+                    </Modal><Modal
+                        title="Error"
+                        open={isFailureAlertModalVisible}
+                        onCancel={() => setIsFailureAlertModalVisible(false)}
+                        footer={null}
+                    >
+                        <FailureAlert
+                            FailureTitle={errorParams.FailureTitle}
+                            FailureMessage={`${errorParams.FailureMessage}`}
+                            AlertStyle={errorParams.AlertStyle} />
+                    </Modal></>
+        )}
         </>
     );
 };

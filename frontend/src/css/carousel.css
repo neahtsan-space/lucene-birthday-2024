@@ -67,6 +67,7 @@ line-height: 3;
   .carousel-container > img {
     max-width: 100%; /* Set max-width to ensure images are responsive */
     height: auto;
+    
   }
   
   .carousel-description {

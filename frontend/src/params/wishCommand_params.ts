@@ -9,6 +9,8 @@ export const WISHCOMMAND_CONTACT_NAME2 = 'Neaht.!'
 export const EMOJI_CAT = ' ≽^•⩊•^≼ ₊˚⊹♡'
 export const POPCAT_PATH ='/popcat'
 
+export const ENABLE_CREATE_WISH = true;
+
 export const CREATE_WISHCARD_BUTTON_TEXT = 'ส่งคำอวยพร'
 export const CREATE_WISHCARD_MODAL_TITLE = 'ส่งคำอวยพรให้ Lucene🤍'
 
