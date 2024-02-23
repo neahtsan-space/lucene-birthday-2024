@@ -24,18 +24,27 @@ const CreditPage: React.FC = () => {
   }, [creditList]); // Run effect when creditList changes
 
   return (
-    <div className="credit-container">
-      <h1 className='credit-title'>Credits</h1>
-      <div className="credit-list">
-        {/* Map through credits and display them */}
-        {credits.map((credit, index) => (
-          <div key={index} className="credit-item">
-            {credit}
-          </div>
-        ))}
+    <>
+      <header>
+        <a href="../">BACK</a>
+      </header>
+      <div className="credit-container">
+        <h1 className='credit-title'>Credits</h1>
+        <div className="credit-list">
+          {/* Map through credits and display them */}
+          {credits.map((credit, index) => (
+            <div key={index} className="credit-item">
+              <div className="credit-content">
+                {credit}
+                <div className="centered-text">
+                  Hello
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
-};
-
+}
 export default CreditPage;

@@ -19,6 +19,21 @@
     align-items: center;
     animation: roll-out 5s linear forwards; /* Example animation */
   }
+  .credit-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .credit-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .centered-text {
+    text-align: center;
+  }
   
   @keyframes roll-out {
     0% {
