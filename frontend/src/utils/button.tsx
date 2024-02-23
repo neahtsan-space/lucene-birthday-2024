@@ -118,4 +118,20 @@ const LinkButton: React.FC<{ text: string }> = ({ text }) => (
         <Button type="link">{text}</Button>
 );
 
-export { TextButton, PrimaryButton, DefaultButton, LinkButton };
+const TextNoLinkButton: React.FC<{buttonName: string}> = ({ buttonName }) => {
+
+  const onClick = () => {
+    window.location.href = './credit'
+  }
+
+  return (
+    <>
+      <Button type="text" className="buttonEffect" style={{ color: 'white' }} onClick={onClick}>
+        {buttonName}
+      </Button>
+
+    </>
+  );
+};
+
+export { TextButton, PrimaryButton, DefaultButton, LinkButton, TextNoLinkButton };

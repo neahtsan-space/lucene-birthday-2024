@@ -18,7 +18,7 @@ export const button1_TH = "เกี่ยวกับ Polygon"
 export const button2_TH = "สินค้า Polygon"
 export const button3_TH = "สินค้า Lucene"
 export const button4_TH = "สนับสนุน Lucene"
-export const button5_TH = "ติดต่อ"
+export const button5_TH = "คณะผู้จัดทำ"
 
 //All Button URL
 export const button1_URL = "https://www.plg.tv/"
