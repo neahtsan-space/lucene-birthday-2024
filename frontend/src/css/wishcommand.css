@@ -14,7 +14,7 @@
     justify-self: center;
     align-items: center;
     font-size: large;
-    padding: 5vh;
+    padding: 3vh;
     padding-bottom: 3vh;
   }
   
@@ -33,19 +33,17 @@
   .wish-command-style{
     justify-self: center;
     align-items: center;
-    opacity: '0.5';
-    font-size: '70%';
-    padding-top: '10%';
+    text-align: center;
+    font-size: '100%';
 
   }
   .wish-command-desc{
     align-items: center;
-    padding-top: 2%;
-    padding-bottom: 2%;
+    padding: '5%';
+    padding-bottom: '5%';
   }
   .wish-command-over{
-    align-items: center;
-
+    padding-bottom: 10%;
   }
 }
 

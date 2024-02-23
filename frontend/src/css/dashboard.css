@@ -46,7 +46,8 @@
     display: flex; 
     align-items: center; 
     justify-content: center; 
-    height: 6vh;
+    text-align: center;
+    height: 15vh;
     height: 'auto' ;
   }
 
@@ -54,7 +55,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 6vh;
+    height: 15vh;
     padding: 10px;
   }
 
@@ -89,7 +90,7 @@
   
   .swiper-slide {
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
     background: #fff;
   
     /* Center slide text vertically */
@@ -108,21 +109,21 @@
     display: flex; 
     align-items: center; 
     justify-content: center; 
-    height: 15vh;
-  }
-  .dashboard-description2{
-    display: 'flex'; 
-    align-items: 'center'; 
-    justify-content: 'center';
-    opacity: 0.4;
+    height: 25vh;
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: x-large;
+
   }
 
   .dashboard-title {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 15vh;
-    padding: 10px; 
+    height: 20vh;
+    padding: 10px;
+    font-size: xxx-large; 
   }
 
 }

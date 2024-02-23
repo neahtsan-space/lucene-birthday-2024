@@ -21,6 +21,7 @@
   .description-container {
     height: 4vh;
     padding: 10px;
+    text-overflow: ellipsis;
   }
 
   .thumbnail {
