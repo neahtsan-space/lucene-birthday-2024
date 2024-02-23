@@ -9,6 +9,7 @@ import { SuccessAlert, FailureAlert } from './alert';
 import { revalidatePath } from 'next/cache';
 import axios from 'axios';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import handler from '../../api/recaptchaSubmit';
 
 const { TextArea } = Input;
 
@@ -129,11 +130,9 @@ const CreateWishCardButton: React.FC<{ showbutton: boolean }> = ({ showbutton })
 
         const reCaptchaToken = await executeRecaptcha('submit_wish_card');
 
-        const response = await axios.post('/api/recaptchaSubmit', {
-            gRecaptchaResponse: reCaptchaToken,
-        });
+        const response = await handler({ method: 'POST', body: { gRecaptchaResponse: reCaptchaToken } } as any, {} as any);
 
-        if (!response.data.success) {
+        if (!response) {
             setErrorParams({
                 FailureTitle: WISHCONSTANT.CREATE_WISHCARD_NAME_WARNING,
                 FailureMessage: WISHCONSTANT.RECAPTCHA_FAILURE_DESC,
@@ -142,7 +141,6 @@ const CreateWishCardButton: React.FC<{ showbutton: boolean }> = ({ showbutton })
             setIsFailureAlertModalVisible(true);
             return;
         }
-
 
         setIsModalVisible(false);
 

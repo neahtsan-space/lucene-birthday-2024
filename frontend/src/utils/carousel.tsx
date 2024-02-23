@@ -8,8 +8,9 @@ import 'swiper/css/effect-fade';
 import { Pagination, Navigation, EffectFade, Autoplay, FreeMode, Thumbs } from 'swiper/modules';
 import '@/css/carousel.css';
 import { dashboardImages, DASHBOARD_TITLE, DASHBOARD_NAVIGATION_COLOR, DASHBOARD_PAGINATION_COLOR, EMOJI_DASHBOARD_TITLE } from '@/params/dashboard_param';
-import { DASHBOARD_BG, DASHBOARD_DESC_BG, DASHBOARD_DESC_BG2, DASHBOARD_TITLE_BG } from '@/params/background_params';
+import { DASHBOARD_BG, DASHBOARD_DESC_BG, DASHBOARD_TITLE_BG } from '@/params/background_params';
 import '@/css/dashboard.css';
+
 const DashboardCarousel: React.FC<{ showThumbs: boolean }> = ({ showThumbs }) => {
   const [currentDescription, setCurrentDescription] = useState<string>('');
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
@@ -23,8 +24,8 @@ const DashboardCarousel: React.FC<{ showThumbs: boolean }> = ({ showThumbs }) =>
   };
 
   return (
-    <div style={{userSelect: 'none',backgroundColor: DASHBOARD_BG}}>
-      <div className='dashboard-title' style={{backgroundColor: DASHBOARD_TITLE_BG}}>{DASHBOARD_TITLE} {EMOJI_DASHBOARD_TITLE}</div>
+    <div style={{ userSelect: 'none', background: DASHBOARD_BG }}>
+      <div className='dashboard-title' style={{background: DASHBOARD_TITLE_BG}}>{DASHBOARD_TITLE} {EMOJI_DASHBOARD_TITLE}</div>
       <Swiper
         thumbs={{ swiper: thumbsSwiper }}
         slidesPerView={1}
@@ -54,7 +55,7 @@ const DashboardCarousel: React.FC<{ showThumbs: boolean }> = ({ showThumbs }) =>
             style={{
               position: 'relative',
               width: '100%',
-              backgroundColor: DASHBOARD_BG,
+              background: DASHBOARD_BG,
               minWidth: '25vw',
             }}>
               <Image
@@ -103,7 +104,7 @@ const DashboardCarousel: React.FC<{ showThumbs: boolean }> = ({ showThumbs }) =>
       </div>
       )}
       <div className='dashboard-description' style={{ backgroundColor: DASHBOARD_DESC_BG}}>
-        <div className='dashboard-description2' style={{backgroundColor: DASHBOARD_DESC_BG2 }}>
+        <div className='dashboard-description2' style={{backgroundColor: DASHBOARD_DESC_BG }}>
         {currentDescription}
         </div>
       </div>
