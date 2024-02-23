@@ -1,16 +1,15 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import './CreditPage.css'; // Import your CSS file for styling
-import * as CreditParams from '@/params/credit_params';
+import { credits } from '@/params/credit_params';
+import './CreditPage.css';
 
 const CreditPage: React.FC = () => {
-  const [credits, setCredits] = useState<string[]>([]); // State to hold credits
-  const creditList = [CreditParams.CREDIT_NAME1,CreditParams.CREDIT_NAME2,CreditParams.CREDIT_NAME3,CreditParams.CREDIT_NAME4,CreditParams.CREDIT_NAME5,CreditParams.CREDIT_NAME6]; // Sample list of credits
+  const [creditList, setCreditList] = useState<{ name: string; description: string; link: string }[]>([]);
 
   useEffect(() => {
     // Function to roll out credits
     const rollOutCredits = () => {
-      setCredits(creditList); // Set credits to the list
+      setCreditList(credits); // Set credits to the list imported from credits.ts
     };
 
     // Call the function after component is mounted
@@ -19,9 +18,9 @@ const CreditPage: React.FC = () => {
     // Cleanup function
     return () => {
       // Reset credits when component is unmounted
-      setCredits([]);
+      setCreditList([]);
     };
-  }, [creditList]); // Run effect when creditList changes
+  }, []);
 
   return (
     <>
@@ -32,13 +31,12 @@ const CreditPage: React.FC = () => {
         <h1 className='credit-title'>Credits</h1>
         <div className="credit-list">
           {/* Map through credits and display them */}
-          {credits.map((credit, index) => (
+          {creditList.map((credit, index) => (
             <div key={index} className="credit-item">
               <div className="credit-content">
-                {credit}
-                <div className="centered-text">
-                  Hello
-                </div>
+                {/* Make the name a link */}
+                <a href={credit.link} className="credit-name">{credit.name}</a>
+                <p className="credit-description">{credit.description}</p>
               </div>
             </div>
           ))}
@@ -47,4 +45,5 @@ const CreditPage: React.FC = () => {
     </>
   );
 }
+
 export default CreditPage;

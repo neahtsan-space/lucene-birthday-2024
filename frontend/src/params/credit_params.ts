@@ -1,13 +1,8 @@
-export const CREDIT_NAME1 = 'Neaht';
-export const CREDIT_NAME2 = 'Razerman';
-export const CREDIT_NAME3 = 'CV_FSan';
-export const CREDIT_NAME4 = 'สิราวิ้จจะบึ';
-export const CREDIT_NAME5 = 'GPT-KUN';
-export const CREDIT_NAME6 = 'COPILOT-SAN';
-
-export const CREDIT_DESC1 = '';
-export const CREDIT_DESC2 = '';
-export const CREDIT_DESC3 = '';
-export const CREDIT_DESC4 = '';
-export const CREDIT_DESC5 = '';
-export const CREDIT_DESC6 = '';
+export const credits: { name: string; description: string; link: string }[] = [
+    { name: 'Neaht', description: 'Project Developer', link: 'https://twitter.com/NeahtSan2nd' },
+    { name: 'Razerman', description: 'Project Developer', link: 'razerman.html' },
+    { name: 'CV_FSan', description: 'Artwork Provider', link: 'https://twitter.com/cvfsan' },
+    { name: 'สิราวิ้จจะบึ', description: 'Project Inspiration', link: 'https://twitter.com/SierraB_Siravij' },
+    /*{ name: 'GPT-KUN ft. COPILOT-SAN', description: 'KYA', link: 'gpt_kun.html' },*/
+    { name: 'Polygon Project', description: 'Project Approval', link: 'copilot_san.html' },
+];
