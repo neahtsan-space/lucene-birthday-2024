@@ -114,7 +114,6 @@
     display: 'flex'; 
     align-items: 'center'; 
     justify-content: 'center';
-    text-shadow: 2px 2px rgb(255, 255, 255); 
     opacity: 0.4;
   }
 
@@ -123,8 +122,7 @@
     align-items: center;
     justify-content: center;
     height: 15vh;
-    padding: 10px;
-    text-shadow: 4px 4px rgb(255, 255, 255); 
+    padding: 10px; 
   }
 
 }
