@@ -1,21 +1,21 @@
 'use server';
 
-import { IWishCardDB, IWishCardPost } from '@/interfaces/IWishcard';
+import { IWishCard, IWishCardPost } from '@/interfaces/IWishcard';
 import *  as API_PATH from '@/params/api_params'; 
 
-async function GetWishData(): Promise<IWishCardDB[]> {
+async function GetWishData(): Promise<IWishCard[]> {
     const response = await fetch(API_PATH.GET_ALL_WISH);
-    const data: IWishCardDB[] = await response.json();
+    const data: IWishCard[] = await response.json();
     return data;
   }
 
-async function GetLastestFourWish(): Promise<IWishCardDB[]> {
+async function GetLastestFourWish(): Promise<IWishCard[]> {
     const response = await fetch(API_PATH.GET_LASTEST_FOUR_WISH);
-    const data: IWishCardDB[] = await response.json();
+    const data: IWishCard[] = await response.json();
     return data;
 }
 
-async function GetWishByName(name: string): Promise<IWishCardDB | null> {
+async function GetWishByName(name: string): Promise<IWishCard | null> {
     try {
         const encodedName = encodeURIComponent(name);
         const API_PATH_GET_WISH_BY_NAME = `${API_PATH.GET_WISH_BY_NAME}?name=${encodedName}`;
@@ -26,7 +26,7 @@ async function GetWishByName(name: string): Promise<IWishCardDB | null> {
             return null;
         }
 
-        const data: IWishCardDB = await response.json();
+        const data: IWishCard = await response.json();
         return data;
     } catch (error) {
         console.error("Error fetching wish card");

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { META_DATA_TITLE, META_DATA_DESCRIPTION } from "@/params/metadata_params";
+import GoogleCaptchaWrapper from "./googleCaptchaWrapper";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +27,11 @@ export default function RootLayout({
         sizes="<generated>"
       />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <GoogleCaptchaWrapper>
+          {children}
+        </GoogleCaptchaWrapper>
+      </body>
     </html>
   );
 }

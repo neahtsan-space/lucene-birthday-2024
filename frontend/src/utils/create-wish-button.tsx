@@ -7,6 +7,8 @@ import { IWishCardPost } from '@/interfaces/IWishcard';
 import { CreateWishCard } from '../../api/api';
 import { SuccessAlert, FailureAlert } from './alert';
 import { revalidatePath } from 'next/cache';
+import axios from 'axios';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 const { TextArea } = Input;
 
@@ -67,6 +69,8 @@ const imageChoiceToPathMap = MapInputToImage.reduce((acc, cur) => {
 
 const CreateWishCardButton: React.FC<{ showbutton: boolean }> = ({ showbutton }) => {
 
+    const { executeRecaptcha } = useGoogleReCaptcha();
+
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [nameInputValue, setNameInputValue] = useState('');
     const [wishInputValue, setWishInputValue] = useState('');
@@ -105,12 +109,34 @@ const CreateWishCardButton: React.FC<{ showbutton: boolean }> = ({ showbutton })
         setIsModalVisible(true);
     };
 
-    const handleOk = () => {
+
+    const handleOk = async() => {
 
         if (nameInputValue === '' || wishInputValue === '') {
             setErrorParams({
                 FailureTitle: WISHCONSTANT.CREATE_WISHCARD_NAME_WARNING,
                 FailureMessage: WISHCONSTANT.CREATE_WISHCARD_NAME_WARNING_DESC,
+                AlertStyle: {backgroundColor: 'white', color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center'}
+            });
+            setIsFailureAlertModalVisible(true);
+            return;
+        }
+
+        if (!executeRecaptcha) {
+            console.log('Execute recaptcha not yet available');
+            return;
+        }
+
+        const reCaptchaToken = await executeRecaptcha('submit_wish_card');
+
+        const response = await axios.post('/api/recaptchaSubmit', {
+            gRecaptchaResponse: reCaptchaToken,
+        });
+
+        if (!response.data.success) {
+            setErrorParams({
+                FailureTitle: WISHCONSTANT.CREATE_WISHCARD_NAME_WARNING,
+                FailureMessage: WISHCONSTANT.RECAPTCHA_FAILURE_DESC,
                 AlertStyle: {backgroundColor: 'white', color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center'}
             });
             setIsFailureAlertModalVisible(true);
