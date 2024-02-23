@@ -17,16 +17,16 @@ export const DASHBOARD_IMG_7 = '/dashboard/7.webp';
 // Dashboard img description
 export const DASHBOARD_IMG_1_DESC = 'ลุ้นดวงกับเน่~ กิจกรรมท้าชะตา ฟ้าลิขิต คนที่ถูกขอให้เปนช้านนนน'
 export const DASHBOARD_IMG_2_DESC = 'ไลฟ์ Party 3 ไลฟ์ติดอย่างนั้นเหรอ!!'
-export const DASHBOARD_IMG_3_DESC = 'Lucene In TAIPEI 2024!'
-export const DASHBOARD_IMG_4_DESC = 'Mock Image 4 '
-export const DASHBOARD_IMG_5_DESC = 'Mock Image 5 '
-export const DASHBOARD_IMG_6_DESC = 'Mock Image 6 '
-export const DASHBOARD_IMG_7_DESC = 'Mock Image 7 '
+export const DASHBOARD_IMG_3_DESC = 'Lucene In TAIPEI!! (2024 Taipei Book Exhibition)'
+export const DASHBOARD_IMG_4_DESC = 'ไลฟ์ valentine กับเน่ ดูกันอ๊ะยาง ดูกันอ๊ะยางงง'
+export const DASHBOARD_IMG_5_DESC = 'ขอบคุณคุณ F สำหรับงาน ART น่ารักๆนะครับ!'
+export const DASHBOARD_IMG_6_DESC = ''
+export const DASHBOARD_IMG_7_DESC = ''
 
 export const ENABLE_CAROUSEL_THUMBS = false;
 
 // Dashboard total img (picture name must be 1.webp, 2.webp, 3.webp, ... n.webp)
-const DASHBOARD_TOTAL_IMG = 3;
+const DASHBOARD_TOTAL_IMG = 5;
 
 
 // Don't have to change anything below this line

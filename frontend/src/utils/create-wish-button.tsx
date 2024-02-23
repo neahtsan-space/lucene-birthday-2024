@@ -283,6 +283,7 @@ const CreateWishCardButton: React.FC<{ showbutton: boolean }> = ({ showbutton })
                         open={isSuccessAlertModalVisible}
                         onCancel={() => setIsSuccessAlertModalVisible(false)}
                         footer={null}
+                        centered={true}
                     >
                         <SuccessAlert
                             SuccessTitle={alertParams.SuccessTitle}
@@ -294,6 +295,7 @@ const CreateWishCardButton: React.FC<{ showbutton: boolean }> = ({ showbutton })
                         open={isFailureAlertModalVisible}
                         onCancel={() => setIsFailureAlertModalVisible(false)}
                         footer={null}
+                        centered={true}
                     >
                         <FailureAlert
                             FailureTitle={errorParams.FailureTitle}
