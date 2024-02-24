@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { META_DATA_TITLE, META_DATA_DESCRIPTION } from "@/params/metadata_params";
 import GoogleCaptchaWrapper from "./googleCaptchaWrapper";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -31,6 +32,7 @@ export default function RootLayout({
         <GoogleCaptchaWrapper>
           {children}
         </GoogleCaptchaWrapper>
+        <SpeedInsights />
       </body>
     </html>
   );
