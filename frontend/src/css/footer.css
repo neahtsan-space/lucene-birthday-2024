@@ -77,7 +77,7 @@
   color: white;
   text-align: center;
   padding: 20px;
-  z-index: 9999;
+  z-index: 4;
 }
 .footer-discord-name {
   display: flex;
