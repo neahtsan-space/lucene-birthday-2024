@@ -1,22 +1,22 @@
-/*mobilecss*/
-@media screen and (max-width: 768px){
-.wish-command-container {
-    width: 100%;
-    display: flex;
-    justify-self: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  .wish-command-title {
-    display: flex;
-    flex: 1;
-    justify-self: center;
-    align-items: center;
-    font-size: large;
-    padding: 3vh;
-    padding-bottom: 3vh;
-  }
+/*mobile css*/
+@media screen and (max-width: 600px){
+  .wish-command-container {
+      width: 100%;
+      display: flex;
+      justify-self: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    
+    .wish-command-title {
+      display: flex;
+      flex: 1;
+      justify-self: center;
+      align-items: center;
+      font-size: large;
+      padding: 5vh;
+      padding-bottom: 3vh;
+    }
   
   .wish-command-divider {
     border-color: turquoise;
@@ -47,38 +47,73 @@
   }
 }
 
-/*pc css*/
-@media (min-width: 768px){
-    .wish-command-container {
-        width: 100%;
-        margin-left: 25%;
-        margin-right: 20%;
-        /*text-shadow: 2px 2px white;*/
-      }
-      
-      .wish-command-title {
-        width: 100%;
-        font-size: 8vh;
-        padding: 5vh;
-        padding-bottom: 3vh;
-        text-shadow: 4px 4px rgb(255, 255, 255); 
-      }
-      
-      .wish-command-divider {
-        border-color: turquoise;
-        border-width: 0.3vw;
-        padding: 2vh;
-        margin: 10px 0;
-        padding-left: 5vh;
-      }
-      
-      .wish-command-button-container {
-        display: flex;
-        gap: 10%;
-        flex-direction: row;
-      }
-      .wish-command-over:hover{
-        color: teal;
-        
-      }
+/*tablet css*/
+@media (min-width: 600px)and (max-width:1281px){
+  .wish-command-container {
+      width: 100%;
+      margin-left: 25%;
+      margin-right: 20%;
+      /*text-shadow: 2px 2px white;*/
     }
+    
+    .wish-command-title {
+      width: 100%;
+      font-size: 8vh;
+      padding: 5vh;
+      padding-bottom: 3vh;
+      text-shadow: 4px 4px rgb(255, 255, 255); 
+    }
+    .wish-command-divider {
+      border-color: turquoise;
+      border-width: 0.3vw;
+      padding: 2vh;
+      margin: 10px 0;
+      padding-left: 5vh;
+    }
+    
+    .wish-command-button-container {
+      display: flex;
+      gap: 10%;
+      flex-direction: row;
+    }
+    .wish-command-over:hover{
+      color: teal;
+      
+    }
+  }
+
+/*pc css*/
+@media (min-width: 1281px){
+  .wish-command-container {
+      width: 100%;
+      margin-left: 25%;
+      margin-right: 20%;
+      /*text-shadow: 2px 2px white;*/
+    }
+    
+    .wish-command-title {
+      width: 100%;
+      font-size: 8vh;
+      padding: 5vh;
+      padding-bottom: 3vh;
+      text-shadow: 4px 4px rgb(255, 255, 255); 
+    }
+    
+    .wish-command-divider {
+      border-color: turquoise;
+      border-width: 0.3vw;
+      padding: 2vh;
+      margin: 10px 0;
+      padding-left: 5vh;
+    }
+    
+    .wish-command-button-container {
+      display: flex;
+      gap: 10%;
+      flex-direction: row;
+    }
+    .wish-command-over:hover{
+      color: teal;
+      
+    }
+  }

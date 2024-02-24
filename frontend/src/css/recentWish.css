@@ -1,53 +1,81 @@
-/* Mobile responsiveness */
-@media screen and(max-width: 768px) {
-.recent-wish-container {
-  border: 1px solid transparent;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; /* Allow items to wrap to next line */
-}
-
-
-  .wish-card {
-    flex-direction: row; /* Stack items vertically */
-    align-items: flex-start; /* Align items to the start of the container */
-    width: 100%;
-    height: 100%;
-    padding-left: 5%; /* Adjust padding for smaller screens */
-    padding-right: 5%; /* Adjust padding for smaller screens */
-    flex-direction: row;
-    align-items: center;
-    padding-bottom: 5%;
-    margin-bottom: 10px;
-    gap: 5%;
-  }
-}
-
-
-/* pc Container styles */
-@media (min-width: 768px){
-.recent-wish-container {
+/* mobile css */
+@media screen and(max-width: 600px) {
+  .recent-wish-container {
     border: 1px solid transparent;
     width: 100%;
     height: 100%;
     display: flex;
-  }
-
-  
-  .wish-card {
-    display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    padding-bottom: 5%;
-    margin-bottom: 10px;
-    width: 100%;
-    height: 100%;
-    padding-left: 10%;
-    padding-right: 10%;
-    gap: 5%;
+    flex-wrap: wrap; /* Allow items to wrap to next line */
   }
-}
+  
+  
+    .wish-card {
+      flex-direction: row; /* Stack items vertically */
+      align-items: flex-start; /* Align items to the start of the container */
+      width: 100%;
+      height: 100%;
+      padding-left: 5%; /* Adjust padding for smaller screens */
+      padding-right: 5%; /* Adjust padding for smaller screens */
+      flex-direction: row;
+      align-items: center;
+      padding-bottom: 5%;
+      margin-bottom: 10px;
+      gap: 5%;
+    }
+  }
+  
+  
+  /* tablet css */
+  @media (min-width: 600px)and (max-width:1281px){
+  .recent-wish-container {
+      border: 1px solid transparent;
+      width: 100%;
+      height: 100%;
+      display:'flex';
+      
+  
+    }
+  
+    
+    .wish-card {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      background-color: transparent;
+      padding-bottom: 5%;
+      margin-bottom: 10px;
+      width: 100%;
+      height: 100%;
+      padding-left: 3%;
+      padding-right: 3%;
+      gap: 2%;
+      overflow: scroll;
+    }
+  }
+  /* pc css */
+  @media (min-width: 1281px){
+    .recent-wish-container {
+        border: 1px solid transparent;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        overflow: clip;
+      }
+    
+      
+      .wish-card {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        padding-bottom: 5%;
+        margin-bottom: 10px;
+        width: 100%;
+        height: 100%;
+        padding-left: 10%;
+        padding-right: 10%;
+        gap: 5%;
+      }
+    }

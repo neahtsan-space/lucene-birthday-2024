@@ -1,5 +1,30 @@
+/*mobile css*/
+@media screen and (max-width: 600px) {
+  .item {
+    height: 25vh; /* Each item takes one-fourth of the container's height on mobile */
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; /* Adjust as needed */
+  }
+}
+
+/*tablet css*/
+@media (min-width: 600px)and (max-width:1281px) {
+  .item {
+    height: 25vh; /* Each item takes one-fourth of the container's height on mobile */
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; /* Adjust as needed */
+  }
+}
+
+
 /*pc css*/
-@media screen and (min-width: 768px) {
+@media (min-width: 1281px) {
 
 .app {
   width: 100vw;
@@ -21,16 +46,4 @@
   border: 1px solid black;
   box-sizing: content-box;
 }
-}
-
-/*mobile css*/
-@media (max-width: 768px) {
-  .item {
-    height: 25vh; /* Each item takes one-fourth of the container's height on mobile */
-  }
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%; /* Adjust as needed */
-  }
 }

@@ -1,5 +1,5 @@
 /*mobile css*/
-@media screen and (max-width: 768px) {
+@media  screen and (max-width: 600px) {
   .dashboard-image-container {
     width: 100vw;
     height: auto;
@@ -28,9 +28,51 @@
     height: auto;
   }
 }
+/*tablet css*/
+@media (min-width: 600px)and (max-width:1281px){
 
+  
+  .dashboard-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5vw;
+  }
+  
+  .dashboard-image-container {
+    position: relative;
+    width: 50vw;
+    height: 25vw;
+  }
+  .dashboard-description{
+    display: 'flex'; 
+    align-items: 'center'; 
+    justify-content: 'center'; 
+    height: '2.5vw' ;
+  }
+  
+  
+  .thumbs-container {
+    margin-top: 20px;
+  }
+  
+  .thumbnail {
+    position: relative;
+    height: 5.625vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .description-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5vw;
+  }
+}
 /*pc css*/
-@media (min-width: 768px){
+@media (min-width: 1281px){
 
   
   .dashboard-title {

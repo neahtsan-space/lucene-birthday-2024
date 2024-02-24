@@ -1,5 +1,5 @@
 /*mobilecss*/
-@media screen and (max-width: 768px){
+@media  screen and(max-width: 600px){
 
   .menu-open .retract{
     color: aquamarine ;
@@ -88,16 +88,118 @@
 }
 }
 }
+
+/*tablet css*/
+@media (min-width: 600px)and (max-width:1281px){
+
+  .retract{
+    visibility: hidden;
+  
+    }
+
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .header-left-side, .header-right-side {
+    flex: 1;
+    text-align: center; /* Center text for visual consistency */
+  }
+  
+  .header-center {
+    flex: 2; /* Allows the center section to take more space, adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .header-right-side {
+      display: flex;
+      justify-content: flex-start;
+  }
+  
+  .text-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 768px;
+      padding-left: 20;
+      margin-left: 20px;
+    }
+    
+    .header-title {
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      color: white; /* Consider changing the color for better contrast if needed */
+      font-size: 30px;
+      font-weight: bold;
+      line-height: 1.5;
+      display: inline-block;
+      animation: rainbow-wave 3s infinite;
+    }
+    .header-right-side {
+      display: flex;
+      align-items: right;
+      justify-content: flex-end;
+  }
+  .header-button {
+      margin: 10px;
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+  }
+  
+  
+  @keyframes colorChange {
+  0%, 100% {
+    color: rgb(255, 255, 255); /* Start and end color */
+  }
+  50% {
+    color: rgba(38, 222, 247, 0.829); /* Mid color */
+  }
+  }
+  @keyframes headerglow {
+  0%, 100% {
+    color: rgba(53, 255, 211, 0.5); /* Initial and final color */
+    text-shadow: 0 0 10px rgba(53, 255, 211, 0.5), 0 0 20px rgba(53, 255, 211, 0.5), 0 0 30px rgba(53, 255, 211, 0.5); /* Initial and final shadow */
+  }
+  25%, 75% {
+    color: rgbargba(255, 215, 0, 0.8); /* Yellow */
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.8); /* Yellow */
+  }
+  50% {
+    color: rgba(38, 222, 247, 0.829); /* Red */
+    text-shadow: 0 0 20px rgba(38, 222, 247, 0.829), 0 0 40px rgba(38, 222, 247, 0.829), 0 0 60px rgba(38, 222, 247, 0.829); /* Red */
+  }
+  }
+  }
+  
+  @keyframes rainbow-wave {
+    0% { color: red; }
+    16.666% { color: orange; }
+    33.333% { color: yellow; }
+    50% { color: green; }
+    66.666% { color: blue; }
+    83.333% { color: indigo; }
+    100% { color: violet; }
+  }
+
 /*pc css*/
-@media (min-width: 768px){
+@media (min-width: 1281px){
 
 .retract{
   visibility: hidden;
 
   }
-/* Adjustments for header.css */
 
-/* header.css */
 
 .header {
   display: flex;
@@ -131,7 +233,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 768px;
+    max-width: 1281px;
     padding-left: 20;
     margin-left: 20px;
   }
