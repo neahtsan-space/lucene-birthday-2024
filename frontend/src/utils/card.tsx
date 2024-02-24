@@ -157,13 +157,17 @@ const WishCardDemo: React.FC<{wishCard: IWishCard}> = ({wishCard}) => {
                 }}
             >
                 <Meta
-                title={`${wishCard.name} #${wishCard.cardNumber}`}
-                description={
-                    <div>
-                    <p>{wishCard.time}</p>
-                    <p>{wishCard.wish}</p>
-                    </div>
-                }
+                    title={
+                    <span style={{ color: 'blue', fontWeight: 'bold' }}>
+                        {wishCard.name} #{wishCard.cardNumber}
+                    </span>
+                    }
+                    description={
+                        <div>
+                        <p style={{ color: 'black', fontSize: '100%' }}>{wishCard.time}</p>
+                        <p style={{ paddingTop: '10%', color: CARD_PARAMS.TEXT_COLOR, fontSize: '120%' }}>{wishCard.wish}</p>
+                        </div>
+                    }
                 />
             </Card>
         </div>
