@@ -19,14 +19,14 @@ export const DASHBOARD_IMG_1_DESC = 'ลุ้นดวงกับเน่~ �
 export const DASHBOARD_IMG_2_DESC = 'ไลฟ์ Party 3 ไลฟ์ติดอย่างนั้นเหรอ!!'
 export const DASHBOARD_IMG_3_DESC = 'Lucene In TAIPEI!! (2024 Taipei Book Exhibition)'
 export const DASHBOARD_IMG_4_DESC = 'ไลฟ์ valentine กับเน่ ดูกันอ๊ะยาง ดูกันอ๊ะยางงง'
-export const DASHBOARD_IMG_5_DESC = 'ขอบคุณคุณ F สำหรับงาน ART น่ารักๆนะครับ!'
-export const DASHBOARD_IMG_6_DESC = ''
+export const DASHBOARD_IMG_5_DESC = 'เหยยย แบบนี้จะพลาดได้หรือไม่~'
+export const DASHBOARD_IMG_6_DESC = 'ขอบคุณคุณ F สำหรับงาน ART น่ารักๆนะครับ!'
 export const DASHBOARD_IMG_7_DESC = ''
 
 export const ENABLE_CAROUSEL_THUMBS = false;
 
 // Dashboard total img (picture name must be 1.webp, 2.webp, 3.webp, ... n.webp)
-const DASHBOARD_TOTAL_IMG = 5;
+const DASHBOARD_TOTAL_IMG = 6;
 
 
 // Don't have to change anything below this line
