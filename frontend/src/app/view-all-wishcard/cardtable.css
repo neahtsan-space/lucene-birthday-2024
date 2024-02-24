@@ -1,40 +1,60 @@
 /*mobilecss*/
 @media screen and (max-width: 768px){
-.card-grid {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-content: space-around;
-    gap: 2px;
-    margin: 0 auto;
+  .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-content: space-around;
+      gap: 2px;
+      margin: 0 auto;
+    }
+    
+    .card-grid-item {
+      flex: 1 1 calc(25% - 32px);
+      max-width: calc(25% - 32px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
   
+  /* tablet css */
+  @media (min-width: 600px) and (max-width:1281px) {
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-content: space-around;
+      gap: 2px;
+      margin: 0 auto;
+    }
+    
+    .card-grid-item {
+      flex: 1 1 calc(25% - 32px);
+      max-width: calc(25% - 32px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  
+  /*pc css*/
+  @media (min-width: 768px){
+  .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin: 0 auto;
+      padding: 3%;
+    }
+    
   .card-grid-item {
-    flex: 1 1 calc(25% - 32px);
-    max-width: calc(25% - 32px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+      flex: 1 1 calc(25% - 32px);
+      max-width: calc(25% - 32px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
-}
-
-/*pc css*/
-@media (min-width: 768px){
-.card-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin: 0 auto;
-    padding: 3%;
-  }
-  
-.card-grid-item {
-    flex: 1 1 calc(25% - 32px);
-    max-width: calc(25% - 32px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}

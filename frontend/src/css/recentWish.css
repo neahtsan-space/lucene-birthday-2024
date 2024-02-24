@@ -27,32 +27,28 @@
   
   
   /* tablet css */
-  @media (min-width: 600px)and (max-width:1281px){
-  .recent-wish-container {
+  @media (min-width: 600px) and (max-width:1281px) {
+    .recent-wish-container {
       border: 1px solid transparent;
       width: 100%;
       height: 100%;
-      display:'flex';
-      
-  
-    }
-  
-    
-    .wish-card {
       display: flex;
       flex-direction: row;
+      flex-wrap: wrap;
       justify-content: center;
-      background-color: transparent;
-      padding-bottom: 5%;
+      align-items: center;
+      gap: 5%;
+    }
+    
+    .wish-card {
+      flex-direction: column;
+      width: calc(50% - 10%);
+      height: auto;
       margin-bottom: 10px;
-      width: 100%;
-      height: 100%;
-      padding-left: 3%;
-      padding-right: 3%;
-      gap: 2%;
-      overflow: scroll;
     }
   }
+  
+    
   /* pc css */
   @media (min-width: 1281px){
     .recent-wish-container {
@@ -79,3 +75,5 @@
         gap: 5%;
       }
     }
+    
+  
