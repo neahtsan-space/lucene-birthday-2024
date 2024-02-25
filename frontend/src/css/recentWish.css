@@ -6,17 +6,17 @@
     height: 100%;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap; /* Allow items to wrap to next line */
+    flex-wrap: wrap; 
   }
   
   
     .wish-card {
       flex-direction: row; /* Stack items vertically */
-      align-items: flex-start; /* Align items to the start of the container */
+      align-items: flex-start; 
       width: 100%;
       height: 100%;
-      padding-left: 5%; /* Adjust padding for smaller screens */
-      padding-right: 5%; /* Adjust padding for smaller screens */
+      padding-left: 5%; 
+      padding-right: 5%; 
       flex-direction: row;
       align-items: center;
       padding-bottom: 5%;

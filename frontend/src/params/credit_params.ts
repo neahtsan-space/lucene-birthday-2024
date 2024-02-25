@@ -6,3 +6,4 @@ export const credits: { name: string; description: string; link: string }[] = [
     { name: 'Setsugi', description: 'Domain', link: 'https://twitter.com/SetsuGi1'},
     { name: 'Polygon Project', description: 'Project Approval', link: 'https://www.plg.tv/' },
 ];
+

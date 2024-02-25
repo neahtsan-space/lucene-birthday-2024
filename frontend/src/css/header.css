@@ -64,29 +64,6 @@
     margin-bottom: 10px;
   }
 
-
-@keyframes colorChange {
-0%, 100% {
-  color: rgb(255, 255, 255); /* Start and end color */
-}
-50% {
-  color: rgba(38, 222, 247, 0.829); /* Mid color */
-}
-}
-@keyframes headerglow {
-0%, 100% {
-  color: rgba(53, 255, 211, 0.5); /* Initial and final color */
-  text-shadow: 0 0 10px rgba(53, 255, 211, 0.5), 0 0 20px rgba(53, 255, 211, 0.5), 0 0 30px rgba(53, 255, 211, 0.5); /* Initial and final shadow */
-}
-25%, 75% {
-  color: rgbargba(255, 215, 0, 0.8); /* Yellow */
-  text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.8); /* Yellow */
-}
-50% {
-  color: rgba(38, 222, 247, 0.829); /* Red */
-  text-shadow: 0 0 20px rgba(38, 222, 247, 0.829), 0 0 40px rgba(38, 222, 247, 0.829), 0 0 60px rgba(38, 222, 247, 0.829); /* Red */
-}
-}
 }
 
 /*tablet css*/
@@ -105,17 +82,16 @@
     align-items: center;
     width: 100%;
     padding: 1rem;
-    background-color: #333;
     color: #fff;
   }
   
   .header-left-side, .header-right-side {
     flex: 1;
-    text-align: center; /* Center text for visual consistency */
+    text-align: center; 
   }
   
   .header-center {
-    flex: 2; /* Allows the center section to take more space, adjust as needed */
+    flex: 2; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -139,7 +115,7 @@
     .header-title {
       text-align: center;
       font-family: 'Arial', sans-serif;
-      color: white; /* Consider changing the color for better contrast if needed */
+      color: white; 
       font-size: 30px;
       font-weight: bold;
       line-height: 1.5;
@@ -158,31 +134,8 @@
       display: flex;
   }
   
-  
-  @keyframes colorChange {
-  0%, 100% {
-    color: rgb(255, 255, 255); /* Start and end color */
   }
-  50% {
-    color: rgba(38, 222, 247, 0.829); /* Mid color */
-  }
-  }
-  @keyframes headerglow {
-  0%, 100% {
-    color: rgba(53, 255, 211, 0.5); /* Initial and final color */
-    text-shadow: 0 0 10px rgba(53, 255, 211, 0.5), 0 0 20px rgba(53, 255, 211, 0.5), 0 0 30px rgba(53, 255, 211, 0.5); /* Initial and final shadow */
-  }
-  25%, 75% {
-    color: rgbargba(255, 215, 0, 0.8); /* Yellow */
-    text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.8); /* Yellow */
-  }
-  50% {
-    color: rgba(38, 222, 247, 0.829); /* Red */
-    text-shadow: 0 0 20px rgba(38, 222, 247, 0.829), 0 0 40px rgba(38, 222, 247, 0.829), 0 0 60px rgba(38, 222, 247, 0.829); /* Red */
-  }
-  }
-  }
-  
+  /*colorwave effect*/
   @keyframes rainbow-wave {
     0% { color: red; }
     16.666% { color: orange; }
@@ -208,17 +161,15 @@
   align-items: center;
   width: 100%;
   padding: 1rem;
-  background-color: #333;
-  color: #fff;
 }
 
 .header-left-side, .header-right-side {
   flex: 1;
-  text-align: center; /* Center text for visual consistency */
+  text-align: center; 
 }
 
 .header-center {
-  flex: 2; /* Allows the center section to take more space, adjust as needed */
+  flex: 2; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -242,7 +193,7 @@
   .header-title {
     text-align: center;
     font-family: 'Arial', sans-serif;
-    color: white; /* Consider changing the color for better contrast if needed */
+    color: white;
     font-size: 30px;
     font-weight: bold;
     line-height: 1.5;
@@ -261,31 +212,8 @@
     display: flex;
 }
 
-
-@keyframes colorChange {
-0%, 100% {
-  color: rgb(255, 255, 255); /* Start and end color */
 }
-50% {
-  color: rgba(38, 222, 247, 0.829); /* Mid color */
-}
-}
-@keyframes headerglow {
-0%, 100% {
-  color: rgba(53, 255, 211, 0.5); /* Initial and final color */
-  text-shadow: 0 0 10px rgba(53, 255, 211, 0.5), 0 0 20px rgba(53, 255, 211, 0.5), 0 0 30px rgba(53, 255, 211, 0.5); /* Initial and final shadow */
-}
-25%, 75% {
-  color: rgbargba(255, 215, 0, 0.8); /* Yellow */
-  text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.8); /* Yellow */
-}
-50% {
-  color: rgba(38, 222, 247, 0.829); /* Red */
-  text-shadow: 0 0 20px rgba(38, 222, 247, 0.829), 0 0 40px rgba(38, 222, 247, 0.829), 0 0 60px rgba(38, 222, 247, 0.829); /* Red */
-}
-}
-}
-
+/*colorwave effect*/
 @keyframes rainbow-wave {
   0% { color: red; }
   16.666% { color: orange; }

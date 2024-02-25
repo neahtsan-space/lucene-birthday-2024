@@ -7,7 +7,6 @@ import { IWishCardPost } from '@/interfaces/IWishcard';
 import { CreateWishCard } from '../../api/api';
 import { SuccessAlert, FailureAlert } from './alert';
 import { revalidatePath } from 'next/cache';
-import axios from 'axios';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import handler from '../../api/recaptchaSubmit';
 
@@ -68,11 +67,12 @@ const imageChoiceToPathMap = MapInputToImage.reduce((acc, cur) => {
 }, {} as { [key: string]: string });
 
 
-const CreateWishCardButton: React.FC<{ showbutton: boolean }> = ({ showbutton }) => {
+const CreateWishCardButton: React.FC = () => {
 
     const { executeRecaptcha } = useGoogleReCaptcha();
 
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const [isSubmitButtonDisabled, setIsSubmitButtonDisabled] = useState(false);
     const [nameInputValue, setNameInputValue] = useState('');
     const [wishInputValue, setWishInputValue] = useState('');
     const [selectedFirstOption, setSelectedFirstOption] = useState(first_options[0].value);
@@ -113,6 +113,8 @@ const CreateWishCardButton: React.FC<{ showbutton: boolean }> = ({ showbutton })
 
     const handleOk = async() => {
 
+        setIsSubmitButtonDisabled(true);
+
         if (nameInputValue === '' || wishInputValue === '') {
             setErrorParams({
                 FailureTitle: WISHCONSTANT.CREATE_WISHCARD_NAME_WARNING,
@@ -120,6 +122,7 @@ const CreateWishCardButton: React.FC<{ showbutton: boolean }> = ({ showbutton })
                 AlertStyle: {backgroundColor: 'white', color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center'}
             });
             setIsFailureAlertModalVisible(true);
+            setIsSubmitButtonDisabled(false);
             return;
         }
 
@@ -139,6 +142,7 @@ const CreateWishCardButton: React.FC<{ showbutton: boolean }> = ({ showbutton })
                 AlertStyle: {backgroundColor: 'white', color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center'}
             });
             setIsFailureAlertModalVisible(true);
+            setIsSubmitButtonDisabled(false);
             return;
         }
 
@@ -162,6 +166,7 @@ const CreateWishCardButton: React.FC<{ showbutton: boolean }> = ({ showbutton })
                     AlertStyle: {backgroundColor: 'white', color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center'}
                 });
                 setIsFailureAlertModalVisible(true);
+                setIsSubmitButtonDisabled(false);
                 return;
             }
 
@@ -175,7 +180,7 @@ const CreateWishCardButton: React.FC<{ showbutton: boolean }> = ({ showbutton })
 
             revalidatePath('/')
             setIsSuccessAlertModalVisible(false);
-
+            setIsSubmitButtonDisabled(false);
         }).catch((error) => {
         });
     };
@@ -197,10 +202,17 @@ const CreateWishCardButton: React.FC<{ showbutton: boolean }> = ({ showbutton })
 
     return (
         <>
-        {showbutton && (
-            <><Button type="primary" size='large' shape='round'  onClick={showModal}>
+            <><Button type="primary" size='large' shape='round'  onClick={showModal} disabled={WISHCONSTANT.DISABLE_CREATE_WISH}>
                     {WISHCONSTANT.CREATE_WISHCARD_BUTTON_TEXT}
-                </Button><Modal zIndex={5} style={{ fontWeight: 'bold', overflow: 'hidden', color: 'black', userSelect: 'none' }} title={WISHCONSTANT.CREATE_WISHCARD_MODAL_TITLE} open={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+                </Button>
+                <Modal zIndex={5} style={{ fontWeight: 'bold', overflow: 'hidden', color: 'black', userSelect: 'none' }} title={WISHCONSTANT.CREATE_WISHCARD_MODAL_TITLE} open={isModalVisible} onOk={handleOk} onCancel={handleCancel}                 footer={[
+                    <Button key="back" onClick={handleCancel}>
+                        Cancel
+                    </Button>,
+                    <Button key="submit" type="primary" onClick={handleOk} disabled={isSubmitButtonDisabled}>
+                        Submit
+                    </Button>,
+                ]}>
 
                         <p style={{ color: 'blue', paddingTop: '1vh' }}>{WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME}</p>
                         <p>จำกัด: {nameInputValue.length} / {WISHCONSTANT.CREATE_WISHCARD_MODAL_NAME_TEXT_LIMIT}</p>
@@ -302,7 +314,6 @@ const CreateWishCardButton: React.FC<{ showbutton: boolean }> = ({ showbutton })
                             FailureMessage={`${errorParams.FailureMessage}`}
                             AlertStyle={errorParams.AlertStyle} />
                     </Modal></>
-        )}
         </>
     );
 };

@@ -183,8 +183,6 @@
     text-align: center;
     padding-left: 5%;
     padding-right: 5%;
-    font-size: x-large;
-
   }
 
   .dashboard-title {
@@ -193,6 +191,5 @@
     justify-content: center;
     height: 20vh;
     padding: 10px;
-    font-size: xxx-large; 
   }
 }

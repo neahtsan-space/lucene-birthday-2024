@@ -23,6 +23,9 @@ export const DASHBOARD_IMG_5_DESC = 'เหยยย แบบนี้จะพ
 export const DASHBOARD_IMG_6_DESC = `☕ "Welcome to Lucene’s Birthday Party" DONOTHIB! ขอเชิญทุก ๆ ท่าน ที่ช่อง Lucene Ch. ในวันที่ 1 มีนาคม ตั้งแต่เวลา 12.00 น. - 00.00 น.`
 export const DASHBOARD_IMG_7_DESC = 'ขอบคุณคุณ F สำหรับงาน ART น่ารักๆนะครับ!'
 
+export const DASHBOARD_TITLE_FONTSIZE = "xxx-large"
+export const DASHBOARD_DESC_FONTSIZE = "xx-large"
+
 export const ENABLE_CAROUSEL_THUMBS = false;
 
 // Dashboard total img (picture name must be 1.webp, 2.webp, 3.webp, ... n.webp)

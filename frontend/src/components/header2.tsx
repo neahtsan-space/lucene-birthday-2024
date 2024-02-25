@@ -10,13 +10,13 @@ const Header2: React.FC = () => {
         <a href="../" className="header-left-side2 ">
           <div className="text-container2 ">
             <p className="header-title2 ">
-              {HeaderParams.go_back_title}
+              {HeaderParams.HOME_BUTTON}
             </p>
           </div>
         </a>
         <div className="header-right-side2 ">
         <span className="flowing-text animated-text">
-            {HeaderParams.dashing_text}
+            {HeaderParams.DASHING_TEXT}
         </span>
         </div>
       </header>
@@ -24,5 +24,3 @@ const Header2: React.FC = () => {
   };
   
   export default Header2;
-
-/*{HeaderParams.go_back_desc}*/

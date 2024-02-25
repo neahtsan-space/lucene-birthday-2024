@@ -1,26 +1,26 @@
-/* Mobile responsiveness */
+/* mobile css */
 @media  screen and (max-width: 600px){
   .carousel {
-    position: static; /* Change position to relative */
-    top: 0; /* Reset top */
-    left: 0; /* Reset left */
+    position: static; 
+    top: 0; 
+    left: 0; 
   }
   
   .carousel-container {
-    display: block; /* Change display to block */
-    text-align: center; /* Center align content */
+    display: block; 
+    text-align: center; 
     width: 100%;
   }
   
   .carousel-container > img {
-    max-width: 100%; /* Set max-width to ensure images are responsive */
+    max-width: 100%; 
     height: auto;
   }
   
   .carousel-description {
-    font-size: clamp(12px, 2vw, 18px); /* Adjust font size for mobile */
-    line-height: 2; /* Adjust line height */
-    padding: 10px; /* Add padding for better readability */
+    font-size: clamp(12px, 2vw, 18px); 
+    line-height: 2; 
+    padding: 10px; 
   }
   }
   
@@ -51,29 +51,29 @@
   text-align: center; 
   line-height: 3; 
   }
-  /* Tablet responsiveness */
+  /* Tablet css */
   @media (min-width: 600px)and (max-width:1281px){
     .carousel {
-      position: static; /* Change position to relative */
-      top: 0; /* Reset top */
-      left: 0; /* Reset left */
+      position: static; 
+      top: 0; 
+      left: 0; 
     }
     
     .carousel-container {
-      display: block; /* Change display to block */
-      text-align: center; /* Center align content */
+      display: block; 
+      text-align: center; 
       width: 100%;
     }
     
     .carousel-container > img {
-      max-width: 100%; /* Set max-width to ensure images are responsive */
+      max-width: 100%; 
       height: auto;
     }
     
     .carousel-description {
-      font-size: clamp(12px, 2vw, 18px); /* Adjust font size for mobile */
-      line-height: 2; /* Adjust line height */
-      padding: 10px; /* Add padding for better readability */
+      font-size: clamp(12px, 2vw, 18px); 
+      line-height: 2; 
+      padding: 10px; 
     }
     }
     
@@ -107,26 +107,26 @@
   /* pc responsiveness */
   @media (min-width: 1281px){
     .carousel {
-      position: relative; /* Change position to relative */
-      top: 0; /* Reset top */
-      left: 0; /* Reset left */
+      position: relative; 
+      top: 0; 
+      left: 0; 
     }
     
     .carousel-container {
-      display: block; /* Change display to block */
-      text-align: center; /* Center align content */
+      display: block; 
+      text-align: center; 
     }
     
     .carousel-container > img {
-      max-width: 100%; /* Set max-width to ensure images are responsive */
+      max-width: 100%; 
       height: auto;
       
     }
     
     .carousel-description {
-      font-size: clamp(12px, 2vw, 18px); /* Adjust font size for mobile */
-      line-height: 2; /* Adjust line height */
-      padding: 10px; /* Add padding for better readability */
+      font-size: clamp(12px, 2vw, 18px); 
+      line-height: 2; 
+      padding: 10px; 
     }
     }
     

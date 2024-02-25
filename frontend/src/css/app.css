@@ -6,19 +6,19 @@
   .container {
     display: flex;
     flex-wrap: wrap;
-    width: 100%; /* Adjust as needed */
+    width: 100%; 
   }
 }
 
 /*tablet css*/
 @media (min-width: 600px)and (max-width:1281px) {
   .item {
-    height: 25vh; /* Each item takes one-fourth of the container's height on mobile */
+    height: 25vh; 
   }
   .container {
     display: flex;
     flex-wrap: wrap;
-    width: 100%; /* Adjust as needed */
+    width: 100%; 
   }
 }
 
@@ -37,12 +37,12 @@
 .container {
   display: flex;
   flex-wrap: wrap;
-  width: 100%; /* Adjust as needed */
+  width: 100%; 
 }
 
 .item {
-  width: 50%; /* Each item takes half of the container's width */
-  height: 50vh; /* Each item takes half of the container's height */
+  width: 50%; 
+  height: 50vh; 
   border: 1px solid black;
   box-sizing: content-box;
 }

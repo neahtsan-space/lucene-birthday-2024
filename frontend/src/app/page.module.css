@@ -12,9 +12,9 @@
   }
   
   .dashboardContainer {
-    width: 100%; /* Occupy full width */
+    width: 100%; 
     margin-top: 5px;
-    margin-bottom: 5px; /* Add some space between elements */
+    margin-bottom: 5px; 
     height: 100%;
   }
   
@@ -27,7 +27,7 @@
     justify-content: center;
   }
   .box2Title{
-    width:100%; /* Occupy full width */
+    width:100%; 
 
     
   }
@@ -45,8 +45,8 @@
   }
   
   .custom-button {
-    width: 25%; /* Adjust button width */
-    margin: 5px auto; /* Center buttons with some spacing */
+    width: 25%; 
+    margin: 5px auto; 
   }
 }
 
@@ -107,7 +107,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ddd; /* Slightly different color to distinguish */
+  background-color: #ddd; 
 }
 
 .text  {
@@ -125,8 +125,8 @@
 
 .line {
   border: 1px;
-  border-top: 1px solid black; /* Example line style */
-  margin-top: 10px; /* Example margin */
+  border-top: 1px solid black; 
+  margin-top: 10px; 
 }
 
 .buttoncontainer {
@@ -136,14 +136,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ccc; /* Example background color */
+  background-color: #ccc; 
 }
 .custom-button {
   width: 100px;
-  height: 100px; /* Maintain aspect ratio */
-  border-radius: 5%; /* Round the corners */
-  border: 2px solid #ccc; /* Add a border */
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a shadow */
+  height: 100px; 
+  border-radius: 5%; 
+  border: 2px solid #ccc; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
   margin-left: 10px;
   margin-right: 10px;
   transition: transform 0.2s;
@@ -151,12 +151,12 @@
 
 .body-link:hover .custom-button {
   transform: scale(2); /* Increase the size on hover */
-  border: 2px solid #9c3af8; /* Add a border */
+  border: 2px solid #9c3af8; 
 }
 }
 /*pc css*/
 @media (min-width:1281px){
-  /* MergedBoxesFlex.module.css */
+
   .flexContainer {
     display: flex;
     flex-direction: column;
@@ -196,7 +196,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ddd; /* Slightly different color to distinguish */
+    background-color: #ddd; 
   }
   
   .text  {
@@ -214,8 +214,8 @@
   
   .line {
     border: 1px;
-    border-top: 1px solid black; /* Example line style */
-    margin-top: 10px; /* Example margin */
+    border-top: 1px solid black; 
+    margin-top: 10px; 
   }
   
   .buttoncontainer {
@@ -225,14 +225,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ccc; /* Example background color */
+    background-color: #ccc; 
   }
   .custom-button {
     width: 100px;
-    height: 100px; /* Maintain aspect ratio */
-    border-radius: 5%; /* Round the corners */
-    border: 2px solid #ccc; /* Add a border */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a shadow */
+    height: 100px; 
+    border-radius: 5%; 
+    border: 2px solid #ccc; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
     margin-left: 10px;
     margin-right: 10px;
     transition: transform 0.2s;
@@ -240,6 +240,6 @@
   
   .body-link:hover .custom-button {
     transform: scale(2); /* Increase the size on hover */
-    border: 2px solid #9c3af8; /* Add a border */
+    border: 2px solid #9c3af8; 
   }
   }

@@ -7,7 +7,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color:black;
     font-family: 'Roboto';
   }
   .credit-title{
@@ -19,7 +18,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    animation: roll-out 5s linear forwards; /* Example animation */
+    animation: roll-out 5s linear forwards; 
   }
   .credit-item {
     display: flex;
@@ -34,26 +33,26 @@
   }
   
   .credit-name {
-    font-size: 3vh; /* Adjust font size */
-    color: aquamarine; /* Text color */
-    margin-bottom: 0.5vh; /* Add some bottom margin */
-    text-decoration: none; /* Remove underline */
+    font-size: 3vh; 
+    color: aquamarine; 
+    margin-bottom: 0.5vh; 
+    text-decoration: none; 
 }
   .credit-name:hover {
-  font-size: 3vh; /* Adjust font size */
-  color: rgb(255, 255, 255); /* Text color */
+  font-size: 3vh; 
+  color: rgb(255, 255, 255); 
 }
 
   .credit-description {
-    font-size: 2vh; /* Adjust font size */
-    color: #ccc; /* Text color */
-    margin-top: 0.5vh; /* Add some top margin */
-    text-align: center; /* Center align text */
+    font-size: 2vh; 
+    color: #ccc; 
+    margin-top: 0.5vh; 
+    text-align: center; 
 }
   .centered-text {
     text-align: center;
   }
-  
+  /*animation*/
   @keyframes roll-out {
     0% {
       opacity: 0;
@@ -93,7 +92,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      animation: roll-out 5s linear forwards; /* Example animation */
+      animation: roll-out 5s linear forwards; 
     }
     .credit-item {
       display: flex;
@@ -108,26 +107,26 @@
     }
     
     .credit-name {
-      font-size: 3vh; /* Adjust font size */
-      color: aquamarine; /* Text color */
-      margin-bottom: 0.5vh; /* Add some bottom margin */
-      text-decoration: none; /* Remove underline */
+      font-size: 3vh; 
+      color: aquamarine; 
+      margin-bottom: 0.5vh; 
+      text-decoration: none; 
   }
     .credit-name:hover {
-    font-size: 3vh; /* Adjust font size */
-    color: rgb(255, 255, 255); /* Text color */
+    font-size: 3vh; 
+    color: rgb(255, 255, 255); 
   }
   
     .credit-description {
-      font-size: 2vh; /* Adjust font size */
-      color: #ccc; /* Text color */
-      margin-top: 0.5vh; /* Add some top margin */
-      text-align: center; /* Center align text */
+      font-size: 2vh; 
+      color: #ccc; 
+      margin-top: 0.5vh; 
+      text-align: center; 
   }
     .centered-text {
       text-align: center;
     }
-    
+    /*animation*/
     @keyframes roll-out {
       0% {
         opacity: 0;

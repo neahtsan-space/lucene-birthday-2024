@@ -11,14 +11,13 @@ function Aud() {
     } else {
       audio.pause();
     }
-    // Cleanup function to pause the audio when the component unmounts
     return () => {
       audio.pause();
     };
-  }, [audio, isPlaying]); // Re-run the effect whenever audio or isPlaying changes
+  }, [audio, isPlaying]); 
 
   const togglePlay = () => {
-    setIsPlaying(!isPlaying); // Toggle the playing state
+    setIsPlaying(!isPlaying); 
   }
 
   const handleVolumeChange = (event: React.ChangeEvent<HTMLInputElement>) => {

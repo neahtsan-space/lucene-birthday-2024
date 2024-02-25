@@ -49,7 +49,7 @@
 .flowing-text{
   text-align: center;
   font-family: 'Arial', sans-serif;
-  color: rgb(143, 255, 240); /* Consider changing the color for better contrast if needed */
+  color: rgb(143, 255, 240); 
   font-size: 20px;
   font-weight: bold;
   line-height: 1.5;
@@ -87,7 +87,7 @@
     .header-title2 {
       text-align: center;
       font-family: 'Arial', sans-serif;
-      color: rgb(234, 255, 140); /* Consider changing the color for better contrast if needed */
+      color: rgb(234, 255, 140); 
       font-size: 30px;
       font-weight: bold;
       padding-bottom: '2%';
@@ -110,7 +110,7 @@
 .flowing-text{
     text-align: center;
     font-family: 'Arial', sans-serif;
-    color: rgb(143, 255, 240); /* Consider changing the color for better contrast if needed */
+    color: rgb(143, 255, 240); 
     font-size: 50px;
     font-weight: bold;
     line-height: 1.5;
@@ -119,12 +119,12 @@
 @keyframes slideLeft {
     0%, 100% {
       transform: translateX(0%);
-      color: rgba(255, 255, 255, 0.5); /* Initial and final color */
+      color: rgba(255, 255, 255, 0.5); 
       text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.5); /* Initial and final shadow */
     }
     50% {
       transform: translateX(-20%);
-      color: rgba(38, 222, 247, 0.829); /* Red */
+      color: rgba(38, 222, 247, 0.829); 
       text-shadow: 0 0 20px rgba(38, 222, 247, 0.829), 0 0 40px rgba(38, 222, 247, 0.829), 0 0 60px rgba(38, 222, 247, 0.829); /* Red */
     }
   }
@@ -132,12 +132,12 @@
   @keyframes slideRight {
     0%, 100% {
       transform: translateX(0%);
-      color: rgba(38, 222, 247, 0.829); /* Red */
+      color: rgba(38, 222, 247, 0.829);
       text-shadow: 0 0 20px rgba(38, 222, 247, 0.829), 0 0 40px rgba(38, 222, 247, 0.829), 0 0 60px rgba(38, 222, 247, 0.829); /* Red */
     }
     50% {
       transform: translateX(20%);
-      color: hsla(0, 0%, 100%, 0.5); /* Initial and final color */
+      color: hsla(0, 0%, 100%, 0.5); 
       text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.5); /* Initial and final shadow */
     }
   }
@@ -203,7 +203,7 @@
     .header-title2 {
       text-align: center;
       font-family: 'Arial', sans-serif;
-      color: rgba(38, 222, 247, 0.829); /* Consider changing the color for better contrast if needed */
+      color: rgba(38, 222, 247, 0.829); 
       font-size: 30px;
       font-weight: bold;
       padding-bottom: '2%';
@@ -226,7 +226,7 @@
   .flowing-text{
       text-align: center;
       font-family: 'Arial', sans-serif;
-      color: rgba(38, 222, 247, 0.829); /* Consider changing the color for better contrast if needed */
+      color: rgba(38, 222, 247, 0.829); 
       font-size: 50px;
       font-weight: bold;
       line-height: 1.5;
@@ -235,12 +235,12 @@
   @keyframes slideLeft {
       0%, 100% {
         transform: translateX(0%);
-        color: rgba(255, 255, 255, 0.5); /* Initial and final color */
+        color: rgba(255, 255, 255, 0.5); 
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.5); /* Initial and final shadow */
       }
       50% {
         transform: translateX(-20%);
-        color: rgba(38, 222, 247, 0.829); /* Red */
+        color: rgba(38, 222, 247, 0.829);
         text-shadow: 0 0 20px rgba(38, 222, 247, 0.829), 0 0 40px rgba(38, 222, 247, 0.829), 0 0 60px rgba(38, 222, 247, 0.829); /* Red */
       }
     }
@@ -248,12 +248,12 @@
     @keyframes slideRight {
       0%, 100% {
         transform: translateX(0%);
-        color: rgba(38, 222, 247, 0.829); /* Red */
+        color: rgba(38, 222, 247, 0.829); 
         text-shadow: 0 0 20px rgba(38, 222, 247, 0.829), 0 0 40px rgba(38, 222, 247, 0.829), 0 0 60px rgba(38, 222, 247, 0.829); /* Red */
       }
       50% {
         transform: translateX(20%);
-        color: hsla(0, 0%, 100%, 0.5); /* Initial and final color */
+        color: hsla(0, 0%, 100%, 0.5); 
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.5); /* Initial and final shadow */
       }
     }

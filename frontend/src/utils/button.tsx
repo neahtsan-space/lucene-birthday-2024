@@ -2,15 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button, Modal, Divider, ConfigProvider } from 'antd';
 import '@/css/button.css';
-import { 
-        modal_title_TH, 
-        modal_title_EN, 
-        modal_content_TH, 
-        modal_content_EN,
-        modal_OK_TH,
-        modal_OK_EN,
-        modal_Cancel_TH,
-        modal_Cancel_EN } from '@/params/header_params';
+import * as HeaderParams from '@/params/header_params';
 import { WarningOutlined } from '@ant-design/icons';
 
 interface TextButtonProps {
@@ -20,7 +12,7 @@ interface TextButtonProps {
 
 const TextButton: React.FC<TextButtonProps> = ({ buttonName, url }) => {
         const [isModalOpen, setIsModalOpen] = useState(false);
-        const [modalWidth, setModalWidth] = useState('90%'); // Default width
+        const [modalWidth, setModalWidth] = useState('90%');
       
         const showModal = () => setIsModalOpen(true);
         const handleOk = () => {
@@ -29,7 +21,6 @@ const TextButton: React.FC<TextButtonProps> = ({ buttonName, url }) => {
         };
         const handleCancel = () => setIsModalOpen(false);
       
-        // Adjust modal width based on viewport width after component mounts
         useEffect(() => {
                 const updateWidth = () => {
                         const width = window.innerWidth > 768 ? 800 : '90%';
@@ -37,7 +28,7 @@ const TextButton: React.FC<TextButtonProps> = ({ buttonName, url }) => {
                 };
 
                 updateWidth();
-                window.addEventListener('resize', updateWidth); // Adjust width on resize
+                window.addEventListener('resize', updateWidth);
 
                 return () => window.removeEventListener('resize', updateWidth); 
         }, []);
@@ -45,34 +36,34 @@ const TextButton: React.FC<TextButtonProps> = ({ buttonName, url }) => {
         const modalFooter = (
           <div style={{ textAlign: 'center', display: 'flex', justifyContent: 'center', padding: '10px' }}>
             <Button style={{ margin: '0 10px' }} key="back" onClick={handleCancel}>
-              {modal_Cancel_TH}
+              {HeaderParams.MODAL_CANCEL_TH}
             </Button>
-            <Button style={{ margin: '0 10px', backgroundColor: 'red' }} key="submit" type="primary" onClick={handleOk}>
-              {modal_OK_TH}
+            <Button style={{ margin: '0 10px', backgroundColor: HeaderParams.BUTTON_CONFIRM_COLOR }} key="submit" type="primary" onClick={handleOk}>
+              {HeaderParams.MODAL_OK_TH}
             </Button>
           </div>
         );
       
         return (
           <>
-            <Button type="text" className="buttonEffect" style={{ color: 'white' }} onClick={showModal}>
+            <Button type="text" className="buttonEffect" style={{ color: HeaderParams.BUTTON_CANCEL_COLOR }} onClick={showModal}>
               {buttonName}
             </Button>
             <ConfigProvider
               theme={{
                 components: {
                   Modal: {
-                    contentBg: '#1F2937',
-                    footerBg: '#1F2937',
-                    headerBg: '#1F2937',
-                    titleColor: 'white',
-                    titleFontSize: 28,
+                    contentBg: HeaderParams.MODAL_CONTENT_BG_COLOR,
+                    footerBg: HeaderParams.MODAL_FOOTER_BG_COLOR,
+                    headerBg: HeaderParams.MODAL_HEADER_BG_COLOR,
+                    titleColor: HeaderParams.MODAL_TITLE_COLOR,
+                    titleFontSize: HeaderParams.MODAL_TITLE_FONT_SIZE,
                   },
                 },
               }}
             >
               <Modal
-                title={modal_title_TH}
+                title={HeaderParams.MODAL_TITLE_TH}
                 width={modalWidth}
                 style={{ top: 20 }}
                 centered
@@ -82,9 +73,9 @@ const TextButton: React.FC<TextButtonProps> = ({ buttonName, url }) => {
                 footer={modalFooter}
               >
                 <Divider style={{ color: 'white' }} />
-                <WarningOutlined style={{ fontSize: 60, color: 'white', display: 'flex', justifyContent: 'center' }} />
-                <p style={{ marginTop: '20px', fontSize: 18, display: 'flex', justifyContent: 'center', fontWeight: 'bold', color: 'white' }}>{modal_content_TH}</p>
-                <p style={{ marginTop: '5px', fontSize: 18, display: 'flex', justifyContent: 'center', color: 'white' }}>({url})</p>
+                <WarningOutlined style={{ fontSize: HeaderParams.WARNING_ICON_FONT_SIZE, color: HeaderParams.WARNING_ICON_COLOR, display: 'flex', justifyContent: 'center' }} />
+                <p style={{ marginTop: '20px', fontSize: HeaderParams.WARNING_TEXT_FONT_SIZE, display: 'flex', justifyContent: 'center', fontWeight: 'bold', color: HeaderParams.WARNING_TEXT_COLOR }}>{HeaderParams.MODAL_CONTENT_TH}</p>
+                <p style={{ marginTop: '5px', fontSize: HeaderParams.WARNING_TEXT_FONT_SIZE, display: 'flex', justifyContent: 'center', color: HeaderParams.WARNING_TEXT_COLOR }}>({url})</p>
               </Modal>
             </ConfigProvider>
           </>
@@ -100,10 +91,10 @@ const PrimaryButton: React.FC<{ text: string }> = ({ text }) => (
 interface DefaultButtonProps {
   buttonName: string;
   url: string;
-  showbutton2:boolean;
+  disable:boolean;
 }
 
-const DefaultButton: React.FC<DefaultButtonProps> = ({ buttonName, url ,showbutton2}) => {
+const DefaultButton: React.FC<DefaultButtonProps> = ({ buttonName, url ,disable}) => {
   const router = useRouter();
 
   if (!router) return null;
@@ -112,7 +103,7 @@ const DefaultButton: React.FC<DefaultButtonProps> = ({ buttonName, url ,showbutt
     router.push(url);
   };
 
-  return showbutton2 &&<Button className='buttonEffect' size='large' onClick={handleClick}>{buttonName}</Button>;
+  return <Button className='buttonEffect' size='large' onClick={handleClick} disabled={disable}>{buttonName}</Button>;
 };
 
 const LinkButton: React.FC<{ text: string }> = ({ text }) => (

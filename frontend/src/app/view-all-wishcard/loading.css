@@ -9,13 +9,13 @@
 }
 
 .dots-container {
-    display: flex; /* Align dots in a row */
+    display: flex; 
     justify-content: center;
     align-items: center;
 }
 
 .loading-text {
-    margin-top: 1rem; /* Add space between dots and text */
+    margin-top: 1rem; 
     font-size: 3rem;
     color: #4285f5;
     font-weight: bold;
