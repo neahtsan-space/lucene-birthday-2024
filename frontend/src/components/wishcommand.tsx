@@ -9,7 +9,7 @@ import { SearchWishCardButton } from '@/utils/search-wish-button';
 import { Divider } from 'antd';
 import '@/css/wishcommand.css';
 import { POPCAT_PATH } from '@/params/wishCommand_params';
-import { ENABLE_CREATE_WISH } from '@/params/wishCommand_params';
+import { ENABLE_CREATE_WISH,ENABLE_VIEW_WISH } from '@/params/wishCommand_params';
 
 const WishCommand: React.FC = () => {
   return (
@@ -18,7 +18,7 @@ const WishCommand: React.FC = () => {
       <Divider className='wish-command-divider' />
       <div className='wish-command-button-container'>
         <div><CreateWishCardButton showbutton={ENABLE_CREATE_WISH}/></div>
-        <div><DefaultButton buttonName={WishCommandParams.VIEW_ALL_WISHCARD_BUTTON_NAME} url={WishCommandParams.VIEW_ALL_WISHCARD_PATH} /></div>
+        <div><DefaultButton showbutton2 = {ENABLE_VIEW_WISH} buttonName={WishCommandParams.VIEW_ALL_WISHCARD_BUTTON_NAME} url={WishCommandParams.VIEW_ALL_WISHCARD_PATH} /></div>
         <div><SearchWishCardButton /></div>
       </div>
       <div className='wish-command-style' style={{opacity: '0.5',fontSize: '50%',paddingTop: '10%'}}>

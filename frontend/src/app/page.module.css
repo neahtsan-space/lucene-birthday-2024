@@ -51,8 +51,24 @@
 }
 
 /*tablet css*/
-@media (min-width: 600px){
-/* MergedBoxesFlex.module.css */
+/*portrait*/
+@media (min-width: 600px) and (orientation:portrait){
+  .flexContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  .box2Title {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+/*landscape*/
+@media (min-width: 600px) and (max-width:1281px) and (orientation:landscape){
 .flexContainer {
   display: flex;
   flex-direction: column;
