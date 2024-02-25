@@ -46,8 +46,9 @@ export const STICKER_8_NAME = 'sticker8';
 // border color of wish card
 export const COLOR_1 = '#5DBAC7' // rgb(93, 186, 199)
 export const COLOR_2 = '#E75185' // rgb(231, 81, 133)
-export const COLOR_3 = '#CECAB8' // rgb(206, 202, 184)
+export const COLOR_3 = '#48e2ff' // rgb(72,226,255)
 export const COLOR_4 = '#1A3779' // rgb(206, 202, 184)
+//old color3, rgb(206, 202, 184)
 
 
 // decorate sticker
