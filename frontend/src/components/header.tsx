@@ -3,10 +3,9 @@ import React, { useState } from 'react';
 import '@/css/header.css';
 import * as HeaderParams from '@/params/header_params';
 import { TextButton, TextNoLinkButton } from '@/utils/button';
-import FlipCountdown from '@/utils/countdown';
 
 
-const Header: React.FC = () => {
+const Header: React.FC<{wishCount: number}> = ({ wishCount }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -24,7 +23,7 @@ const Header: React.FC = () => {
         </div>
       </div>
       <div className='header-flex-container header-center' style={{userSelect: 'none'}}>
-      <FlipCountdown />
+        <p style={{fontSize: 24}}>มีคำอวยพรแล้วทั้งหมด {wishCount} คำอวยพร</p>
       </div>
       <div className='header-right-side'>
       <div className='retract' onClick={toggleMenu}> ... </div>

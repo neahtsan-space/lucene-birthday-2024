@@ -1,4 +1,6 @@
-import React, { Suspense } from 'react';
+'use client'
+import React, { useState, useEffect } from 'react';
+import { GetLastestFourWish } from '../../api/api';
 import Link from 'next/link';
 import Header from '../components/header';
 import DashBoard from '@/components/dashboard';
@@ -7,12 +9,27 @@ import RecentWish from '@/components/recentWish';
 import Footer from '../components/footer';
 import styles from './page.module.css';
 import { WISHCOMMAND_BG } from '@/params/background_params';
+import { IWishCard } from '@/interfaces/IWishcard';
 
 
 const Home: React.FC = () => {
+
+  const [wishData, setWishData] = useState<IWishCard[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await GetLastestFourWish();
+      setWishData(data);
+    };
+
+    fetchData();
+  }, []);
+
+  const wishCount = wishData[0]?.cardNumber || 0;
+
   return (
     <div>
-      <Header />
+      <Header wishCount={wishCount}/>
       <div className={styles.flexContainer}>
         <Link href="/view-all-wishcard" />
         <div className={styles.topRow}>
@@ -26,7 +43,7 @@ const Home: React.FC = () => {
           </div>
         </div>
         <div className={styles.fullWidthBox}>
-          <RecentWish />
+          <RecentWish wishData={wishData} />
         </div>
       </div>
       <Footer />
