@@ -69,7 +69,7 @@ const SearchWishCardButton = () => {
                 <FailureAlert {...errorParams} />
             </Modal>
             {wishCardDetails && (
-                <Modal title="Wish Card Details" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}} open={true} onCancel={() => setWishCardDetails(null)} footer={null} centered={true}>
+                <Modal title="Wish Card Details" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}} open={true} onCancel={() => setWishCardDetails(null)} footer={null}>
                     <WishCardDemo wishCard={wishCardDetails} />
                 </Modal>
             )}
