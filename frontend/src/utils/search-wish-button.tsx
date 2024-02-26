@@ -65,11 +65,11 @@ const SearchWishCardButton = () => {
                 <p>{WISHCONSTANT.SEARCH_WISHCARD_MODAL_NAME}</p>
                 <Input value={nameInputValue} onChange={(e) => setNameInputValue(e.target.value)} />
             </Modal>
-            <Modal open={isFailureAlertModalVisible} onCancel={() => setIsFailureAlertModalVisible(false)}>
+            <Modal open={isFailureAlertModalVisible} onCancel={() => setIsFailureAlertModalVisible(false)} centered={true}>
                 <FailureAlert {...errorParams} />
             </Modal>
             {wishCardDetails && (
-                <Modal title="Wish Card Details" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}} open={true} onCancel={() => setWishCardDetails(null)} footer={null}>
+                <Modal title="Wish Card Details" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}} open={true} onCancel={() => setWishCardDetails(null)} footer={null} centered={true}>
                     <WishCardDemo wishCard={wishCardDetails} />
                 </Modal>
             )}
