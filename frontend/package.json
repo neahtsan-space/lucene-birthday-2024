@@ -21,7 +21,8 @@
     "react-dom": "^18",
     "react-google-recaptcha-v3": "^1.10.1",
     "swiper": "^11.0.6",
-    "tailwind": "^4.0.0"
+    "tailwind": "^4.0.0",
+    "vercel": "^33.5.3"
   },
   "devDependencies": {
     "@types/node": "^20",
