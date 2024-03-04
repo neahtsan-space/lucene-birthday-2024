@@ -1,19 +1,10 @@
-import React, { useEffect, useState } from 'react';
 import CardTable from "@/app/view-all-wishcard/cardtable";
-import { GetWishData } from '../../api/api';
-import { IWishCard } from '@/interfaces/IWishcard';
+import { allWish } from "../../data/allWish";
+
 
 const WishTable: React.FC = async () => {
-  const [wishData, setWishData] = useState<IWishCard[]>([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await GetWishData();
-      setWishData(data);
-    };
-
-    fetchData();
-  }, []);
+  const wishData = allWish;
 
   return (
     <div>

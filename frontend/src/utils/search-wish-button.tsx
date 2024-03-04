@@ -58,7 +58,7 @@ const SearchWishCardButton = () => {
 
     return (
         <>
-            <Button type='default' size='large' onClick={showModal}>
+            <Button type='default' size='large' onClick={showModal} disabled={true}>
                 {WISHCONSTANT.SEARCH_WISHCARD_BUTTON_NAME}
             </Button>
             <Modal title={WISHCONSTANT.SEARCH_WISHCARD_MODAL_TITLE} open={isModalVisible} onOk={handleOk} onCancel={handleCancel} centered={true}>

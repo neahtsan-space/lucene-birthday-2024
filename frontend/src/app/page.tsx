@@ -1,6 +1,4 @@
-'use client'
-import React, { useState, useEffect } from 'react';
-import { GetLastestFourWish } from '../../api/api';
+'use client';
 import Link from 'next/link';
 import Header from '../components/header';
 import DashBoard from '@/components/dashboard';
@@ -9,23 +7,14 @@ import RecentWish from '@/components/recentWish';
 import Footer from '../components/footer';
 import styles from './page.module.css';
 import { WISHCOMMAND_BG } from '@/params/background_params';
-import { IWishCard } from '@/interfaces/IWishcard';
+import { allWish } from '../../data/allWish';
 
 
 const Home: React.FC = () => {
 
-  const [wishData, setWishData] = useState<IWishCard[]>([]);
+const wishData = allWish.slice(-4).reverse();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await GetLastestFourWish();
-      setWishData(data);
-    };
-
-    fetchData();
-  }, []);
-
-  const wishCount = wishData[0]?.cardNumber || 0;
+const wishCount = wishData[0]?.cardNumber || 0;
 
   return (
     <div>

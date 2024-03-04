@@ -133,12 +133,12 @@ const CreateWishCardButton: React.FC = () => {
 
         const reCaptchaToken = await executeRecaptcha('submit_wish_card');
 
-        const response = await handler({ method: 'POST', body: { gRecaptchaResponse: reCaptchaToken } } as any, {} as any);
+        const response = false;
 
         if (!response) {
             setErrorParams({
-                FailureTitle: WISHCONSTANT.CREATE_WISHCARD_NAME_WARNING,
-                FailureMessage: WISHCONSTANT.RECAPTCHA_FAILURE_DESC,
+                FailureTitle: WISHCONSTANT.CREATE_WISHCARD_SHOWCASE,
+                FailureMessage: WISHCONSTANT.CREATE_WISHCARD_SHOWCASE_DESC,
                 AlertStyle: {backgroundColor: 'white', color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center'}
             });
             setIsFailureAlertModalVisible(true);
@@ -148,41 +148,6 @@ const CreateWishCardButton: React.FC = () => {
 
         setIsModalVisible(false);
 
-        const wishCardObject: IWishCardPost = {
-            name: nameInputValue,
-            wish: wishInputValue,
-            stickerUp: getImagePathForOption(selectedFirstOption),
-            stickerDown: getImagePathForOption(selectedSecondOption),
-            borderColor: selectedThirdOption,
-        }
-
-        CreateWishCard(wishCardObject).then((response) => {
-            const { status, body } = response as { status: number; body: any };
-
-            if(status !== 201) {
-                setErrorParams({
-                    FailureTitle: WISHCONSTANT.CREATE_WISHCARD_NAME_WARNING,
-                    FailureMessage: body.message,
-                    AlertStyle: {backgroundColor: 'white', color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center'}
-                });
-                setIsFailureAlertModalVisible(true);
-                setIsSubmitButtonDisabled(false);
-                return;
-            }
-
-            setAlertParams({
-                SuccessTitle: WISHCONSTANT.CREATE_WISHCARD_SUCCESS_ALERT, 
-                SuccessMessage: WISHCONSTANT.CREATE_WISHCARD_SUCCESS_DESC,
-                AlertStyle: {backgroundColor: 'white', color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center'}
-            });
-            setIsSuccessAlertModalVisible(true);
-            setCountdown(WISHCONSTANT.COUNT_DOWN_REFRESH_SEC);
-
-            revalidatePath('/')
-            setIsSuccessAlertModalVisible(false);
-            setIsSubmitButtonDisabled(false);
-        }).catch((error) => {
-        });
     };
 
     const handleCancel = () => {

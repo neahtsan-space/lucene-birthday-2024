@@ -95,3 +95,6 @@ export const SEARCH_WISHCARD_INCOORECT_DESC = 'กรุณากรอกชื
 
 export const SEARCH_WISHCARD_NOT_FOUND_TITLE = 'ไม่พบคำอวยพร!!!'
 export const SEARCH_WISHCARD_NOT_FOUND_DESC = 'ไม่พบคำอวยพร กรุณากรอกใหม่อีกครั้ง'
+
+export const CREATE_WISHCARD_SHOWCASE = 'ระบบปิดการส่งคำอวยพรแล้ว'
+export const CREATE_WISHCARD_SHOWCASE_DESC = 'ขอบคุณทุกคำอวยพรที่ส่งมาให้ Lucene ครับ'
