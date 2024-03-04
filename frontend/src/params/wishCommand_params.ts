@@ -11,7 +11,7 @@ export const POPCAT_PATH ='/popcat'
 
 export const CONTACT_INFO = 'https://twitter.com/NeahtSan2nd'
 
-export const DISABLE_CREATE_WISH = true;
+export const DISABLE_CREATE_WISH = false;
 export const DISABLE_VIEW_WISH = false;
 
 export const CREATE_WISHCARD_BUTTON_TEXT = 'ส่งคำอวยพร'
