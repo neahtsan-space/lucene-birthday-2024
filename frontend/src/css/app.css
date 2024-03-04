@@ -1,7 +1,7 @@
 /*mobile css*/
 @media screen and (max-width: 600px) {
   .item {
-    height: 25vh; /* Each item takes one-fourth of the container's height on mobile */
+    height: 25vh; 
   }
   .container {
     display: flex;

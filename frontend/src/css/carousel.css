@@ -104,7 +104,7 @@
     text-align: center; 
     line-height: 3; 
     }
-  /* pc responsiveness */
+  /* pc css*/
   @media (min-width: 1281px){
     .carousel {
       position: relative; 
