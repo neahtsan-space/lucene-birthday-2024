@@ -5,7 +5,10 @@
 
 
 ### For production , Clone from this version
--   Due to latest commit is only use data from data/data.ts -> no connection to backend
+-   Due to the latest commit, Frontend only uses data from data/data.ts --> no connection to the backend
+    <br/>
+    
+    This version is a **Final Production version** where all system working fine
   
 - ``` git clone https://github.com/neahtsan-space/lucene-birthday-2024.git  ```
 
@@ -131,3 +134,6 @@
     ```
     #### Backend route
     ![Backend route](/backend_route.png)
+
+#### More Information
+Please check out this article in Thai: [กระต่าย ดวงจันทร์ และ การเขียนเว็ป](link.medium.com/X7MvLie0LHb)
