@@ -12,6 +12,7 @@
 - ``` git checkout 79949b6dd0f2eb741bc8e5d4a084a08f6840a1f4 ```
 
 ### Frontend ( Next JS )
+
 - change directory to ./frontend
 - Setup an enviroment
 - create a .env.local file in ./frontend with this content
@@ -70,6 +71,8 @@
     // if you want to change any text at header change its here
     export const TOPIC = "Lucene Birthday 2024"
     ```
+    #### Frontend Components
+![Frontend Componetns](/lucene_arch.png)
 ### Backend ( Nest JS )
 - change directory to ./backend
 - Setup an enviroment
@@ -126,3 +129,5 @@
     ```
     GET /wish-card/slang-check
     ```
+    #### Backend route
+    ![Backend route](/backend_route.png)
