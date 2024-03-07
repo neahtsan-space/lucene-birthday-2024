@@ -10,9 +10,12 @@
     
     This version is a **Final Production version** where all system working fine
   
-- ``` git clone https://github.com/neahtsan-space/lucene-birthday-2024.git  ```
-
-- ``` git checkout 79949b6dd0f2eb741bc8e5d4a084a08f6840a1f4 ```
+``` 
+git clone https://github.com/neahtsan-space/lucene-birthday-2024.git 
+```
+```
+git checkout 79949b6dd0f2eb741bc8e5d4a084a08f6840a1f4
+```
 
 ### Frontend ( Next JS )
 
