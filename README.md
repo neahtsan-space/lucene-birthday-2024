@@ -5,10 +5,11 @@
 
 
 ### For production , Clone from this version
--   Due to latest commit is only for readme update
+-   Due to latest commit is only use data from data/data.ts -> no connection to backend
   
-``` git clone https://github.com/neahtsan-space/lucene-birthday-2024.git  ```
-``` git checkout 79949b6dd0f2eb741bc8e5d4a084a08f6840a1f4 ```
+- ``` git clone https://github.com/neahtsan-space/lucene-birthday-2024.git  ```
+
+- ``` git checkout 79949b6dd0f2eb741bc8e5d4a084a08f6840a1f4 ```
 
 ### Frontend ( Next JS )
 - change directory to ./frontend
@@ -31,6 +32,7 @@
   ```
   yarn dev or npm run dev
   ```
+
 #### All available path
 
 -  **A page that show all wish in a form of grid**
@@ -55,12 +57,19 @@
     find a wishcard by sender name
 -   **recent wish card**
     show recent 4 wish cards
+
 #### Configuration
 
 -   **CSS**
     color and size of content defined in css directory 
 -   **Params**
-    text and linkurl defined in params directory
+    If you want to change something such as backgroundColor, Text of Buttons, etc.
+    Please check out params directory because our work migrate every property to **params**
+    ```
+    example @params/header_params.ts
+    // if you want to change any text at header change its here
+    export const TOPIC = "Lucene Birthday 2024"
+    ```
 ### Backend ( Nest JS )
 - change directory to ./backend
 - Setup an enviroment
@@ -86,9 +95,8 @@
     ```
     GET /wish-card
     ```
--   **create new wish card **
-    >require six parameters [name, wish, stickerUp, stickerDown, picture, borderColor : string]
-    >
+-   **create new wish card**
+    require six parameters [name, wish, stickerUp, stickerDown, picture, borderColor : string]
     ```
     POST /wish-card/new
     ```
@@ -101,14 +109,12 @@
     GET /wish-card/lastest-four
     ```
 -   **update a wishcard**
-    >require two parameters [name, wish : string]
-    >
+    require two parameters [name, wish : string]
     ```
     PUT /wish-card/update
     ```
 -   **delete a wish card**
-    >require a parameter [name : string]
-    >
+    require a parameter [name : string]
     ```
     DELETE /wish-card/delete
     ```
