@@ -139,4 +139,4 @@ git checkout 79949b6dd0f2eb741bc8e5d4a084a08f6840a1f4
     ![Backend route](/backend_route.png)
 
 #### More Information
-Please check out this article in Thai: [กระต่าย ดวงจันทร์ และ การเขียนเว็ป](link.medium.com/X7MvLie0LHb)
+Please check out this article in Thai: [กระต่าย ดวงจันทร์ และ การเขียนเว็ป](https://link.medium.com/X7MvLie0LHb)
